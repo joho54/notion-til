@@ -96,6 +96,12 @@ def convert_to_markdown(blocks):
             texts = block["callout"].get("rich_text", [])
             content = "".join([text["plain_text"] for text in texts])
             md_text += f"> **Note:** {content}\n\n"
+        elif block_type == "equation":
+            latex = block["equation"]["expression"]
+            if block["equation"].get("inline", False):  # 인라인 수식 여부 확인
+                md_text += f"${latex}$"
+            else:
+                md_text += f"$$\n{latex}\n$$\n\n"
     return md_text
 
 
