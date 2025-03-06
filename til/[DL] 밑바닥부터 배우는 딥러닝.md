@@ -105,11 +105,15 @@ class TwoLayerNet:
 
 개념: SGD란 매개 변수의 기울기를 이용해서 기울어진 방향으로 매개변수 값을 갱신하는 일을 몇 번이고 반복해서 점점 최적의 값에 다다르는 것. 매개변수 갱신 방법이다.
 
-\frac{\eta L}{\eta W}: W에 대한 손실 함수의 기울기.
+$$
+W \leftarrow W - \eta \frac{\sigma L}{\sigma W}
+$$
+
+$\frac{\eta L}{\eta W}$: W에 대한 손실 함수의 기울기.
 
 ← : 우변의 값으로 좌변의 값을 갱신한다는 뜻. 
 
-\eta: 학습률
+$\eta$: 학습률
 
 ```python
 class SGD:
@@ -139,6 +143,10 @@ for i in range(10000):
 
 주어진 로스 함수가 다음과 같다고 하자. 
 
+$$
+f(x, y) = \frac{1}{20}x^2 + y^2
+$$
+
 그러면 기울기는 아래와 같이 x값을 매우 더디게 갱신하는 형태가 된다. 아마 x 매개변수 갱신이 y보다 10배쯤 느리지 않을까? 
 
 ### GPT의 설명
@@ -149,7 +157,15 @@ SGD(Stochastic Gradient Descent)의 단점 중 하나는 매개변수 갱신 속
 
 2. SGD 업데이트 식
 
-즉, x는 \eta/10만큼 변화하고, y는 2\eta만큼 변화합니다.
+$$
+x_{t+1} = x_t - \eta \frac{\partial f}{\partial x} = x_t - \eta \frac{1}{10} x_t
+$$
+
+$$
+y_{t+1} = y_t - \eta \frac{\partial f}{\partial y} = y_t - 2\eta y_t
+$$
+
+즉, x는 $\eta/10$만큼 변화하고, y는 $2\eta$만큼 변화합니다.
 
 3. 갱신 속도의 차이
 
@@ -159,11 +175,19 @@ SGD(Stochastic Gradient Descent)의 단점 중 하나는 매개변수 갱신 속
 
 
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/3c536962-c9d4-4af6-b261-82125e201ebf/Screenshot_2025-03-06_at_3.17.51_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XUUSKO4P%2F20250306%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250306T071124Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHXy1XlGOM9JXgzcoekO0fZQ9HLat6EBOdsTCQ33dYuOAiEA7BvZK5NkShaxP2rpNppCb%2BhICbkW9FkG7mndb4w%2FViwq%2FwMIJxAAGgw2Mzc0MjMxODM4MDUiDMTbHBVx%2FUsa7jeS0ircA9VUKEEDHyaypTZnx6ARz%2F0l%2Fayhn41Ym5bER9ZwseyQgTmT16U3KuzfhuRWSpL%2Bdg6RhYCCxLM1fcCJa0Wtuz1fEdMrYDbQAoTw6rz3ibrto%2Bc4wSejn6HGURLJh1JC3k2LUtsphlae8e9KZlbIP7TLko%2BVhUhC3KcNOrmZuDEgwnKSU5IdhFR0y8WdnsxyCNLyA4ddJozCbWWtA6z0jDyBsUVDWrBYOFkKWNEch0UC4duse79t1FufQhXGfPQFvKcorQpd%2B%2FlKTIBfQIbnXz4D5tXeYCAzARMLJE%2BeSlFoanjzrXdhQs6P3MRNG7i3pjjyHVwgXcoqlmtKSRamhHmw00HNML8qRlsN5zArtbrJKsaGYIziIPozXcbH4G3qNXVyCasx81is73j%2Fr95gxmscc85g8FlQhO2YRyhghFWkLL%2FHkBxj4vunhxnJgvpkifOif6d6wxs62o1ZoypCdphKdDIgrbhr%2BK2qrNK0RBXyAhgwxBWIX7uz0XiPFu5PYEASKQWH4XDZkagG5aJZW7n2cRdNkpgxam0u%2F9y%2FaE9bHyc%2BXIPgxy1xLcGFbPww6ESZ3mWpgB1eQJj8VafcO50eMYMLPQdNbgeMmc1Qct4do1fVHyBjdsf72Co3MKr3pL4GOqUBYjpGOgBK%2Fni1Z1wNgVReQk4C7rgxDvGpMR1MXWBpMpm0pyrE38HSy5E%2F%2BwQVR6zGo6Cygt4iWf7o7Gj7fYuECjtt7isJ2AfrvFXGvZxNvW4bi7EZ5VVh0f9XyrnHRGw24uWqof6GbNlkLtOwy54V6LaKsnl6i1ZUkSz7nqiOhFFxQ5tHMouh1AjyxIfkx7AIeOpwfkV8Ai2vRiBCRyWIZHejoKZo&X-Amz-Signature=2d05bc2701aa31c6fb5502ae519679622d482ff3c79e77613821210c6c83bc41&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/3c536962-c9d4-4af6-b261-82125e201ebf/Screenshot_2025-03-06_at_3.17.51_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662FUC36A7%2F20250306%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250306T071508Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC%2FOvFLQ1k6Fi%2Flzr0SHDbDbN5Qj09QL7yfiT4flPQ7fQIgW89Q4nJdG0K%2BC69V63J1MP9xMk9g9nR9Z2NB4XSlQKIq%2FwMIJxAAGgw2Mzc0MjMxODM4MDUiDB64dYnZ64TgWRbeKSrcA%2BlXHawTfNLvfDBpcS67BjfCbIqpJiRu%2BIpCVHTlSL%2BbJ9d28Ng9kIFG3A4qYwS03Up8ILhBA4YJAsPDybt9EwQYnkGm4nTX4V3QrT8pQ%2FsgfoQAqoTDi1C1dRaKxFTEMTFf5Ns4XgrVFMGLUKvWGPI2dE6yK8ZpfKbqsLs8fnW7zY1UEogmZUncwt8IFF439OHIY4j0Z4pz6zFtcT%2BBRNR%2FU9eMPSGNXHsuCYNnsW5CZQPQKKUcZVB6wtZQZqoQVse0rwNDo1Wd7zIJ0YLob%2FF%2FXfTXpxFy0ScaKdaogD%2FoW3%2FTwV%2B5QnaQ0YF2rv9ixY%2BqxwnVyu2oy27Ls8Qu0vCRX%2BJHjwXQDbSJkTre454pBt6oMbmwmcAznghYbGIAmfbC7%2Fiw4N2F1K699Un%2F2fmH%2BwKu2icdJ%2B40SbfMYX9UTcJiJTGkDg%2Bw6IcX2de4gcwuuyY59ojtlR2hT%2B5Zf8nxeoJYwiLs3E0bVCncNMd4d6CzbB6L8N6fhCSij%2FUC2dgJC7teFzyOVAFA71wi2NWwBVtjqkjSIeFaJW4FPQMTqW00iM%2BOufSjDL2ZO%2BNYEcZmYb6WMPUixGQwhgXsXCPhUtJoR26BSroltk7DBHg1gEv4nrLFtzsp4BDyMNv2pL4GOqUBnXB35sGx1rIp6t%2FtUX4my2M3uxRYgeQhMHZ%2FzfAknGSi8Qv0mYu5%2FSl5Saj8jtq7fRub8kL7MEKCd2N4PtdwOLZn62%2BdOmr4nB472wOOMYpaPtnijOUZupXDg5bsebMVVOaIvOkRzaBxCU7KWQrU8lxtFcgt1Fy9Ba1Qp539tCMZ1OdDE2YMcLD4ykWx5SDzOibjrZGBK%2BDR5HH05UWZ1EQfMmii&X-Amz-Signature=2abb07eb262d4e2e227c94bddc24c0655cec9a11ea49375eb03250cb8917a3ed&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ## SGD의 대안: 모멘텀
 
 ### 수식
+
+$$
+v \leftarrow av - \eta \frac{\sigma L}{\sigma W}
+$$
+
+$$
+W \leftarrow W + v
+$$
 
 v라는 변수가 새로 나오는데, 이는 물리에서 말하는 속도에 해당함. av항은 물체가 아무런 힘을 받지 않을 때 서서히 하강시키는 역할을 함. (a = 0.9 등으로 설정. 중력 가속도랑 같은 건가? 아니다. 반대로 속도를 줄이는 저항의 역할이다.) 물리에서의 지면 마찰이나 공기 저항에 해당하는 개념. (즉 하강 속도를 줄이는 항이다.)
 
@@ -208,7 +232,15 @@ class Momentum:
 
 ### 수식
 
-여기서 h라는 변수가 새로 등장. 기존 기울기값을 제곱하여 계속 더한 값. 글고 매개변수를 갱신할 때 \frac{1}{\sqrt h}를 곱해서 학습률을 조정. 이게 의미하는 바: 매개변수의 원소 중에서 많이 움직인(크게 갱신된) 원소는 학습률이 낮아진다는 뜻. h는 기울기에 비례, \frac{1}{\sqrt h}는 기울기에 당연히 반비례하므로, 기울기를 통해 크게 갱신되고 나면 다음 학습률을 낮추는 효과가 있음.
+$$
+h \leftarrow h + \frac{\sigma L}{\sigma W} \odot \frac{\sigma L}{\sigma W}
+$$
+
+$$
+W \leftarrow W - \eta \frac{1}{\sqrt h}\frac{\sigma L}{\sigma W}
+$$
+
+여기서 h라는 변수가 새로 등장. 기존 기울기값을 제곱하여 계속 더한 값. 글고 매개변수를 갱신할 때 $\frac{1}{\sqrt h}$를 곱해서 학습률을 조정. 이게 의미하는 바: 매개변수의 원소 중에서 많이 움직인(크게 갱신된) 원소는 학습률이 낮아진다는 뜻. h는 기울기에 비례, $\frac{1}{\sqrt h}$는 기울기에 당연히 반비례하므로, 기울기를 통해 크게 갱신되고 나면 다음 학습률을 낮추는 효과가 있음.
 
 ### 코드
 

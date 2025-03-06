@@ -44,9 +44,13 @@ def convert_to_markdown(blocks, indent=0):
     for block in blocks:
         block_type = block.get("type")
         if block_type == "paragraph":
-            texts = block["paragraph"].get("rich_text", [])
-            content = "".join([text["plain_text"] for text in texts])
-            md_text += content + "\n\n"
+            for item in block["paragraph"]["rich_text"]:
+                if item["type"] == "equation":  # 인라인 수식 탐색
+                    latex = item["equation"]["expression"]
+                    md_text += f"${latex}$"
+                elif item["type"] == "text":  # 일반 텍스트 처리
+                    md_text += item["text"]["content"]
+            md_text += "\n\n"  # 문장 끝
         elif block_type == "heading_1":
             texts = block["heading_1"].get("rich_text", [])
             content = "".join([text["plain_text"] for text in texts])
@@ -102,6 +106,9 @@ def convert_to_markdown(blocks, indent=0):
             content = "".join([text["plain_text"] for text in texts])
             md_text += f"> **Note:** {content}\n\n"
         # 기타 블록 유형 추가 가능
+        elif block_type == "equation":  # 독립적인 수식 블록
+            latex = block["equation"]["expression"]
+            md_text += f"$$\n{latex}\n$$\n\n"
     return md_text
 
 
