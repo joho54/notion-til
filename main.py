@@ -96,12 +96,18 @@ def convert_to_markdown(blocks):
             texts = block["callout"].get("rich_text", [])
             content = "".join([text["plain_text"] for text in texts])
             md_text += f"> **Note:** {content}\n\n"
-        elif block_type == "equation":
+        elif block_type == "equation":  # 독립적인 수식 블록
             latex = block["equation"]["expression"]
-            if block["equation"].get("inline", False):  # 인라인 수식 여부 확인
-                md_text += f"${latex}$"
-            else:
-                md_text += f"$$\n{latex}\n$$\n\n"
+            md_text += f"$$\n{latex}\n$$\n\n"
+
+        elif block_type == "paragraph":  # 문장 내 인라인 수식이 있는 경우
+            for item in block["paragraph"]["rich_text"]:
+                if item["type"] == "equation":  # 인라인 수식 탐색
+                    latex = item["equation"]["expression"]
+                    md_text += f"${latex}$"
+                elif item["type"] == "text":  # 일반 텍스트 처리
+                    md_text += item["text"]["content"]
+            md_text += "\n\n"  # 문장 끝
     return md_text
 
 
