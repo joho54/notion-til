@@ -12,20 +12,64 @@
 
 # 투포인터: 연속된 자연수의 합 구하기
 
-## 문제 분석하기
+
+
+## Phase1. Top down
+
+```java
+
+import java.util.Scanner;
+
+class BOJ2018 {
+
+    public static int MAX_N = 10000000;
+    public static int[] arr = new int[MAX_N];
+
+    public static void main(String[] args) {
+        int ptr1 = 0;
+        int ptr2 = 0;
+        int tmp;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            arr[i] = i + 1;
+        }
+        int ans = 1;
+        while (ptr1 < n - 1 && ptr2 < n) {
+            tmp = ((arr[ptr1] + arr[ptr2]) * (arr[ptr2] - arr[ptr1] + 1)) / 2;
+            if (tmp == n) {
+                ans++;
+                ptr1++;
+                ptr2++;
+            } else if (tmp > n) {
+                ptr1++;
+            } else if (tmp < n) {
+                ptr2++;
+            }
+        }
+        System.out.println(ans);
+
+    }
+}
+
+```
+
+## Phase2. Bottom up
+
+### 문제 분석하기
 
 n의 최대값이 10,000,000이므로 O(nlogn) 알고리즘 쓰면 제한시간 초과하므로 O(n) 복잡도를 사용해야 함. 이런 경우 자주 사용하는 방법이 투 포인터
 
-## 손으로 플어보기
+### 손으로 플어보기
 
-### 투 포인터 이동 원칙
+투 포인터 이동 원칙
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/05bfa4fe-a087-4a4e-84ea-04165d656134/Screenshot_2025-03-03_at_5.30.53_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667PRIXQIT%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T092139Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIFZpJPrEihNJlT33Up%2BxHDYMI1O0H%2FkiDUaxkw6lK8xzAiEA1xlosxP%2F2WOqgMZVqM1l7zwnlTnaI98gO2nn4Wyn1GMq%2FwMIQhAAGgw2Mzc0MjMxODM4MDUiDGD7faPYhrOTh0M4%2FyrcAw1Y9%2F6C9%2Fc0YJkCSmvROMewMN1NX0pZVUsnNRX1QODrKsPfjPMxZASS%2FSbF46u9elaLYJJPjPEhk%2FDnfTThtMLNpXZmuPmZOKthfPJXB1OUqHAh3RmqFosZQLkPAybtOCyYkyVy8%2FUcZ%2FgB0pY1uHMbrwLlEZ71WHLXR%2BtsgXi0pBzyO3b5vtY8BcYiFhuFBdeejYsERgDYou%2BG1Xf2gcLu2KStGKXt7s0aYI3os1Px6nTviBPKQ8jOqDdl4MHTW1CuDi6Ghseh4kmooNJQ5zCxOamMWO6n%2FpxBu4532b3bFS4H2l4OEeXJBHdMZaYVExvUHZDlzb%2B3Oj7XAHT42LmYl6uhcH22Cx%2FLiBOkKAmT8Mkt%2F5fXpkayi%2FL4Vj1BzsfXj5YgU5c470yRwvaAZjcnIyBBwfKtKNjtmJGUiJcmZlvF82ZrcPajWijR6GULgAjBLSEbwjcGPUve7JA9FPiISnGV%2FURxsrjAeaSoNlVo%2BX128qbq3yTSD0OfBOyXmlb%2FOdcw0MBakf4ekENvt09bVgUl%2BjownYMI9c%2FFzfe9IXXN40lswgFZQjmme1fqVoeL40RJj6oS265%2FauHOtBjuhs4aRZMjs0UtGZKtRcGNl%2B3EwKjWdej2%2Fa94MIHnqr4GOqUBub%2Fr5yY01R40G1xlsZo0zb995WRsWfrsePXQr0PdB46SRc46VroGO2diuBSLZ0jMAujZ7KIeOJRTtniKMvNSzLAvHI1C4peL6jTPF%2F%2Fbdc1nGJ2gii%2BwBQJP2%2F79qcWhQOjRQWvdmJZRl7KzD7oieWlWTyiD%2FP7LXuJHV%2B3xnR2zqiF4t6XIf%2BF279F4gitRI7uDcQnWHwsfV83izJfzuAQ0NVQf&X-Amz-Signature=ac594656e0b14fdd4df38d80ff817d5c0cc6c38114d344cea6ce405a51a702fa&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/05bfa4fe-a087-4a4e-84ea-04165d656134/Screenshot_2025-03-03_at_5.30.53_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466W3LWRABU%2F20250307%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250307T141312Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDtEysTCqyTOYFGVa2kymCACgCx5MtGyImuDayYcDvL1wIgHsQZY11412kYJPMvDDuaydvd70UjyU8UN8MLHrZCt3Yq%2FwMIRhAAGgw2Mzc0MjMxODM4MDUiDAK2qsKtF7lZbiz69ircA3u3LKAYuQOGtZ5YZWEtHSNh4AEL77mTgRIPdbp%2BiWSFyELjaicgIK2fF9WYir1MXKUL%2BrRzC5z8BjEkAFzAPMAQYt2AUb3xoQW0ZUXWTSWIIRGawMp031EQXeEJyT9jv1bgyrtg0s5DXRaFvNkPvLWwLNx1hZINt5uWB1tXi9n9fxz75ipZPI%2FMrN1GTCWUU4uXhw1IKyRDMO4glhFk9mg323LrrJQj9SIhmUhXim1o3BOMw3q5doHcuyl%2Fmvpym1evDXrRmO2ae%2B2TiM10Cf2d9WOmpAio%2Fm3LVabUQ0HjPwnyV4tXg9yQAXoIPFDqPOyzO%2FfCRrVwN7sfBXdsxsajVqC%2FJ%2Ft60xJd7S8RO5LxGuCABvKSszrQfQP9dobxLxeatKn0yNgM7MataSb5NMLHET9Kf8IdMsVyGqp7zwN44%2By0tSotXy42DT4%2Fnbvrp1hyuNjD56tlQMbTdmnGaXbj4O79sOaM2NotFnEnyePqXXAW4lAbwmuMLAuJzZhBMC73s1Uae6mkfFzNOKqfykJGwX1J95qN0Puax1XDjkZFhjbkhw%2Bb8B3e412yeS%2F4wY3k%2BnbMiEzwVVmvIwng%2BiPhxku8UY8VwWuDvaN6MT374fNhCqc259GfMH2pMOLfq74GOqUB4jarB07EbwX64Nsx4%2BUjMzsfBcI7sDL1mGeoWExTabAnYx79VQEmySoZ1V9L6PSb8fPb3QTlptRsBelp9AumSCiNR5aTddw00ylNcYu2gFE8mY7Gjw7vGwa5XjgfKd2Gb5ABHH0gEPofyAKrEDxd7W1AbrREPI68%2BB0WqPq0lr7d5UybPtuFfdn4%2BmOHTUVpvaCHZHEaEZfiIOToJYA4%2Fgg5ylqT&X-Amz-Signature=aec9bf7c98684008e1869b5b55d4eb0e0c9e5f94516a51e6afcba5dc187559e7&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 - sum > N: sum = sum - start_index; start_index++
 - sum < N: end_index++; sum = sum + end_index;
 - sum == N: end_index++; sum = sum + end_index; count++;
-## 슈도코드
+### 슈도코드
 
 ```c
 N 변수 저장
@@ -38,7 +82,38 @@ while(end_index != N) {
 count 출력
 ```
 
-## 코드 구현
+### 코드 구현
+
+정답
+
+```java
+import java.util.Scanner;
+
+public class P2018_연속된자연수의합{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int count = 1;
+		int start_index = 1;
+		int end_index = 1;
+		int sum = 1;
+		while (end_index != N){
+			if(sum == N){
+				count++;
+				end_index++;
+				sum = sum + end_index;
+			} else if (sum > N){
+				sum = sum - start_index;
+				start_index++;
+			} else {
+				end_index++;
+				sum = sum + end_index;
+			}
+		}
+		System.out.println(count);
+	}
+}
+```
 
 개선
 
@@ -75,4 +150,73 @@ class BOJ2018 {
 }
 
 ```
+
+# 투포인터: 주몽
+
+
+
+## Phase1. Top down
+
+```c
+import java.util.Scanner;
+import java.util.Arrays;
+
+// 그래서 어떻게 풀어? 무슨 문제야?
+// 일단 뺄셈을 이용하면 좋다.
+// 같은 숫자가 주어지는가? 아니, 고유한 번호가 주어진다.
+// 일단은 주어진 번호를 인덱스로 하는 불 배열을 만드는 것도 좋지 않나?
+// 그러나 투 포인터가 아니잖아.
+// 투 포인터를 어떻게 하면 써먹지?
+// 재료의 개수가 15000으로 매우 많나? 그러니까 nlogn으로는 풀면 안 되는 건가
+// 만약 n으로 풀 수 있는 문제인가? 그냥 정렬하는게 낫지 않아? 
+// 일단 정렬 + 투포인터가 제일 합당한 거 같다.
+// end index 값 증가 로직이 적절하지 않다.어떻게 해야 하나? 
+//  일단 세부 조건을 두고, 인덱스끼리 안 겹칠때는 작으면 start를 올리고, 겹칠거 같으면 end를 올려야지
+// sum 과 m의 비교에서
+// sum > m: 정렬된 배열에서 m 값을 맞추기 위해 투 포인터로 할 수 있는 방법이 더는 없다. 
+// 이 경우 포인터를 이동할 수록 가능한 값을 증가시킬 뿐이다. 그러니까, 동작을 끝내야 한다.
+// sum == m: 답을 찾은 경우
+// sum < m: 값을 더 증가시켜야 하는데, 이게 좀 더 정교하게 해야 하는 경우.
+// 찾았다. start_index를 초기화시키는 절차가 없어서 문제다.
+
+class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[] array = new int[n];
+        for(int i = 0; i < n; i++){
+            array[i] = sc.nextInt(); // what happens then?
+        }
+        Arrays.sort(array);
+
+        int start_index = 0;
+        int end_index = 0;
+        int sum = array[start_index];
+        int ans = 0;
+        while(start_index < n && end_index < n){
+            sum = array[start_index] + array[end_index];
+            if(sum < m){
+                if(start_index < end_index-1){
+                    start_index++;
+                }
+                else
+                    end_index++;
+            }
+            else if(sum == m){ // found one
+                ans++;
+                start_index = 0;
+                end_index++;
+            }
+            else if (sum > m){
+                break;
+            }
+        }
+        System.out.println(ans);
+
+    }
+}   
+```
+
+## Phase2. Bottom up
 
