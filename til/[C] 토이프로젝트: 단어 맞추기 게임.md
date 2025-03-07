@@ -12,6 +12,8 @@
 
 > GPT 에게 바로 물어보지 말고, 코딩도장에서 관련 자료를 찾아서 오픈 북 형태로 실습 진행.
 
+
+
 # 명세
 
 C 언어 초보자를 위한 간단한 “단어 맞추기 게임” 프로젝트를 추천합니다.
@@ -143,4 +145,231 @@ int r = rand()%10;      // Returns a pseudo-random integer between 0 and RAND_MA
 •	포인터는 특정 타입의 변수 주소를 저장하는 변수이다.
 
 🚀 즉, &는 주소를 얻고, *는 주소에 저장된 값을 가져온다!
+
+# 목표: 맞춘 글자는 보이고, 아직 못 맞춘 글자는 _로 표시.
+
+어떻게? 일단 under bar를 글자 수 만큼 출력하는 방법을 모르겠다. 문자열의 길이는 어떻게 알 수 있는가?
+
+```c
+#include <string.h>
+//
+strlen(char_var)
+```
+
+일단은 이렇게 하면 된다. 
+
+전체 코드
+
+```c
+#define _CRT_SECURE_NO_WARNINGS    // scanf 보안 경고로 인한 컴파일 에러 방지
+#include <stdio.h>
+#include <stdlib.h> // rand() 함수 포함 라이브러리
+#include <time.h>
+#include <stdbool.h>    // bool, true, false가 정의된 헤더 파일
+#include <string.h>
+
+
+int main()
+{    
+    srand(time(NULL));
+
+	char words[10][20] = {
+		{"hello"},
+		{"hebrew"},
+		{"english"},
+		{"japan"},
+		{"folks"},
+		{"holiday"},
+		{"france"},
+		{"always"},
+		{"donald"},
+		{"russia"}
+	};
+    int random = 0;
+
+    random = rand()%10;
+    long char_len = strlen(words[random]);
+    printf("%d\n", random);
+    printf("%s\n", words[random]);
+    printf("%zu\n", char_len);
+
+    while(true){
+        char c1;
+        printf("문자를 입력하세요: ");
+        scanf(" %c", &c1);    // 문자를 입력받아서 변수에 저장
+        // printf("%c\n",  c1);
+        bool flag = false;
+        // iterate on each 
+        for(int i = 0; i < 10; i++){
+            if (words[random][i] == c1){
+                flag = true;
+            }
+        };
+        if(flag){
+            printf("correct!\n");
+        }
+        else{
+            printf("wrong!\n");
+        }
+    }
+};
+```
+
+그렇다면, 일단 boolean 타입의 배열을 정의해서 그에 따라 순회하며 reveal the characters according to iterated boolean variables.
+
+
+
+# 이슈: strlen 컴파일 에러
+
+## Phase1. 
+
+### 환경
+
+macOS, arm64, C
+
+### 로그
+
+```c
+main.c:31:20: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+31 |     printf("%d\n", strlen(words[random]));
+|             ~~     ^~~~~~~~~~~~~~~~~~~~~
+|             %lu
+1 warning generated.
+```
+
+### 최근 변경사항
+
+아래 코드 작성.
+
+```c
+printf("%d\n", strlen(words[random])); 
+```
+
+## Phase2-1. 해결
+
+### 확인
+
+로그를 통해 확인할 수 있다시피 strlen의 반환 타입은 unsigned long. 이를 포매팅하는 예약어는 %zu.
+
+### 시도
+
+```c
+printf("%zu\n", strlen(words[random]));
+```
+
+### 결과분석
+
+제대로 출력 됨.
+
+# 이슈: 문자열 하나를 처리하고 반복문이 다음 텀으로 넘어가버림. 
+
+One iteration should process only one char.
+
+에러는 아니고 그냥 논리를 완성해야 하는 부분. 
+
+일단, getchar이나 scanf는 다 캐릭터 하나하나를 처리한다. 그럼 그렇게 안 하려면? 
+
+아래와 같은 코드로 변경하면 된다.
+
+```c
+
+				char input_word[MAX_WORD_LEN];
+        printf("문자를 입력하세요: ");
+        scanf(" %s", input_word);    // 문자를 입력받아서 변수에 저장(입력값 포매팅에 공백이 필요.)
+        bool flag = false;
+        for(int i = 0; i < char_len; i++){
+            // should be nested loop
+            long input_len = strlen(input_word);
+            for(int j = 0; j < input_len; j ++){
+                if (words[random][i] == input_word[j]){
+                    flags[i] = true;
+                }
+            }
+        };
+```
+
+# 완성
+
+```c
+#define _CRT_SECURE_NO_WARNINGS // scanf 보안 경고로 인한 컴파일 에러 방지
+#include <stdio.h>
+#include <stdlib.h> // rand() 함수 포함 라이브러리
+#include <time.h>
+#include <stdbool.h> // bool, true, false가 정의된 헤더 파일
+#include <string.h>
+#define MAX_TRIAL 5
+#define MAX_WORD_LEN 20
+
+int main()
+{
+    srand(time(NULL));
+
+    char words[10][MAX_WORD_LEN] = {
+        {"hello"},
+        {"hebrew"},
+        {"english"},
+        {"japan"},
+        {"folks"},
+        {"holiday"},
+        {"france"},
+        {"always"},
+        {"donald"},
+        {"russia"}};
+    // all set by false.
+    bool flags[MAX_WORD_LEN];
+    int random = 0;
+    int trial = 1;
+    random = rand() % 10;
+    long char_len = strlen(words[random]);
+    printf("%d\n", random);
+    printf("%s\n", words[random]);
+    printf("5번만에 단어를 맞춰 보세요\n");
+
+    while (true)
+    {
+        char input_word[MAX_WORD_LEN];
+        bool flag = false;
+        int correct_sum = 0;
+        
+        printf("문자를 입력하세요: ");
+        scanf(" %s", input_word); // 문자를 입력받아서 변수에 저장(입력값 포매팅에 공백이 필요.)
+        for (int i = 0; i < char_len; i++)
+        {
+            // should be nested loop
+            long input_len = strlen(input_word);
+            for (int j = 0; j < input_len; j++)
+            {
+                if (words[random][i] == input_word[j])
+                {
+                    flags[i] = true;
+                    // if this condition has been ran multiple times as much as the length of the character,
+                    // user got the answer
+                    correct_sum++;
+                }
+            }
+        };
+        for (int i = 0; i < char_len; i++)
+        {
+            if (flags[i])
+                printf("%c", words[random][i]);
+            else
+                printf("_");
+        }
+        printf("\n");
+        // game stop logic
+        // user can win even the max trial hit at the final loop.
+        trial++;
+        if (correct_sum >= char_len){
+            printf("정답입니다!\n");
+            break;
+
+        }
+        if (trial > MAX_TRIAL)
+        {
+            printf("제한 횟수 초과!\n");
+            break;
+        }
+    }
+};
+```
 
