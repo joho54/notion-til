@@ -1,5 +1,8 @@
 import os
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Notion API 설정
 NOTION_API_KEY = os.getenv('NOTION_API_KEY')
