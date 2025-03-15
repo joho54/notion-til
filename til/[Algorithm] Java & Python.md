@@ -64,7 +64,7 @@ n의 최대값이 10,000,000이므로 O(nlogn) 알고리즘 쓰면 제한시간 
 
 투 포인터 이동 원칙
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/05bfa4fe-a087-4a4e-84ea-04165d656134/Screenshot_2025-03-03_at_5.30.53_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RBSQGNNY%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDsjjtZ6ayO1AVeKssSJOiCbVSRoSzUn5XUcweiUvOBMAiEAwxvUOD5b0iYkQl81cOrNXPfc86z7zqq%2Fx1O4jeFaeSIqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCC4v4IL4qSHtiAQUircA2bELN03MZv4S0lVdNClfBllX9CO256fLMrkfdZ%2BfRLHlcn%2Fcl%2FkOqY2l%2FtBtalPzBOk4cE7pFJVz0yuBXoDlctmbdDD0OymAnYC%2BdRf1JA2I%2F5vVgS%2BBrqk5Ptp6MmFcRqefekt6mOTLmS%2FyxyPCnGtUl6dOwvLp8vt0rh6gA5BV5Sza9mwZpMUr9CcwE8nGHZ71c%2B2B1o%2F1iibt5pUW%2FR8H85%2BpwLOnvsE2nvGZDV%2BVHqj1fAPjL5ohT1P8e2rxYyGqTSmQAOvOszKnPODMEiceRIv6XKG7hWzhM8ygyoh%2BcQ7kGqkCJT%2FBWfKEAmhHpc7PWf4Qu8rJJQi5VpaDCrAtly6imJqdRnnGRLm6DU6WdTNFHd1RSllghS4PvCekOOJm4BqDGySpe%2FbOizd8Tmeb1ZGKqlTljfu6dQnuuF5%2Bhf9u0nuf6A7pDUPTeyD5B4tf0XqGBM9xpVdzyXWaCjfEk8IvWChhXl73sSyZ1AIjwE9q0S1EsnMjx8W1XczSb22atumIdVszBxf5py8Uc6euOwaLMvwAbd6n685JzHycrRhpBZhu2iAm4OtMwyUYv9TKQVpVhyU7LilatFmFf6yYU%2FKMDkZ%2BHGAMK7olprg1DI8Tep6mcz81DTkMPXu0r4GOqUBKhpjhwUDoIJITFOyCb15A%2Fs4J18IpupMyDX7y73No%2F5ETZUjVnNXEA0Zh8X1Hgo6hnnUtTnFDROY5DLS6PwtNGNZ9AQFgALHEJbj2KrKKSz8OJ44z3EToyRzO4iumy8gUvAJjomIigLJ5PAxSb5DRWLte8NWz5qDO8Gj8aXzb2%2FUGuS0s6NW3y5h8sqW1Gw89A%2F7v5IueZBzQ8hAaTHG0qSgXHtm&X-Amz-Signature=6268f9037bab267b8583ea3f5df2b13caa3f910b0a43a0c89d3600eb7fbcc1ad&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/05bfa4fe-a087-4a4e-84ea-04165d656134/Screenshot_2025-03-03_at_5.30.53_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662DDTBG2H%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075000Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCNDWuOfX5tX%2FMS%2Bdz692QFYaya6dJ%2Bbx5xg9WZnw5qFQIhAMLqId4xvR8o3Oqe4IKEOOny8A%2BxV%2BsLczBSbBvtfDI2Kv8DCBEQABoMNjM3NDIzMTgzODA1IgyYCLzI%2BuEGkrUzpnkq3AODlinANFzb2hPHZM9CAkzErRrL%2FEzB6XBlg8%2BV9j4pEIezNiLKp98y5KT12PkaNnIn0XJbTGv%2FkuGRMRR5sJQUd6YdngnWAIrsYn8V4mAhed7fjthlVC8ZgYCe%2FY49%2FY4ON%2FwU2dC8yovM0UQ%2FwIuV6%2B9oRyuLBbNiLm8o2KzhWlQ2LTCPQnlSywWYIDKvoNOJ%2BgqIU6WPsyP6WTNGT22zE3WgVLBkkk3OqI0GgbNCLOPhvi98KCaWDgik0YAMLeO5iaitd800IhXk6DtuHNG%2BT%2FHCl0RLg5NBHpkOU%2FKQ4H4Zs%2FaA8zWMw8sO8IQoOQrHUdoYDl%2BbJBg33Saa2jLojMG0SMETXi%2BUioSughRgi1eilCBpoRoFIR1feq5c1Z5Tx0FiZMFotb%2BeJXBWKQQu7E0OK4Hhxp8XlYq4jQ5xa463rRqUcfzNSCL%2BA52DKz8iuHrsCgsXYMruH1hlGjK0Enl2Ea2qkwwXMuRqQ31NM7ksvCVICoET4YUvrSlw7LdWhtNatNjcm88SsAJYtuDaEi7mAfWJFGdaz2HCg8mRShH9tFv9mqcPhK7VdplRFxTIldhLthb%2B912GksBk6qX8Zcj375BsUuU%2FjShNAoHHVTw%2BtBv0daLTq2R8lTCn4dS%2BBjqkAcUXYCg2FhAio8RZOiuTpU5Pk5WxK%2BpWmzseAHs%2FrnchsXTJleeMK6ZI6k5m0LzPfffRfgUccfcSmzskgPzi%2FgN6C3LWPKQNaXTmizTgc9YYYaRuIp%2Bww%2BR6m0erbusQHxi%2FOuNKVevX4jfZIg8Nw58AlAmNKYdZ6QHUPo5SkudfDEpJm61wznZ3EtxAl%2F%2FWTp8CsfIdU6NKpuQ7hHQA0H9KLuHa&X-Amz-Signature=25c2e1f0ddc40646b2eb3777544db796fd4d96053ec5db8d20dcc2ba771e04c3&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 - sum > N: sum = sum - start_index; start_index++
 - sum < N: end_index++; sum = sum + end_index;
@@ -341,9 +341,9 @@ sub problem 정의를 하지 못했다.
 
 > 컴퓨터 대신 손으로 직접 실행해보는 것도 효과적입니다. 예제 입력을 작게 하여 코드가 어떻게 동작하는지 확인.
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/005964d6-917a-4d21-bede-ff8ab6a4e978/IMG_9871.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RBSQGNNY%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDsjjtZ6ayO1AVeKssSJOiCbVSRoSzUn5XUcweiUvOBMAiEAwxvUOD5b0iYkQl81cOrNXPfc86z7zqq%2Fx1O4jeFaeSIqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCC4v4IL4qSHtiAQUircA2bELN03MZv4S0lVdNClfBllX9CO256fLMrkfdZ%2BfRLHlcn%2Fcl%2FkOqY2l%2FtBtalPzBOk4cE7pFJVz0yuBXoDlctmbdDD0OymAnYC%2BdRf1JA2I%2F5vVgS%2BBrqk5Ptp6MmFcRqefekt6mOTLmS%2FyxyPCnGtUl6dOwvLp8vt0rh6gA5BV5Sza9mwZpMUr9CcwE8nGHZ71c%2B2B1o%2F1iibt5pUW%2FR8H85%2BpwLOnvsE2nvGZDV%2BVHqj1fAPjL5ohT1P8e2rxYyGqTSmQAOvOszKnPODMEiceRIv6XKG7hWzhM8ygyoh%2BcQ7kGqkCJT%2FBWfKEAmhHpc7PWf4Qu8rJJQi5VpaDCrAtly6imJqdRnnGRLm6DU6WdTNFHd1RSllghS4PvCekOOJm4BqDGySpe%2FbOizd8Tmeb1ZGKqlTljfu6dQnuuF5%2Bhf9u0nuf6A7pDUPTeyD5B4tf0XqGBM9xpVdzyXWaCjfEk8IvWChhXl73sSyZ1AIjwE9q0S1EsnMjx8W1XczSb22atumIdVszBxf5py8Uc6euOwaLMvwAbd6n685JzHycrRhpBZhu2iAm4OtMwyUYv9TKQVpVhyU7LilatFmFf6yYU%2FKMDkZ%2BHGAMK7olprg1DI8Tep6mcz81DTkMPXu0r4GOqUBKhpjhwUDoIJITFOyCb15A%2Fs4J18IpupMyDX7y73No%2F5ETZUjVnNXEA0Zh8X1Hgo6hnnUtTnFDROY5DLS6PwtNGNZ9AQFgALHEJbj2KrKKSz8OJ44z3EToyRzO4iumy8gUvAJjomIigLJ5PAxSb5DRWLte8NWz5qDO8Gj8aXzb2%2FUGuS0s6NW3y5h8sqW1Gw89A%2F7v5IueZBzQ8hAaTHG0qSgXHtm&X-Amz-Signature=3283e221dc62d4c1dcbc6209c7067210e6c99189377fe0897d68b47f7aacc086&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/005964d6-917a-4d21-bede-ff8ab6a4e978/IMG_9871.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662DDTBG2H%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075000Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCNDWuOfX5tX%2FMS%2Bdz692QFYaya6dJ%2Bbx5xg9WZnw5qFQIhAMLqId4xvR8o3Oqe4IKEOOny8A%2BxV%2BsLczBSbBvtfDI2Kv8DCBEQABoMNjM3NDIzMTgzODA1IgyYCLzI%2BuEGkrUzpnkq3AODlinANFzb2hPHZM9CAkzErRrL%2FEzB6XBlg8%2BV9j4pEIezNiLKp98y5KT12PkaNnIn0XJbTGv%2FkuGRMRR5sJQUd6YdngnWAIrsYn8V4mAhed7fjthlVC8ZgYCe%2FY49%2FY4ON%2FwU2dC8yovM0UQ%2FwIuV6%2B9oRyuLBbNiLm8o2KzhWlQ2LTCPQnlSywWYIDKvoNOJ%2BgqIU6WPsyP6WTNGT22zE3WgVLBkkk3OqI0GgbNCLOPhvi98KCaWDgik0YAMLeO5iaitd800IhXk6DtuHNG%2BT%2FHCl0RLg5NBHpkOU%2FKQ4H4Zs%2FaA8zWMw8sO8IQoOQrHUdoYDl%2BbJBg33Saa2jLojMG0SMETXi%2BUioSughRgi1eilCBpoRoFIR1feq5c1Z5Tx0FiZMFotb%2BeJXBWKQQu7E0OK4Hhxp8XlYq4jQ5xa463rRqUcfzNSCL%2BA52DKz8iuHrsCgsXYMruH1hlGjK0Enl2Ea2qkwwXMuRqQ31NM7ksvCVICoET4YUvrSlw7LdWhtNatNjcm88SsAJYtuDaEi7mAfWJFGdaz2HCg8mRShH9tFv9mqcPhK7VdplRFxTIldhLthb%2B912GksBk6qX8Zcj375BsUuU%2FjShNAoHHVTw%2BtBv0daLTq2R8lTCn4dS%2BBjqkAcUXYCg2FhAio8RZOiuTpU5Pk5WxK%2BpWmzseAHs%2FrnchsXTJleeMK6ZI6k5m0LzPfffRfgUccfcSmzskgPzi%2FgN6C3LWPKQNaXTmizTgc9YYYaRuIp%2Bww%2BR6m0erbusQHxi%2FOuNKVevX4jfZIg8Nw58AlAmNKYdZ6QHUPo5SkudfDEpJm61wznZ3EtxAl%2F%2FWTp8CsfIdU6NKpuQ7hHQA0H9KLuHa&X-Amz-Signature=5ae48614c392a8ffbdc65d4b95a4993c070a45298f425977ef313cb9ee475d29&X-Amz-SignedHeaders=host&x-id=GetObject)
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/a82a3eec-e72a-40bb-87cb-8327c5cc36b1/IMG_9872.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RBSQGNNY%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDsjjtZ6ayO1AVeKssSJOiCbVSRoSzUn5XUcweiUvOBMAiEAwxvUOD5b0iYkQl81cOrNXPfc86z7zqq%2Fx1O4jeFaeSIqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCC4v4IL4qSHtiAQUircA2bELN03MZv4S0lVdNClfBllX9CO256fLMrkfdZ%2BfRLHlcn%2Fcl%2FkOqY2l%2FtBtalPzBOk4cE7pFJVz0yuBXoDlctmbdDD0OymAnYC%2BdRf1JA2I%2F5vVgS%2BBrqk5Ptp6MmFcRqefekt6mOTLmS%2FyxyPCnGtUl6dOwvLp8vt0rh6gA5BV5Sza9mwZpMUr9CcwE8nGHZ71c%2B2B1o%2F1iibt5pUW%2FR8H85%2BpwLOnvsE2nvGZDV%2BVHqj1fAPjL5ohT1P8e2rxYyGqTSmQAOvOszKnPODMEiceRIv6XKG7hWzhM8ygyoh%2BcQ7kGqkCJT%2FBWfKEAmhHpc7PWf4Qu8rJJQi5VpaDCrAtly6imJqdRnnGRLm6DU6WdTNFHd1RSllghS4PvCekOOJm4BqDGySpe%2FbOizd8Tmeb1ZGKqlTljfu6dQnuuF5%2Bhf9u0nuf6A7pDUPTeyD5B4tf0XqGBM9xpVdzyXWaCjfEk8IvWChhXl73sSyZ1AIjwE9q0S1EsnMjx8W1XczSb22atumIdVszBxf5py8Uc6euOwaLMvwAbd6n685JzHycrRhpBZhu2iAm4OtMwyUYv9TKQVpVhyU7LilatFmFf6yYU%2FKMDkZ%2BHGAMK7olprg1DI8Tep6mcz81DTkMPXu0r4GOqUBKhpjhwUDoIJITFOyCb15A%2Fs4J18IpupMyDX7y73No%2F5ETZUjVnNXEA0Zh8X1Hgo6hnnUtTnFDROY5DLS6PwtNGNZ9AQFgALHEJbj2KrKKSz8OJ44z3EToyRzO4iumy8gUvAJjomIigLJ5PAxSb5DRWLte8NWz5qDO8Gj8aXzb2%2FUGuS0s6NW3y5h8sqW1Gw89A%2F7v5IueZBzQ8hAaTHG0qSgXHtm&X-Amz-Signature=5ac658b598981e978edd108d9a197742d048ee7bf1ddbb73fabc36ad81b4e622&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/a82a3eec-e72a-40bb-87cb-8327c5cc36b1/IMG_9872.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662DDTBG2H%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075000Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCNDWuOfX5tX%2FMS%2Bdz692QFYaya6dJ%2Bbx5xg9WZnw5qFQIhAMLqId4xvR8o3Oqe4IKEOOny8A%2BxV%2BsLczBSbBvtfDI2Kv8DCBEQABoMNjM3NDIzMTgzODA1IgyYCLzI%2BuEGkrUzpnkq3AODlinANFzb2hPHZM9CAkzErRrL%2FEzB6XBlg8%2BV9j4pEIezNiLKp98y5KT12PkaNnIn0XJbTGv%2FkuGRMRR5sJQUd6YdngnWAIrsYn8V4mAhed7fjthlVC8ZgYCe%2FY49%2FY4ON%2FwU2dC8yovM0UQ%2FwIuV6%2B9oRyuLBbNiLm8o2KzhWlQ2LTCPQnlSywWYIDKvoNOJ%2BgqIU6WPsyP6WTNGT22zE3WgVLBkkk3OqI0GgbNCLOPhvi98KCaWDgik0YAMLeO5iaitd800IhXk6DtuHNG%2BT%2FHCl0RLg5NBHpkOU%2FKQ4H4Zs%2FaA8zWMw8sO8IQoOQrHUdoYDl%2BbJBg33Saa2jLojMG0SMETXi%2BUioSughRgi1eilCBpoRoFIR1feq5c1Z5Tx0FiZMFotb%2BeJXBWKQQu7E0OK4Hhxp8XlYq4jQ5xa463rRqUcfzNSCL%2BA52DKz8iuHrsCgsXYMruH1hlGjK0Enl2Ea2qkwwXMuRqQ31NM7ksvCVICoET4YUvrSlw7LdWhtNatNjcm88SsAJYtuDaEi7mAfWJFGdaz2HCg8mRShH9tFv9mqcPhK7VdplRFxTIldhLthb%2B912GksBk6qX8Zcj375BsUuU%2FjShNAoHHVTw%2BtBv0daLTq2R8lTCn4dS%2BBjqkAcUXYCg2FhAio8RZOiuTpU5Pk5WxK%2BpWmzseAHs%2FrnchsXTJleeMK6ZI6k5m0LzPfffRfgUccfcSmzskgPzi%2FgN6C3LWPKQNaXTmizTgc9YYYaRuIp%2Bww%2BR6m0erbusQHxi%2FOuNKVevX4jfZIg8Nw58AlAmNKYdZ6QHUPo5SkudfDEpJm61wznZ3EtxAl%2F%2FWTp8CsfIdU6NKpuQ7hHQA0H9KLuHa&X-Amz-Signature=9ffd331a40c80632cade968212fb990e68b7fb1e6d03423c484b0a4bc29c419d&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 n=5까지 그려봤으나 규칙 확인 실패
 
@@ -375,7 +375,7 @@ def factorial(n: int) -> int:
 
 팩토리얼을 재귀적으로 구하는 과정.
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/ef6a62d5-e03d-40cc-88e9-b4e6fb30c8d3/IMG_9873.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RBSQGNNY%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDsjjtZ6ayO1AVeKssSJOiCbVSRoSzUn5XUcweiUvOBMAiEAwxvUOD5b0iYkQl81cOrNXPfc86z7zqq%2Fx1O4jeFaeSIqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCC4v4IL4qSHtiAQUircA2bELN03MZv4S0lVdNClfBllX9CO256fLMrkfdZ%2BfRLHlcn%2Fcl%2FkOqY2l%2FtBtalPzBOk4cE7pFJVz0yuBXoDlctmbdDD0OymAnYC%2BdRf1JA2I%2F5vVgS%2BBrqk5Ptp6MmFcRqefekt6mOTLmS%2FyxyPCnGtUl6dOwvLp8vt0rh6gA5BV5Sza9mwZpMUr9CcwE8nGHZ71c%2B2B1o%2F1iibt5pUW%2FR8H85%2BpwLOnvsE2nvGZDV%2BVHqj1fAPjL5ohT1P8e2rxYyGqTSmQAOvOszKnPODMEiceRIv6XKG7hWzhM8ygyoh%2BcQ7kGqkCJT%2FBWfKEAmhHpc7PWf4Qu8rJJQi5VpaDCrAtly6imJqdRnnGRLm6DU6WdTNFHd1RSllghS4PvCekOOJm4BqDGySpe%2FbOizd8Tmeb1ZGKqlTljfu6dQnuuF5%2Bhf9u0nuf6A7pDUPTeyD5B4tf0XqGBM9xpVdzyXWaCjfEk8IvWChhXl73sSyZ1AIjwE9q0S1EsnMjx8W1XczSb22atumIdVszBxf5py8Uc6euOwaLMvwAbd6n685JzHycrRhpBZhu2iAm4OtMwyUYv9TKQVpVhyU7LilatFmFf6yYU%2FKMDkZ%2BHGAMK7olprg1DI8Tep6mcz81DTkMPXu0r4GOqUBKhpjhwUDoIJITFOyCb15A%2Fs4J18IpupMyDX7y73No%2F5ETZUjVnNXEA0Zh8X1Hgo6hnnUtTnFDROY5DLS6PwtNGNZ9AQFgALHEJbj2KrKKSz8OJ44z3EToyRzO4iumy8gUvAJjomIigLJ5PAxSb5DRWLte8NWz5qDO8Gj8aXzb2%2FUGuS0s6NW3y5h8sqW1Gw89A%2F7v5IueZBzQ8hAaTHG0qSgXHtm&X-Amz-Signature=ca829d1eecf977342d1cb4931ae434795b9c1dfec608e74aeefc9b966dfc7b52&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/ef6a62d5-e03d-40cc-88e9-b4e6fb30c8d3/IMG_9873.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662DDTBG2H%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075000Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCNDWuOfX5tX%2FMS%2Bdz692QFYaya6dJ%2Bbx5xg9WZnw5qFQIhAMLqId4xvR8o3Oqe4IKEOOny8A%2BxV%2BsLczBSbBvtfDI2Kv8DCBEQABoMNjM3NDIzMTgzODA1IgyYCLzI%2BuEGkrUzpnkq3AODlinANFzb2hPHZM9CAkzErRrL%2FEzB6XBlg8%2BV9j4pEIezNiLKp98y5KT12PkaNnIn0XJbTGv%2FkuGRMRR5sJQUd6YdngnWAIrsYn8V4mAhed7fjthlVC8ZgYCe%2FY49%2FY4ON%2FwU2dC8yovM0UQ%2FwIuV6%2B9oRyuLBbNiLm8o2KzhWlQ2LTCPQnlSywWYIDKvoNOJ%2BgqIU6WPsyP6WTNGT22zE3WgVLBkkk3OqI0GgbNCLOPhvi98KCaWDgik0YAMLeO5iaitd800IhXk6DtuHNG%2BT%2FHCl0RLg5NBHpkOU%2FKQ4H4Zs%2FaA8zWMw8sO8IQoOQrHUdoYDl%2BbJBg33Saa2jLojMG0SMETXi%2BUioSughRgi1eilCBpoRoFIR1feq5c1Z5Tx0FiZMFotb%2BeJXBWKQQu7E0OK4Hhxp8XlYq4jQ5xa463rRqUcfzNSCL%2BA52DKz8iuHrsCgsXYMruH1hlGjK0Enl2Ea2qkwwXMuRqQ31NM7ksvCVICoET4YUvrSlw7LdWhtNatNjcm88SsAJYtuDaEi7mAfWJFGdaz2HCg8mRShH9tFv9mqcPhK7VdplRFxTIldhLthb%2B912GksBk6qX8Zcj375BsUuU%2FjShNAoHHVTw%2BtBv0daLTq2R8lTCn4dS%2BBjqkAcUXYCg2FhAio8RZOiuTpU5Pk5WxK%2BpWmzseAHs%2FrnchsXTJleeMK6ZI6k5m0LzPfffRfgUccfcSmzskgPzi%2FgN6C3LWPKQNaXTmizTgc9YYYaRuIp%2Bww%2BR6m0erbusQHxi%2FOuNKVevX4jfZIg8Nw58AlAmNKYdZ6QHUPo5SkudfDEpJm61wznZ3EtxAl%2F%2FWTp8CsfIdU6NKpuQ7hHQA0H9KLuHa&X-Amz-Signature=78299544b4a28991e7008d49b76e39d26be6dc26e5c8ca59dc547177d47db4c2&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 (맨 마지막이 d)
 
@@ -400,10 +400,10 @@ a 반환된 값 2를 전달받은 factorial 함수는 3*factorial(2) 즉, 3*2를
 이렇게 최종 factorial(3)값인 6을 얻음
 
 - 직접 재귀와 간접 재귀
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/a1fda402-9322-4b73-b569-596a90f192eb/IMG_9874.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RBSQGNNY%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDsjjtZ6ayO1AVeKssSJOiCbVSRoSzUn5XUcweiUvOBMAiEAwxvUOD5b0iYkQl81cOrNXPfc86z7zqq%2Fx1O4jeFaeSIqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCC4v4IL4qSHtiAQUircA2bELN03MZv4S0lVdNClfBllX9CO256fLMrkfdZ%2BfRLHlcn%2Fcl%2FkOqY2l%2FtBtalPzBOk4cE7pFJVz0yuBXoDlctmbdDD0OymAnYC%2BdRf1JA2I%2F5vVgS%2BBrqk5Ptp6MmFcRqefekt6mOTLmS%2FyxyPCnGtUl6dOwvLp8vt0rh6gA5BV5Sza9mwZpMUr9CcwE8nGHZ71c%2B2B1o%2F1iibt5pUW%2FR8H85%2BpwLOnvsE2nvGZDV%2BVHqj1fAPjL5ohT1P8e2rxYyGqTSmQAOvOszKnPODMEiceRIv6XKG7hWzhM8ygyoh%2BcQ7kGqkCJT%2FBWfKEAmhHpc7PWf4Qu8rJJQi5VpaDCrAtly6imJqdRnnGRLm6DU6WdTNFHd1RSllghS4PvCekOOJm4BqDGySpe%2FbOizd8Tmeb1ZGKqlTljfu6dQnuuF5%2Bhf9u0nuf6A7pDUPTeyD5B4tf0XqGBM9xpVdzyXWaCjfEk8IvWChhXl73sSyZ1AIjwE9q0S1EsnMjx8W1XczSb22atumIdVszBxf5py8Uc6euOwaLMvwAbd6n685JzHycrRhpBZhu2iAm4OtMwyUYv9TKQVpVhyU7LilatFmFf6yYU%2FKMDkZ%2BHGAMK7olprg1DI8Tep6mcz81DTkMPXu0r4GOqUBKhpjhwUDoIJITFOyCb15A%2Fs4J18IpupMyDX7y73No%2F5ETZUjVnNXEA0Zh8X1Hgo6hnnUtTnFDROY5DLS6PwtNGNZ9AQFgALHEJbj2KrKKSz8OJ44z3EToyRzO4iumy8gUvAJjomIigLJ5PAxSb5DRWLte8NWz5qDO8Gj8aXzb2%2FUGuS0s6NW3y5h8sqW1Gw89A%2F7v5IueZBzQ8hAaTHG0qSgXHtm&X-Amz-Signature=7e3f89cebc64ce6867f46705303f9b3fabf5ff843207e1470dd0deb923c13262&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/a1fda402-9322-4b73-b569-596a90f192eb/IMG_9874.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662DDTBG2H%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075000Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCNDWuOfX5tX%2FMS%2Bdz692QFYaya6dJ%2Bbx5xg9WZnw5qFQIhAMLqId4xvR8o3Oqe4IKEOOny8A%2BxV%2BsLczBSbBvtfDI2Kv8DCBEQABoMNjM3NDIzMTgzODA1IgyYCLzI%2BuEGkrUzpnkq3AODlinANFzb2hPHZM9CAkzErRrL%2FEzB6XBlg8%2BV9j4pEIezNiLKp98y5KT12PkaNnIn0XJbTGv%2FkuGRMRR5sJQUd6YdngnWAIrsYn8V4mAhed7fjthlVC8ZgYCe%2FY49%2FY4ON%2FwU2dC8yovM0UQ%2FwIuV6%2B9oRyuLBbNiLm8o2KzhWlQ2LTCPQnlSywWYIDKvoNOJ%2BgqIU6WPsyP6WTNGT22zE3WgVLBkkk3OqI0GgbNCLOPhvi98KCaWDgik0YAMLeO5iaitd800IhXk6DtuHNG%2BT%2FHCl0RLg5NBHpkOU%2FKQ4H4Zs%2FaA8zWMw8sO8IQoOQrHUdoYDl%2BbJBg33Saa2jLojMG0SMETXi%2BUioSughRgi1eilCBpoRoFIR1feq5c1Z5Tx0FiZMFotb%2BeJXBWKQQu7E0OK4Hhxp8XlYq4jQ5xa463rRqUcfzNSCL%2BA52DKz8iuHrsCgsXYMruH1hlGjK0Enl2Ea2qkwwXMuRqQ31NM7ksvCVICoET4YUvrSlw7LdWhtNatNjcm88SsAJYtuDaEi7mAfWJFGdaz2HCg8mRShH9tFv9mqcPhK7VdplRFxTIldhLthb%2B912GksBk6qX8Zcj375BsUuU%2FjShNAoHHVTw%2BtBv0daLTq2R8lTCn4dS%2BBjqkAcUXYCg2FhAio8RZOiuTpU5Pk5WxK%2BpWmzseAHs%2FrnchsXTJleeMK6ZI6k5m0LzPfffRfgUccfcSmzskgPzi%2FgN6C3LWPKQNaXTmizTgc9YYYaRuIp%2Bww%2BR6m0erbusQHxi%2FOuNKVevX4jfZIg8Nw58AlAmNKYdZ6QHUPo5SkudfDEpJm61wznZ3EtxAl%2F%2FWTp8CsfIdU6NKpuQ7hHQA0H9KLuHa&X-Amz-Signature=6ddbb3029f3f48249cd6cfd4bb7dcb644b4b7b2b15ce6de7fef35e7a7ef69de9&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 - 유클리드 호제법
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/899122bf-a705-49f5-94ca-91e8cedab38e/IMG_9875.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RBSQGNNY%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDsjjtZ6ayO1AVeKssSJOiCbVSRoSzUn5XUcweiUvOBMAiEAwxvUOD5b0iYkQl81cOrNXPfc86z7zqq%2Fx1O4jeFaeSIqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCC4v4IL4qSHtiAQUircA2bELN03MZv4S0lVdNClfBllX9CO256fLMrkfdZ%2BfRLHlcn%2Fcl%2FkOqY2l%2FtBtalPzBOk4cE7pFJVz0yuBXoDlctmbdDD0OymAnYC%2BdRf1JA2I%2F5vVgS%2BBrqk5Ptp6MmFcRqefekt6mOTLmS%2FyxyPCnGtUl6dOwvLp8vt0rh6gA5BV5Sza9mwZpMUr9CcwE8nGHZ71c%2B2B1o%2F1iibt5pUW%2FR8H85%2BpwLOnvsE2nvGZDV%2BVHqj1fAPjL5ohT1P8e2rxYyGqTSmQAOvOszKnPODMEiceRIv6XKG7hWzhM8ygyoh%2BcQ7kGqkCJT%2FBWfKEAmhHpc7PWf4Qu8rJJQi5VpaDCrAtly6imJqdRnnGRLm6DU6WdTNFHd1RSllghS4PvCekOOJm4BqDGySpe%2FbOizd8Tmeb1ZGKqlTljfu6dQnuuF5%2Bhf9u0nuf6A7pDUPTeyD5B4tf0XqGBM9xpVdzyXWaCjfEk8IvWChhXl73sSyZ1AIjwE9q0S1EsnMjx8W1XczSb22atumIdVszBxf5py8Uc6euOwaLMvwAbd6n685JzHycrRhpBZhu2iAm4OtMwyUYv9TKQVpVhyU7LilatFmFf6yYU%2FKMDkZ%2BHGAMK7olprg1DI8Tep6mcz81DTkMPXu0r4GOqUBKhpjhwUDoIJITFOyCb15A%2Fs4J18IpupMyDX7y73No%2F5ETZUjVnNXEA0Zh8X1Hgo6hnnUtTnFDROY5DLS6PwtNGNZ9AQFgALHEJbj2KrKKSz8OJ44z3EToyRzO4iumy8gUvAJjomIigLJ5PAxSb5DRWLte8NWz5qDO8Gj8aXzb2%2FUGuS0s6NW3y5h8sqW1Gw89A%2F7v5IueZBzQ8hAaTHG0qSgXHtm&X-Amz-Signature=048581d0af3fb896d355406cb9eb551142f76223e146d0e69e3cee32375ded54&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/899122bf-a705-49f5-94ca-91e8cedab38e/IMG_9875.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662DDTBG2H%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075000Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCNDWuOfX5tX%2FMS%2Bdz692QFYaya6dJ%2Bbx5xg9WZnw5qFQIhAMLqId4xvR8o3Oqe4IKEOOny8A%2BxV%2BsLczBSbBvtfDI2Kv8DCBEQABoMNjM3NDIzMTgzODA1IgyYCLzI%2BuEGkrUzpnkq3AODlinANFzb2hPHZM9CAkzErRrL%2FEzB6XBlg8%2BV9j4pEIezNiLKp98y5KT12PkaNnIn0XJbTGv%2FkuGRMRR5sJQUd6YdngnWAIrsYn8V4mAhed7fjthlVC8ZgYCe%2FY49%2FY4ON%2FwU2dC8yovM0UQ%2FwIuV6%2B9oRyuLBbNiLm8o2KzhWlQ2LTCPQnlSywWYIDKvoNOJ%2BgqIU6WPsyP6WTNGT22zE3WgVLBkkk3OqI0GgbNCLOPhvi98KCaWDgik0YAMLeO5iaitd800IhXk6DtuHNG%2BT%2FHCl0RLg5NBHpkOU%2FKQ4H4Zs%2FaA8zWMw8sO8IQoOQrHUdoYDl%2BbJBg33Saa2jLojMG0SMETXi%2BUioSughRgi1eilCBpoRoFIR1feq5c1Z5Tx0FiZMFotb%2BeJXBWKQQu7E0OK4Hhxp8XlYq4jQ5xa463rRqUcfzNSCL%2BA52DKz8iuHrsCgsXYMruH1hlGjK0Enl2Ea2qkwwXMuRqQ31NM7ksvCVICoET4YUvrSlw7LdWhtNatNjcm88SsAJYtuDaEi7mAfWJFGdaz2HCg8mRShH9tFv9mqcPhK7VdplRFxTIldhLthb%2B912GksBk6qX8Zcj375BsUuU%2FjShNAoHHVTw%2BtBv0daLTq2R8lTCn4dS%2BBjqkAcUXYCg2FhAio8RZOiuTpU5Pk5WxK%2BpWmzseAHs%2FrnchsXTJleeMK6ZI6k5m0LzPfffRfgUccfcSmzskgPzi%2FgN6C3LWPKQNaXTmizTgc9YYYaRuIp%2Bww%2BR6m0erbusQHxi%2FOuNKVevX4jfZIg8Nw58AlAmNKYdZ6QHUPo5SkudfDEpJm61wznZ3EtxAl%2F%2FWTp8CsfIdU6NKpuQ7hHQA0H9KLuHa&X-Amz-Signature=8f1679a59e7cd6b3cecbf8b730841d9d67c5669d017923174e6972c19755bd0f&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 이 과정의 수학적 정의: 두 정수 x와 y의 최대 공약수를 gcd(x, y)로 표기할 때, x=az와 y=bz를 만족하는 정수 , a, b와 최대의 정수 z가 존재할 때 z는 gcd(x, y)라고 할 수 있다.
 
@@ -425,6 +425,8 @@ def gcd(x: int, y: int) -> int:
 ```
 
 ### 관련 개념 복습: 재귀 알고리즘 2가지 분석 방법
+
+> 복습 지시: 아래 코드를 가지고 상,하향식 분석 도식을 그리고, 출력 결과를 예상하세요.(상, 하향식 분석의 출력 결과 예상을 모두 하기 전에는 답 확인하지 마세요) → 복습 완료.
 
 ```python
 # 순수한 재귀 함수 구현하기
@@ -452,7 +454,7 @@ recur(4)의 실행 과정
 1. recur(2)를 실행합니다.
 위의 과정 2에서 4가 출력되려면 recur(3)의 실행을 완료한 뒤이므로 먼저 과정 1에서 recur(3)이 무엇을 하는지 그림 5-5를 참고하여 알아보겠습니다. 각각의 상자는 recur() 함수의 동작을 나타냅니다. 전달받은 값이 0 이하면 recur()함수는 아무 일도 하지 않으므로 비어 있다는 의미로 상자 안에 -를 표시합니다.
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/61ada9d6-0300-477b-8faf-1933c1296dea/IMG_9876.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466RBSQGNNY%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDsjjtZ6ayO1AVeKssSJOiCbVSRoSzUn5XUcweiUvOBMAiEAwxvUOD5b0iYkQl81cOrNXPfc86z7zqq%2Fx1O4jeFaeSIqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCC4v4IL4qSHtiAQUircA2bELN03MZv4S0lVdNClfBllX9CO256fLMrkfdZ%2BfRLHlcn%2Fcl%2FkOqY2l%2FtBtalPzBOk4cE7pFJVz0yuBXoDlctmbdDD0OymAnYC%2BdRf1JA2I%2F5vVgS%2BBrqk5Ptp6MmFcRqefekt6mOTLmS%2FyxyPCnGtUl6dOwvLp8vt0rh6gA5BV5Sza9mwZpMUr9CcwE8nGHZ71c%2B2B1o%2F1iibt5pUW%2FR8H85%2BpwLOnvsE2nvGZDV%2BVHqj1fAPjL5ohT1P8e2rxYyGqTSmQAOvOszKnPODMEiceRIv6XKG7hWzhM8ygyoh%2BcQ7kGqkCJT%2FBWfKEAmhHpc7PWf4Qu8rJJQi5VpaDCrAtly6imJqdRnnGRLm6DU6WdTNFHd1RSllghS4PvCekOOJm4BqDGySpe%2FbOizd8Tmeb1ZGKqlTljfu6dQnuuF5%2Bhf9u0nuf6A7pDUPTeyD5B4tf0XqGBM9xpVdzyXWaCjfEk8IvWChhXl73sSyZ1AIjwE9q0S1EsnMjx8W1XczSb22atumIdVszBxf5py8Uc6euOwaLMvwAbd6n685JzHycrRhpBZhu2iAm4OtMwyUYv9TKQVpVhyU7LilatFmFf6yYU%2FKMDkZ%2BHGAMK7olprg1DI8Tep6mcz81DTkMPXu0r4GOqUBKhpjhwUDoIJITFOyCb15A%2Fs4J18IpupMyDX7y73No%2F5ETZUjVnNXEA0Zh8X1Hgo6hnnUtTnFDROY5DLS6PwtNGNZ9AQFgALHEJbj2KrKKSz8OJ44z3EToyRzO4iumy8gUvAJjomIigLJ5PAxSb5DRWLte8NWz5qDO8Gj8aXzb2%2FUGuS0s6NW3y5h8sqW1Gw89A%2F7v5IueZBzQ8hAaTHG0qSgXHtm&X-Amz-Signature=bdec50795de188a131af7994408a7da2ebb614cc85629cd2131f0d60f8cc6003&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/61ada9d6-0300-477b-8faf-1933c1296dea/IMG_9876.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663DITOMZI%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDanUt7YwGgjCtXdiCzU6REb8kLsDV9U62pXbWQmlelbAIhAIcOz60XpHtu4VFWoUQyHWGpnvB9J0qWOYadLi3aUReiKv8DCBAQABoMNjM3NDIzMTgzODA1Igy7PtHmbRzaB%2BLhHzYq3APS4xfmtvT%2FtPB0C09yrQYEjDDAVUNhsaupkK8ILuwZlPSqDYX5gh7sguV9s1qhaJmFXfm5EJQYtKYSGlu74eRiw%2B88T0UFWIVo85x1nrU8bH99TSSRJy4Uc7RRoAfvpx%2BrXG1aVi8JdTlUVOeJXCaku4IE1RABgF6ffy3tRXW%2Fc%2ByKkZokFuT1cBsYNBYsA1rhtktIZqRkIdtGJM20lthmjfspP9YAsWLlQL6ZIVYYNj7uoZXxxZJx4opWKsctAiOiVukTQqBvi41hknqoIzmTyz%2Fu0pcvXDfxDACygyf7V1L0TeFYDVyIv1ljCRZDIsUPDHb10GprO2okz829k2XH%2BzxVlJSxTYbts8n1nsRnm3VYKf6bo1Tv1BTjhV%2Bl%2BLAHqFFflzrlCIU5En%2B6y2K57FjusUDJFyzpGAS67PtWO2wDM7WhTAvb%2FtDsz8WyqCn7gvyKDvmgQXNQWQF8CLHXeYEuaeLAlLoJB9huOrwuoXG7QIUSFkc1aB0ddO8j9zHG8uc%2BTYHh6woc20uhSen0RDTMwbc%2BHmDy1t6lQja8qugUK9UiFOuP4Lfcif12KEU53%2BGj%2BBzSvf0EjhOlO2rfQO%2B1%2Bsp5mtL1Ju2JxfZiIEH1VfTzzZJpc2zogDC4xNS%2BBjqkAWzmbvhuMKG0uZFTWmYapZLkJxwhl0uSsvNbUn1N%2F4R7ptclcOA5I0yWx1Ygu%2FYUPv7UsbTmN5bAtdUv%2FzhfR6Zd16Kbxjj05oZzgxC9SvKIcMVMHytapwPjULwVoFUPtyxjfCo96yC%2FIFSldlKl5Mh6EIHGOAIWniVqki0y%2BjCdMEK%2BZS13XXeLQdV9QcvpxPrG24AvwPpOulRgJvb1WyjJabjq&X-Amz-Signature=ef0d23241d68fa62c984127cfac1810eba7acf9f1beaa833246eedebfa192735&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 가장 위쪽에 위치한 상자의 함수 호출부터 시작하여 계단식으로 자세히 조사해 나가는 분석 방법을 하향식 분석이라 합니다. 그런데 그림에서 보다시피 recur(1), recur(2) 등 같은 함수가 여러번 호출되고 있습니다. 꼭대기부터 분석하면 이렇게 같은 함수를 여러 번 호출할 수 있으므로 하향식 방식이 반드시 효율적이라고 말할 수는 없습니다.
 
@@ -471,7 +473,7 @@ recur(1)의 실행 과정
 1. recur(0)을 실행합니다.
 recur(2)를 실행하면 과정 1에서 recur(1)은 1을 출력하지만 과정 3은 아무것도 출력하지 않음. 결국 recur(1)과 recur(2)의 과정을 거쳐 1, 2를 출력. 이 작업을 recur(4)까지 쌓아 올리며 설명한 내용이 아래 그림. 이 과정을 통하여 recur(4) 최종 출력 얻을 수 있음.
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/b1769365-105f-46de-b9a9-3de7d23c5e8a/IMG_9877.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WPE3XXUC%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235259Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC5jPVzbGfIufq5kEoyPCBTdXZLyRKuMMHN684f4O6wUgIgSBcxNT8ycUf0m4lC65GEy%2FOq12b6vx2AG9mGNgmXTHUqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCuvD8BYT22%2FPagaqCrcAyU6yEkpU1aGPTBhScgWbWaY5ahqFjwINpnt%2F8YXpZcPbJnoub7WtXbkXjC%2BqjeWIA3Ow1svzUU7oI61pj46%2Fq6zDk6LR7NP%2B9SJaXWEKfb0G4HbKBIPQThi6nEKerKSdSo6nNMSHn8RxkguDxpBchlOWBDSdOMva1SuRV2qy0AS13uMhtMQi1%2FioHSvO2Rlen9xKn34pGbFO%2BNP6Rl3RFBwqOrxIjPyL1%2FCAB%2BiPWNx%2B1yPGe8UBktSjRkvlRTwqUfJb%2Fsr2G6eBmsPgCpM2jbHhKithAUtgo8YJAN1oKk4nIUJP6N8Va6xbWBEQoWV%2Bv1Pux3j87VHejR1gOzcmmPJssjQryX%2F%2BYlIbeRYO%2Bq%2FlTawEW256GAb7l4SRWivFN8IrP%2FK7pw%2BJKEPaLOTKcEPTtLKZAjDrl46AKKNtN22bhL3QzRIMllG2RT8L70jWZHR6Mc4PZX3G4KhpMGfVPJ1aRPjuWeDR02ebz%2FmFbccndVwJ46OogUQoiEDj%2FABWn7HQspJFw%2FJ7zuK91H9P0uS5gDjHrgMcSNwJ6mU6KoL%2B0gejpqXinvw4UaoBgPQa2dlk973XRA9jEtcw0M9HRAKlaOjsS3mFpRa8s97quzFlGbGGtN79YgaUN%2BsMPbu0r4GOqUBMOPn4Zpp%2Bl%2BpaHmWBthPsHMY9F5GiX14vbWXg986BtvYHpUWMXrwpiZT4mg6RWwe50dqPFXLXw0LYjSdIjTTimIVG456qNXY2GQ0wkEEs%2FHNJnbRlSOvbMTXt8VdKcxc%2BUI2FKXts8whTYr%2BDDghSNlpUbKTuMnH%2Fz3cEeWqNrryuBFLEUb%2B7%2FkoDUQEVfHtztULgzdO8AjgCRebpbbIbUttLgHw&X-Amz-Signature=0f30f3266be6534cc3c440c1f806ae13b5bc385e2f65ca5720b7f9cb744bf958&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/b1769365-105f-46de-b9a9-3de7d23c5e8a/IMG_9877.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663DITOMZI%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDanUt7YwGgjCtXdiCzU6REb8kLsDV9U62pXbWQmlelbAIhAIcOz60XpHtu4VFWoUQyHWGpnvB9J0qWOYadLi3aUReiKv8DCBAQABoMNjM3NDIzMTgzODA1Igy7PtHmbRzaB%2BLhHzYq3APS4xfmtvT%2FtPB0C09yrQYEjDDAVUNhsaupkK8ILuwZlPSqDYX5gh7sguV9s1qhaJmFXfm5EJQYtKYSGlu74eRiw%2B88T0UFWIVo85x1nrU8bH99TSSRJy4Uc7RRoAfvpx%2BrXG1aVi8JdTlUVOeJXCaku4IE1RABgF6ffy3tRXW%2Fc%2ByKkZokFuT1cBsYNBYsA1rhtktIZqRkIdtGJM20lthmjfspP9YAsWLlQL6ZIVYYNj7uoZXxxZJx4opWKsctAiOiVukTQqBvi41hknqoIzmTyz%2Fu0pcvXDfxDACygyf7V1L0TeFYDVyIv1ljCRZDIsUPDHb10GprO2okz829k2XH%2BzxVlJSxTYbts8n1nsRnm3VYKf6bo1Tv1BTjhV%2Bl%2BLAHqFFflzrlCIU5En%2B6y2K57FjusUDJFyzpGAS67PtWO2wDM7WhTAvb%2FtDsz8WyqCn7gvyKDvmgQXNQWQF8CLHXeYEuaeLAlLoJB9huOrwuoXG7QIUSFkc1aB0ddO8j9zHG8uc%2BTYHh6woc20uhSen0RDTMwbc%2BHmDy1t6lQja8qugUK9UiFOuP4Lfcif12KEU53%2BGj%2BBzSvf0EjhOlO2rfQO%2B1%2Bsp5mtL1Ju2JxfZiIEH1VfTzzZJpc2zogDC4xNS%2BBjqkAWzmbvhuMKG0uZFTWmYapZLkJxwhl0uSsvNbUn1N%2F4R7ptclcOA5I0yWx1Ygu%2FYUPv7UsbTmN5bAtdUv%2FzhfR6Zd16Kbxjj05oZzgxC9SvKIcMVMHytapwPjULwVoFUPtyxjfCo96yC%2FIFSldlKl5Mh6EIHGOAIWniVqki0y%2BjCdMEK%2BZS13XXeLQdV9QcvpxPrG24AvwPpOulRgJvb1WyjJabjq&X-Amz-Signature=0c52b9d20572cee7f66783bc79bc343acd619d0d7d6abb4500bbb89550dc6f62&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 > 만약 위의 재귀 호출을 거꾸로 출력하려면?
 
@@ -486,9 +488,13 @@ def recur(n: int) -> int:
 
 위 코드의 호출 과정
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/0c1839b9-722b-4eaa-a55f-4bfea7bf1cd5/IMG_9878.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WPE3XXUC%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235259Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC5jPVzbGfIufq5kEoyPCBTdXZLyRKuMMHN684f4O6wUgIgSBcxNT8ycUf0m4lC65GEy%2FOq12b6vx2AG9mGNgmXTHUqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCuvD8BYT22%2FPagaqCrcAyU6yEkpU1aGPTBhScgWbWaY5ahqFjwINpnt%2F8YXpZcPbJnoub7WtXbkXjC%2BqjeWIA3Ow1svzUU7oI61pj46%2Fq6zDk6LR7NP%2B9SJaXWEKfb0G4HbKBIPQThi6nEKerKSdSo6nNMSHn8RxkguDxpBchlOWBDSdOMva1SuRV2qy0AS13uMhtMQi1%2FioHSvO2Rlen9xKn34pGbFO%2BNP6Rl3RFBwqOrxIjPyL1%2FCAB%2BiPWNx%2B1yPGe8UBktSjRkvlRTwqUfJb%2Fsr2G6eBmsPgCpM2jbHhKithAUtgo8YJAN1oKk4nIUJP6N8Va6xbWBEQoWV%2Bv1Pux3j87VHejR1gOzcmmPJssjQryX%2F%2BYlIbeRYO%2Bq%2FlTawEW256GAb7l4SRWivFN8IrP%2FK7pw%2BJKEPaLOTKcEPTtLKZAjDrl46AKKNtN22bhL3QzRIMllG2RT8L70jWZHR6Mc4PZX3G4KhpMGfVPJ1aRPjuWeDR02ebz%2FmFbccndVwJ46OogUQoiEDj%2FABWn7HQspJFw%2FJ7zuK91H9P0uS5gDjHrgMcSNwJ6mU6KoL%2B0gejpqXinvw4UaoBgPQa2dlk973XRA9jEtcw0M9HRAKlaOjsS3mFpRa8s97quzFlGbGGtN79YgaUN%2BsMPbu0r4GOqUBMOPn4Zpp%2Bl%2BpaHmWBthPsHMY9F5GiX14vbWXg986BtvYHpUWMXrwpiZT4mg6RWwe50dqPFXLXw0LYjSdIjTTimIVG456qNXY2GQ0wkEEs%2FHNJnbRlSOvbMTXt8VdKcxc%2BUI2FKXts8whTYr%2BDDghSNlpUbKTuMnH%2Fz3cEeWqNrryuBFLEUb%2B7%2FkoDUQEVfHtztULgzdO8AjgCRebpbbIbUttLgHw&X-Amz-Signature=abe92963745917fcacd7965eb324a43a2927c7e410ed5fd72df9918356788a07&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/0c1839b9-722b-4eaa-a55f-4bfea7bf1cd5/IMG_9878.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663DITOMZI%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDanUt7YwGgjCtXdiCzU6REb8kLsDV9U62pXbWQmlelbAIhAIcOz60XpHtu4VFWoUQyHWGpnvB9J0qWOYadLi3aUReiKv8DCBAQABoMNjM3NDIzMTgzODA1Igy7PtHmbRzaB%2BLhHzYq3APS4xfmtvT%2FtPB0C09yrQYEjDDAVUNhsaupkK8ILuwZlPSqDYX5gh7sguV9s1qhaJmFXfm5EJQYtKYSGlu74eRiw%2B88T0UFWIVo85x1nrU8bH99TSSRJy4Uc7RRoAfvpx%2BrXG1aVi8JdTlUVOeJXCaku4IE1RABgF6ffy3tRXW%2Fc%2ByKkZokFuT1cBsYNBYsA1rhtktIZqRkIdtGJM20lthmjfspP9YAsWLlQL6ZIVYYNj7uoZXxxZJx4opWKsctAiOiVukTQqBvi41hknqoIzmTyz%2Fu0pcvXDfxDACygyf7V1L0TeFYDVyIv1ljCRZDIsUPDHb10GprO2okz829k2XH%2BzxVlJSxTYbts8n1nsRnm3VYKf6bo1Tv1BTjhV%2Bl%2BLAHqFFflzrlCIU5En%2B6y2K57FjusUDJFyzpGAS67PtWO2wDM7WhTAvb%2FtDsz8WyqCn7gvyKDvmgQXNQWQF8CLHXeYEuaeLAlLoJB9huOrwuoXG7QIUSFkc1aB0ddO8j9zHG8uc%2BTYHh6woc20uhSen0RDTMwbc%2BHmDy1t6lQja8qugUK9UiFOuP4Lfcif12KEU53%2BGj%2BBzSvf0EjhOlO2rfQO%2B1%2Bsp5mtL1Ju2JxfZiIEH1VfTzzZJpc2zogDC4xNS%2BBjqkAWzmbvhuMKG0uZFTWmYapZLkJxwhl0uSsvNbUn1N%2F4R7ptclcOA5I0yWx1Ygu%2FYUPv7UsbTmN5bAtdUv%2FzhfR6Zd16Kbxjj05oZzgxC9SvKIcMVMHytapwPjULwVoFUPtyxjfCo96yC%2FIFSldlKl5Mh6EIHGOAIWniVqki0y%2BjCdMEK%2BZS13XXeLQdV9QcvpxPrG24AvwPpOulRgJvb1WyjJabjq&X-Amz-Signature=11c98efee2ca5a09b2f9b056d2adb089810dedc8fad1af19c99886be2c3bc436&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 관련 개념 복습: 재귀 알고리즘의 비재귀적 표현
+
+> 복습 지시
+일단 한번 쉐도잉 하세요.
+두 번째 코드를 그림으로 그리세요.
 
 꼬리 재귀를 제거하기: recur() 함수의 맨 끝에서 재귀 호출하는 꼬리 재귀 recur(n- 2)함수의 의미는 ‘인수로 n-2의 값을 전달하고 recur() 함수를 호출하는 것’입니다. 따라서 이 호출은 다음 동작으로 바꿀 수 있습니다.
 
@@ -497,10 +503,10 @@ def recur(n: int) -> int:
 ```python
 def recur(n: int) -> int:
 	"""꼬리 재귀를 제거한 recur()함수"""
-	while n > 0:
+	while n > 0: # 2. 함수의 시작 지점으로 돌아간다.(모로 가도 서울로 가면 된다)
 		recur(n - 1)
 		print(n)
-		n = n - 2
+		n = n - 2 # 1. n을 n-2로 업데이트하고
 ```
 
 재귀를 제거하기: 꼬리 재귀와 달리 맨 앞에서 재귀 호출하는 recur(n-1) 함수는 제거하기가 쉽지 않습니다. 왜냐하면 n값을 출력하기 전에 recur(n-1)을 실행해야 하기 떄문입니다. 예를 들어 n값이 4인 경우 재귀 호출 recur(3)의 처리가 완료될 때까지 4를 어딘가에 저장해야 합니다.다시 말해 재귀 호출하는 recur(n - 1)을 제거하려면 다음과 같이 간단하게 바꿀 수 는 없다.
@@ -519,29 +525,758 @@ def recur(n: int) -> int:
 	while True:
 		if n > 0:
 			s.push(n)
-			n = n - 1
-			continue
-		if not s.is_empty() 
-			 n = s.pop()
-			 print(n)
-			 n = n - 2
+			n = n - 1 # 1. n을 n-1로 업데이트하고
+			continue # 2. 함수의 시작 지점으로 돌아갑니다.
+		if not s.is_empty() # n이 0 이하가 됐을 때, 스택 상단의 값을 하나 팝 합니다.
+			 n = s.pop() 
+			 print(n) # 그 값을 출력하고
+			 n = n - 2 # n을 n-2로 업데이트하고 함수의 처음으로 돌아갑니다.
 			 continue
 		break
 ```
 
 그림
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/267dd9f6-51ff-4616-b454-cae7044a8d0b/IMG_9879.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WPE3XXUC%2F20250314%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250314T235259Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC5jPVzbGfIufq5kEoyPCBTdXZLyRKuMMHN684f4O6wUgIgSBcxNT8ycUf0m4lC65GEy%2FOq12b6vx2AG9mGNgmXTHUqiAQI%2BP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDCuvD8BYT22%2FPagaqCrcAyU6yEkpU1aGPTBhScgWbWaY5ahqFjwINpnt%2F8YXpZcPbJnoub7WtXbkXjC%2BqjeWIA3Ow1svzUU7oI61pj46%2Fq6zDk6LR7NP%2B9SJaXWEKfb0G4HbKBIPQThi6nEKerKSdSo6nNMSHn8RxkguDxpBchlOWBDSdOMva1SuRV2qy0AS13uMhtMQi1%2FioHSvO2Rlen9xKn34pGbFO%2BNP6Rl3RFBwqOrxIjPyL1%2FCAB%2BiPWNx%2B1yPGe8UBktSjRkvlRTwqUfJb%2Fsr2G6eBmsPgCpM2jbHhKithAUtgo8YJAN1oKk4nIUJP6N8Va6xbWBEQoWV%2Bv1Pux3j87VHejR1gOzcmmPJssjQryX%2F%2BYlIbeRYO%2Bq%2FlTawEW256GAb7l4SRWivFN8IrP%2FK7pw%2BJKEPaLOTKcEPTtLKZAjDrl46AKKNtN22bhL3QzRIMllG2RT8L70jWZHR6Mc4PZX3G4KhpMGfVPJ1aRPjuWeDR02ebz%2FmFbccndVwJ46OogUQoiEDj%2FABWn7HQspJFw%2FJ7zuK91H9P0uS5gDjHrgMcSNwJ6mU6KoL%2B0gejpqXinvw4UaoBgPQa2dlk973XRA9jEtcw0M9HRAKlaOjsS3mFpRa8s97quzFlGbGGtN79YgaUN%2BsMPbu0r4GOqUBMOPn4Zpp%2Bl%2BpaHmWBthPsHMY9F5GiX14vbWXg986BtvYHpUWMXrwpiZT4mg6RWwe50dqPFXLXw0LYjSdIjTTimIVG456qNXY2GQ0wkEEs%2FHNJnbRlSOvbMTXt8VdKcxc%2BUI2FKXts8whTYr%2BDDghSNlpUbKTuMnH%2Fz3cEeWqNrryuBFLEUb%2B7%2FkoDUQEVfHtztULgzdO8AjgCRebpbbIbUttLgHw&X-Amz-Signature=3a9fb80a69d132114ee941c221c782fdaa8feed0b9f86de81fdecd3bdfb969de&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/267dd9f6-51ff-4616-b454-cae7044a8d0b/IMG_9879.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663DITOMZI%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDanUt7YwGgjCtXdiCzU6REb8kLsDV9U62pXbWQmlelbAIhAIcOz60XpHtu4VFWoUQyHWGpnvB9J0qWOYadLi3aUReiKv8DCBAQABoMNjM3NDIzMTgzODA1Igy7PtHmbRzaB%2BLhHzYq3APS4xfmtvT%2FtPB0C09yrQYEjDDAVUNhsaupkK8ILuwZlPSqDYX5gh7sguV9s1qhaJmFXfm5EJQYtKYSGlu74eRiw%2B88T0UFWIVo85x1nrU8bH99TSSRJy4Uc7RRoAfvpx%2BrXG1aVi8JdTlUVOeJXCaku4IE1RABgF6ffy3tRXW%2Fc%2ByKkZokFuT1cBsYNBYsA1rhtktIZqRkIdtGJM20lthmjfspP9YAsWLlQL6ZIVYYNj7uoZXxxZJx4opWKsctAiOiVukTQqBvi41hknqoIzmTyz%2Fu0pcvXDfxDACygyf7V1L0TeFYDVyIv1ljCRZDIsUPDHb10GprO2okz829k2XH%2BzxVlJSxTYbts8n1nsRnm3VYKf6bo1Tv1BTjhV%2Bl%2BLAHqFFflzrlCIU5En%2B6y2K57FjusUDJFyzpGAS67PtWO2wDM7WhTAvb%2FtDsz8WyqCn7gvyKDvmgQXNQWQF8CLHXeYEuaeLAlLoJB9huOrwuoXG7QIUSFkc1aB0ddO8j9zHG8uc%2BTYHh6woc20uhSen0RDTMwbc%2BHmDy1t6lQja8qugUK9UiFOuP4Lfcif12KEU53%2BGj%2BBzSvf0EjhOlO2rfQO%2B1%2Bsp5mtL1Ju2JxfZiIEH1VfTzzZJpc2zogDC4xNS%2BBjqkAWzmbvhuMKG0uZFTWmYapZLkJxwhl0uSsvNbUn1N%2F4R7ptclcOA5I0yWx1Ygu%2FYUPv7UsbTmN5bAtdUv%2FzhfR6Zd16Kbxjj05oZzgxC9SvKIcMVMHytapwPjULwVoFUPtyxjfCo96yC%2FIFSldlKl5Mh6EIHGOAIWniVqki0y%2BjCdMEK%2BZS13XXeLQdV9QcvpxPrG24AvwPpOulRgJvb1WyjJabjq&X-Amz-Signature=e3322135da638d6b48ea34bcd1087df1828325a764ef5af2ba004b3883c2e924&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 
-오케이 이까지 다 정리하긴 했는데 무슨 소린지 하나도 모르겠다. 다음으로 할 일: 각 코드에 관한 상향식/하향식 분석을 그림으로 그리기. 근데 이거는 더 이상 머리가 안 돌아가니까 내일 합시다.
+자, 이제 도식적으로는 이해 할 만큼 한 거 같다. 
+
+> 복습지시: 아래 코드를 비재귀적으로 표현하기
+
+```python
+# 순수한 재귀 함수 구현하기
+
+def recur(n: int) -> int:
+	"""순수한 재귀 함수 recur의 구현"""
+	if n > 0:
+		recur(n-1)
+		print(n)
+		recur(n-2)
+
+x = int(input())
+recur(x)
+```
+
+1. 꼬리 재귀를 제거하기: 꼬리 재귀는 recur(n-2)인데, 이것의 역할은 n을 n-2로 업데이트하고 함수를 처음부터 실행하는 것임.
+```python
+def recur(n: int) -> int:
+	while True:
+		if n > 0:
+			recur(n-1)
+			print(n)
+			n = n - 2
+```
+
+1. 중간재귀를 제거하기: 중간 재귀는 recur(n-1)인데, 이것을 제거하고 처음으로 돌아가버리면 발생하는 가장 큰 두 가지 문제는 print할 n을 저장할 수 없고, 꼬리 재귀에서 사용할 n값 역시 날아간다는 것임. 스택을 사용하여 해결. 그리고 결국 n = n -1로 업데이트 후 함수의 처음으로 돌아가기는 해야 함.
+```python
+from stack import Stack
+
+def recur(n: int) -> int:
+	s = Stack(n)
+	while True:
+		if n > 0:
+			s.push(n)
+			n = n - 1
+			continue
+		if not s.is_empty():
+			n = s.pop()
+			print(n)
+			n = n - 2
+			continue
+		break
+```
+
+### 다른 사람의 풀이를 분석
+
+> 책 쉐도잉. 뭔 말인지 전혀 모르겠다. 
+그림을 그리면서 정리. 
+
+코드: i 열에 퀸을 하나 배치하는 작업
+
+```python
+# 각 열에 퀸을 1개 배치하는 조합을 재귀적으로 나열하기
+
+pos = [0] * 8 # 각 열에서 퀸의 위치를 출력
+
+def put() -> None:
+	for i in range(8):
+		print(f'{pos[i]:2}', end='')
+	print()
+	
+def set(i: int) -> None:
+	for j in range(8):
+		pos[i] = j # 퀸을 j 행에 배치
+		if i == 7: # 모든 열에 퀸의 배치를 종료
+			put()
+		else:
+			set(i+1) # 다음 열에 퀸을 배치
+
+set(0) # 0 열에 퀸을 배치
+```
+
+코드: 위에서 조건을 추가하여, 각 열에 하나의 퀸만 놓도록 하는 코드
+
+```python
+pos = [0] * 8
+flag  = [False] * 8
+
+def put() -> None:
+    """print queens placed on each column"""
+    for i in range(8):
+        print(f'{pos[i]:2}', end='')
+    print()
+
+def set(i: int) -> None:
+    for j in range(8):
+        if not flag[j]: # if flag is true, set function does nothing.
+            pos[i] = j
+            if i == 7:
+                put()
+            else: 
+                flag[j] = True
+                set(i+1)
+                flag[j] = False
+
+set(0)
+```
+
+> 이처럼 필요하지 않은 분기를 없애서 불필요한 조합을 열거하지 않는 방법을 한정(bounding)이라고 합니다. 분기 작업과 한정 작업을 조합하여 문제를 풀이하는 방법을 분기한정(branching and bounding mehod)라고 합니다.
+
+여기에 대각선 조건만 추가하면 퀸 문제 해결.
+
+```python
+pos = [0] * 8
+flag_a  = [False] * 8
+flag_b = [False] * 15
+flag_c = [False] * 15
+
+def put() -> None:
+    """print queens placed on each column"""
+    for i in range(8):
+        print(f'{pos[i]:2}', end='')
+    print()
+
+def set(i: int) -> None:
+    for j in range(8):
+        if( not flag_a[j]
+            and not flag_b[i + j]
+            and not flag_c[i - j + 7]
+           ):
+            pos[i] = j
+            if i == 7:
+                put()
+            else:
+                flag_a[j] = flag_b[i + j] = flag_c[i - j + 7] = True
+                set(i + 1)
+                flag_a[j] = flag_b[i + j] = flag_c[i - j + 7] = False
+
+set(0)
+```
 
 
+
+대각선 플래그가 이해가 안 된다. 아래 그림을 참고
+
+![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/061efcc5-eb21-424e-a204-afe0e5f1e953/IMG_9881.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663DITOMZI%2F20250315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250315T075001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDanUt7YwGgjCtXdiCzU6REb8kLsDV9U62pXbWQmlelbAIhAIcOz60XpHtu4VFWoUQyHWGpnvB9J0qWOYadLi3aUReiKv8DCBAQABoMNjM3NDIzMTgzODA1Igy7PtHmbRzaB%2BLhHzYq3APS4xfmtvT%2FtPB0C09yrQYEjDDAVUNhsaupkK8ILuwZlPSqDYX5gh7sguV9s1qhaJmFXfm5EJQYtKYSGlu74eRiw%2B88T0UFWIVo85x1nrU8bH99TSSRJy4Uc7RRoAfvpx%2BrXG1aVi8JdTlUVOeJXCaku4IE1RABgF6ffy3tRXW%2Fc%2ByKkZokFuT1cBsYNBYsA1rhtktIZqRkIdtGJM20lthmjfspP9YAsWLlQL6ZIVYYNj7uoZXxxZJx4opWKsctAiOiVukTQqBvi41hknqoIzmTyz%2Fu0pcvXDfxDACygyf7V1L0TeFYDVyIv1ljCRZDIsUPDHb10GprO2okz829k2XH%2BzxVlJSxTYbts8n1nsRnm3VYKf6bo1Tv1BTjhV%2Bl%2BLAHqFFflzrlCIU5En%2B6y2K57FjusUDJFyzpGAS67PtWO2wDM7WhTAvb%2FtDsz8WyqCn7gvyKDvmgQXNQWQF8CLHXeYEuaeLAlLoJB9huOrwuoXG7QIUSFkc1aB0ddO8j9zHG8uc%2BTYHh6woc20uhSen0RDTMwbc%2BHmDy1t6lQja8qugUK9UiFOuP4Lfcif12KEU53%2BGj%2BBzSvf0EjhOlO2rfQO%2B1%2Bsp5mtL1Ju2JxfZiIEH1VfTzzZJpc2zogDC4xNS%2BBjqkAWzmbvhuMKG0uZFTWmYapZLkJxwhl0uSsvNbUn1N%2F4R7ptclcOA5I0yWx1Ygu%2FYUPv7UsbTmN5bAtdUv%2FzhfR6Zd16Kbxjj05oZzgxC9SvKIcMVMHytapwPjULwVoFUPtyxjfCo96yC%2FIFSldlKl5Mh6EIHGOAIWniVqki0y%2BjCdMEK%2BZS13XXeLQdV9QcvpxPrG24AvwPpOulRgJvb1WyjJabjq&X-Amz-Signature=d6950bb2a872a5a8b67bbbc73deaacd9cd63b1540a6b2c418029a0a5be3fa1b8&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+> 쉐도잉, 필사, 그림 따라 그리기를 동원해서 n-queen 문제를 읽기는 했다. 여전히 잘 모르겠다. branching and bounding이 중요한 키워드인 것은 알겠다.
+학교 수업 때 쓴 교제를 다시 볼까? 
+
+근데 일단 어떻게 푸는지는 다 알지 않아? 코드를 직접 생각하면서 문제를 구성해보는 것도 의미가 있을 거 같은데? 음…글쎄 일단 그런가? 아니면 다음 문제 한번 보고 돌아와봐
+
+# 재귀: Z
+
+## Phase1. Top Down.
+
+```python
+# 문제 읽기
+# 첫째 줄에 정수 N, r, c가 주어진다.
+# N > 1인 경우, 배열을 크기가 2^N-1 × 2^N-1로 4등분 한 후에 재귀적으로 순서대로 방문한다.
+# N이 주어졌을 때 r행 c열을 몇 번째로 방문하는지 출력하는 프로그램을 작성하시오.
+
+# 문제 풀기
+# 문제 정의 
+# 그렇게 어려울 거 같지 않은데, 일단 재귀 지식에 입각해서 수도코드를 작성해보자.
+
+# 함수: 재귀(?): 뭐 하는 함수인데? 현재 위치가 i,j일때 다음 방문하는 좌표를 구하는 함수? 이게 작은 재귀를 다 한 다음 큰 재귀를 해야 함.
+# 재귀로 넘어가는 값이 그러니까 사각형이어야 하는 거지. 
+# (r1, c1, r2, c2)이걸 넘겨서 이 값이 정사각형 한 변의 길이가 2인 점들이 되면 방문을 하고, 그게 다 끝났으면? 
+# 큰 사각형 하나를 줬을 떄 작은 사각형들로 나눠서 재귀를 하고, 베이스 컨디션은 2인 정사각형.
+# endpoint에서 다음 사각형 start point로 가야지. 그리고 이건 항상 (r1, c1), (r2, c2)로 정해져있다.
+# 하노이 문제랑 좀 비슷하다. 대신 재귀 안에서 재귀를 네번 순서대로 해야 할 거 같은데, 그지? ㅇㅇ
+
+class rect:
+    def __init__(self, r1, c1, r2, c2):
+        self.r1 = r1
+        self.c1 = c1
+        self.r2 = r2
+        self.c2 = c2
+    def __str__(self):
+        return f'{self.r1, self.c1, self.r2, self.c2}'
+
+def get_rect(pos, T: rect):
+    half_r = (T.r1 + T.r2)//2
+    half_c = (T.c1 + T.c2)//2
+    if pos == 'A':
+        return rect(T.r1, T.c1, half_r, half_c)
+    if pos == 'B':
+        return rect(T.r1, half_c, half_r, T.c2)
+    if pos == 'C':
+        return rect(half_r, T.c1, T.r2, half_c)
+    if pos == 'D':
+        return rect(half_r, half_c, T.r2, T.c2)
+    
+
+def recur(T: rect): # 사각형 하나가 주어졌을 때, T에 대한 A, B, C, D 사각형을 구해서 재귀
+    global grid, cnt
+    if abs(T.r1 - T.r2) == 2:
+        for i in range(T.r1, T.r2):
+            for j in range(T.c1, T.c2):
+                # print(i, j)
+                grid[i][j] = cnt
+                cnt += 1
+        return
+    A = get_rect(pos='A', T=T)
+    B = get_rect(pos='B', T=T)
+    C = get_rect(pos='C', T=T)
+    D = get_rect(pos='D', T=T)
+    recur(A)
+    recur(B)
+    recur(C)
+    recur(D)
+
+# initial T must contain correct r, c ponits.
+n, r, c = tuple(map(int, input().split()))
+n = 2**n
+grid = [
+    [[] for _ in range(n)]
+    for _ in range(n)
+]
+cnt = 0
+initial_rect = rect(0, 0, n, n)
+recur(T=initial_rect)
+print(grid[r][c])
+# for g in grid:
+#     print(g)
+```
+
+실행 시간: 3.785085 초
+
+시간 초과 발생. 제한시간은 0.5초로 굉장히 짧다. 대신 메모리가 크고. 스택을 이용해서 재귀를 없애야 하나?
+
+```python
+
+from collections import deque
+
+s = deque()
+
+class rect:
+    def __init__(self, r1, c1, r2, c2):
+        self.r1 = r1
+        self.c1 = c1
+        self.r2 = r2
+        self.c2 = c2
+    def __str__(self):
+        return f'{self.r1, self.c1, self.r2, self.c2}'
+
+def get_rect(pos: str, T: rect):
+    half_r = (T.r1 + T.r2)//2
+    half_c = (T.c1 + T.c2)//2
+    if pos == 'A':
+        return rect(T.r1, T.c1, half_r, half_c)
+    if pos == 'B':
+        return rect(T.r1, half_c, half_r, T.c2)
+    if pos == 'C':
+        return rect(half_r, T.c1, T.r2, half_c)
+    if pos == 'D':
+        return rect(half_r, half_c, T.r2, T.c2)
+    
+def recur(T: rect):
+    global grid, cnt
+    while True:
+        if abs(T.r1 - T.r2) == 2:
+            # 현재 업데이트된 사각형이 충분히 작다면 방문을 한 다음 종료.
+            for i in range(T.r1, T.r2):
+                for j in range(T.c1, T.c2):
+                    grid[i][j] = cnt
+                    cnt += 1
+            T = s.popleft()
+            continue
+        if s: 
+            s.appendleft(get_rect('D', T))
+            s.appendleft(get_rect('C', T))
+            s.appendleft(get_rect('B', T))
+            s.appendleft(get_rect('A', T))
+            T = s.popleft()
+            continue
+        break
+
+# initial T must contain correct r, c ponits.
+n, r, c = tuple(map(int, input().split()))
+n = 2**n
+grid = [
+    [[] for _ in range(n)]
+    for _ in range(n)
+]
+cnt = 0
+initial_rect = rect(0, 0, n, n)
+s.appendleft(initial_rect)
+recur(T=initial_rect)
+print(grid[r][c])
+```
+
+실행 시간: 0.357471 초(n=10)
+
+스택으로 구현은 성공했다. 제한시간 0.5초에 대해서도 훨씬 빠르다. 그런데도 시간 초과가 발생한다. 그럼 어디서 더 성능을 개선할 수 있을까? 일단 시간이 n에 영향을 많이 받는다. n이 11만 돼도 시간이 2초에 가까워진다. 
+
+내 생각에 자료구조 문제는 아닐 거 같고 이터레이션 타임을 줄여야 한다. i, j를 모두 기록해서 찾는 대신, 빠르게 목적지까지 찾아가는 방법도 있을 거 같다. 스마트하게 하자 스마트하게. 그리고 get_rect도 없애는게 훨씬 맞겠다. 일단 get_rect 제거.
+
+```python
+  cd /Users/johyeonho/jungle-backjoon ; /usr/bin/env /Users/johyeonho/jungle-backjoon/.venv/bin/python /Users/johyeonho/.vscode/extensions/ms-python.debugpy-2025.4.1-darwin-arm
+64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53384 -- /Users/johyeonho/jungle-backjoon/BOJ1074.py 
+10 512 512
+786432
+실행 시간: 3.463909 초
+ {Bach} 🌎   ~/jungle-backjoon   main ±
+  cd /Users/johyeonho/jungle-backjoon ; /usr/bin/env /Users/johyeonho/jungle-backjoon/.venv/bin/python /Users/johyeonho/.vscode/extensions/ms-python.debugpy-2025.4.1-darwin-arm
+64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53416 -- /Users/johyeonho/jungle-backjoon/BOJ1074.py 
+10 512 512
+786432
+실행 시간: 2.683325 초
+
+```
+
+rect 클래스를 제거하고 정보를 리스트로 넘기니 거의 1초가 줄어들긴 했다! 이제 이터레이션을 수정해서 순서를 알 필요가 없는 세부 사각형의 헤드에 진입한 경우 그냥 지나가도록 하자. 그 로직은 어떻게 만들지?
+
+```python
+
+from collections import deque
+import time
+
+start_time = time.time()  # 시작 시간 기록
+
+s = deque()
+
+def recur(T: list):
+    global grid, cnt, r, c
+    while True:
+        if T[2] - T[0] == 2:
+            # 아래 이터레이션 자체를 경우에 따라 스킵하려면? 
+            if r in range(T[0], T[2]) and c in range(T[1], T[3]):
+                for i in range(T[0], T[2]):
+                    for j in range(T[1], T[3]):
+                        grid[i][j] = cnt
+                        cnt += 1
+                break
+            else: 
+                print('pass')
+                cnt += 4
+            T = s.popleft()
+            continue
+        if s: 
+            half_r = (T[0] + T[2])//2
+            half_c = (T[1] + T[3])//2
+            s.appendleft((half_r, half_c, T[2], T[3]))
+            s.appendleft((half_r, T[1], T[2], half_c))
+            s.appendleft((T[0], half_c, half_r, T[3]))
+            s.appendleft((T[0], T[1], half_r, half_c))
+            T = s.popleft()
+            continue
+        break
+
+# initial T must contain correct r, c ponits.
+n, r, c = tuple(map(int, input().split()))
+n = 2**n
+grid = [
+    [[] for _ in range(n)]
+    for _ in range(n)
+]
+cnt = 0
+initial_rect = (0, 0, n, n)
+s.appendleft(initial_rect)
+recur(T=initial_rect)
+print(grid[r][c])
+```
+
+그냥 어펜드를 시킬 때도, 그 순회하는 인덱스가 의미가 있을 것인지 없을 것인지 미리 판단해서, 필요 없으면 그냥 그대로 카운터만 올려버리면 안 되나
+
+```python
+
+from collections import deque
+import time
+
+start_time = time.time()  # 시작 시간 기록
+
+s = deque()
+
+def recur(T: list):
+    global grid, cnt, r, c
+    while True:
+        edge = T[2] - T[0]
+        if edge == 2:
+            # 아래 이터레이션 자체를 경우에 따라 스킵하려면? 
+            if r in range(T[0], T[2]) and c in range(T[1], T[3]):
+                print('arrive')
+                for i in range(T[0], T[2]):
+                    for j in range(T[1], T[3]):
+                        grid[i][j] = cnt
+                        cnt += 1
+                break
+            else: 
+                print('pass')
+                cnt += 4
+            T = s.popleft()
+            continue
+        if s: 
+            half_r = (T[0] + T[2])//2
+            half_c = (T[1] + T[3])//2
+
+            D = (half_r, half_c, T[2], T[3])
+            C = (half_r, T[1], T[2], half_c)
+            B = (T[0], half_c, half_r, T[3])
+            A = (T[0], T[1], half_r, half_c)
+
+            s.appendleft(D)
+            s.appendleft(C)
+            s.appendleft(B)
+            s.appendleft(A)
+            T = s.popleft()
+            flag = True
+            while flag:
+                edge2 = T[2] - T[0]
+                if r in range(T[0], T[2]) and c in range(T[1], T[3]):
+                    print('found: ', T)
+                    flag = False
+                else: # 없다면 버리고 다시 팝.
+                    print("pass: ", T)
+                    print('edge: ', edge2)
+                    cnt += 2**edge2 
+                    print("cnt update:")
+                    T = s.popleft()
+            continue
+        break
+
+# initial T must contain correct r, c ponits.
+n, r, c = tuple(map(int, input().split()))
+n = 2**n
+grid = [
+    [[] for _ in range(n)]
+    for _ in range(n)
+]
+cnt = 0
+initial_rect = (0, 0, n, n)
+s.appendleft(initial_rect)
+recur(T=initial_rect)
+print(grid[r][c])
+```
+
+딱 생각했던 구현. 하지만 여전히 시간 초과. 유의미한 차이가 없다. 그리드를 안 쓰고 카운터만 쓰면? 그래도 n^2는 변함 없음. 시간초과 날 거임. 
+
+## Phase2. Bottom up
+
+이 코드는 Z-모양으로 2차원 배열을 순회하는 문제(즉, Z-분할 정복)를 해결하는 방식인데, 현재 BFS 스타일의 큐(deque)와 루프를 사용하여 해결하고 있습니다.
+
+하지만 시간 최적화가 필요한 몇 가지 문제가 있습니다.
+
+🔥 개선할 수 있는 주요 부분
+
+1.	불필요한 while 루프 제거 → 재귀 방식으로 개선
+
+2.	deque의 활용 방식 변경 → 큐를 활용하는 방식이 최적화되지 않음
+
+3.	불필요한 if 조건문 최소화
+
+4.	배열 전체를 사용하지 않고 단순히 카운트만 유지하도록 변경
+
+🚀 최적화된 코드
+
+```plain text
+def recur(n, x, y, cnt):
+    """Z-분할 정복을 이용한 탐색 최적화"""
+    if n == 2:  # Base case: 2x2 크기일 때 직접 채우기
+        if x == r and y == c:
+            print(cnt)
+            exit()
+        cnt += 1
+        if x == r and y + 1 == c:
+            print(cnt)
+            exit()
+        cnt += 1
+        if x + 1 == r and y == c:
+            print(cnt)
+            exit()
+        cnt += 1
+        if x + 1 == r and y + 1 == c:
+            print(cnt)
+            exit()
+        return
+
+    half = n // 2  # 현재 크기의 절반
+    if r < x + half and c < y + half:  # A (좌상)
+        recur(half, x, y, cnt)
+    elif r < x + half and c >= y + half:  # B (우상)
+        recur(half, x, y + half, cnt + half * half)
+    elif r >= x + half and c < y + half:  # C (좌하)
+        recur(half, x + half, y, cnt + 2 * half * half)
+    else:  # D (우하)
+        recur(half, x + half, y + half, cnt + 3 * half * half)
+
+# 입력 받기
+n, r, c = map(int, input().split())
+n = 2 ** n  # 2^n 크기의 배열
+recur(n, 0, 0, 0)  # Z-모양 탐색 시작
+```
+
+🔥 최적화된 코드의 장점
+
+✅ 1. deque와 반복문 제거 → 재귀로 개선
+
+•	원래 코드에서는 큐(deque)를 사용하면서 불필요한 while 반복이 발생했습니다.
+
+•	재귀 호출을 사용하면 큐를 사용할 필요가 없고, 불필요한 요소를 저장하지 않아 메모리 사용량도 줄어듭니다.
+
+✅ 2. grid 배열을 없애고 카운트만 유지
+
+•	원래 코드는 전체 배열을 만들고 cnt 값을 저장했는데, 이는 불필요한 메모리 낭비입니다.
+
+•	정확한 위치에서만 cnt를 계산하면 배열을 만들 필요 없이 해결할 수 있습니다.
+
+✅ 3. 불필요한 if 조건문 최소화
+
+•	원래 코드에서는 불필요한 if r in range(...) and c in range(...) 같은 조건문이 많았습니다.
+
+•	개선된 코드에서는 위치에 따라 한 번만 if-elif로 분기 처리하여 효율성을 높였습니다.
+
+✅ 4. 시간 복잡도 개선
+
+•	원래 코드의 최악의 경우 시간 복잡도: O(n^2) (큐에서 모든 영역을 검사)
+
+•	개선된 코드의 시간 복잡도: O(log(n)^2) (분할 정복 사용)
+
+🚀 결론
+
+✅ 기존 코드의 문제점
+
+•	큐(deque)를 사용하여 비효율적인 반복 수행
+
+•	grid 배열을 유지하여 불필요한 메모리 사용
+
+•	탐색 과정에서 if 문이 너무 많아 실행 속도 저하
+
+✅ 개선된 코드의 장점
+
+•	Z-분할 정복 사용 → 큐 제거 및 메모리 최적화
+
+•	배열을 유지하지 않고 직접 cnt를 계산하여 공간 절약
+
+•	**시간 복잡도 개선 (O(log(n)^2))**으로 더 빠름
+
+이제 훨씬 효율적으로 수행시간을 줄일 수 있습니다! 🚀
+
+# 정렬: 수 정렬하기 2
+
+## Phase1. Top Down
+
+https://www.acmicpc.net/problem/2751
+
+N(1 ≤ N ≤ 1,000,000)
+
+```python
+import heapq
+
+heap = []
+
+n = int(input())
+
+for i in range(n):
+    d = int(input())
+    heapq.heappush(heap, d)
+
+while heap:
+    print(heapq.heappop(heap))
+
+```
+
+시간초과.
+
+## Phase2. Bottom Up
+
+입력을 다음과 같이 변경해야 시간 안에 풀 수 있음. 시간초과는 해결됨.
+
+```python
+import heapq
+import sys
+
+heap = []
+
+n = int(sys.stdin.readline().strip())  # 빠른 입력
+
+for i in range(n):
+    d = int(sys.stdin.readline().strip())  # 빠른 입력
+
+    heapq.heappush(heap, d)
+
+while heap:
+    print(heapq.heappop(heap))
+
+```
 
 # 완전탐색: 차이를 최대로 만들기
 
+https://www.acmicpc.net/problem/10819
+
+## Phase1. Top Down
+
 ```python
+
+n = int(input())
+arr = list(map(int, input().split()))
+max_val = 0
+
+def update_max(new_val):
+    global max_val
+    if new_val > max_val: max_val = new_val
+
+def pick(i, A):
+    if(i == n): 
+        update_max(calc(A))
+        return
+    for idx in range(n): 
+        if arr[idx] not in A:
+            pick(i + 1, [*A, arr[idx]])
+
+def calc(A):
+    tmp = 0
+    for i in range(1, n):
+        tmp += abs(A[i-1] - A[i])
+    return tmp
+
+pick(0,[])  
+print(max_val)
+```
+
+눈으로 확인되는 문제는 없는데, 제출하면 오답으로 뜸. 문제가 되는 테스트 케이스가 있는 것으로 보임.
+
+테스트케이스를 어떻게 찾지?
+
+일단 값의 범위
+
+n개의 정수로 이루어진 배열을 짝지었을 때 그 차의 절대값의 합이 최대가 되는 경우.
+
+3 ≤ n ≤ 8
+
+-100 ≤ d ≤ 100
+
+```python
+
+import sys
+MAX_INT = sys.maxsize
+
+n = int(sys.stdin.readline().strip())
+arr = list(map(int, sys.stdin.readline().split()))
+
+max_val = -MAX_INT
+
+def pick(i, A):
+    global max_val
+    if(i == n): 
+        val = calc(A)
+        max_val = val if val > max_val else max_val
+        return
+    for idx in range(n): 
+        if arr[idx] not in A:
+            pick(i + 1, [*A, arr[idx]])
+
+def calc(A):
+    tmp = 0
+    for i in range(1, n):
+        tmp += abs(A[i-1] - A[i]) # | A[0] - A[1]| + |A[1] - A[2]| + ... + |A[N-2] - A[N-1]|
+    return tmp
+
+pick(0,[])  
+print(max_val)
+```
+
+문제 발견!
+
+수열이 전부 다른 값인줄 알았는데, 아니었다. 같은 값이 있으면 not in A 로직 때문에 추가가 안 된다.
+
+## Phase2. Bottom Up
+
+
+
+# 정렬: 단어 정렬
+
+## Phase1. Top Down
+
+https://www.acmicpc.net/problem/1181
+
+```python
+# # 첫째 줄에 단어의 개수 N이 주어진다. (1 ≤ N ≤ 20,000) 
+# # 둘째 줄부터 N개의 줄에 걸쳐 알파벳 소문자로 이루어진 단어가 한 줄에 하나씩 주어진다. 주어지는 문자열의 길이는 50을 넘지 않는다.
+
+
+# 알파벳 소문자로 이루어진 N개의 단어가 들어오면 아래와 같은 조건에 따라 정렬하는 프로그램을 작성하시오.
+
+# 길이가 짧은 것부터
+# 길이가 같으면 사전 순으로
+# 단, 중복된 단어는 하나만 남기고 제거해야 한다.
+
+import sys
+
+words = []
+wordset = []
+n = int(sys.stdin.readline().strip())
+# input 
+for _ in range(n):
+    word = sys.stdin.readline().strip()
+    if word not in wordset:
+        words.append([word, len(word)])
+        wordset.append(word)
+
+words.sort(key=lambda x: (x[1], x[0]))
+
+for word in words:
+    print(word[0])
+# 그래서 뭐 해야 하는데? 하나만 남기고 제거하는 걸 먼저 생각해야겠는데? 
+# 하나만 남기고 제거 어떻게 해?
+```
+
+바로 해결. 따로 더 볼 내용은 없을 거 같음.
+
+
+# 정렬: 수 정렬하기 3
+
+https://www.acmicpc.net/problem/10989
+
+난이도-중 
+
+> n 개의 수가 주어졌을 때 이를 오름차순으로 정렬하는 프로그램을 작성하시오
+N(1 ≤ N ≤ 10,000,000)
+둘째줄부터는 N줄에 거려서 수가 주어진다. 이 수는 10,000보다 작거나 같은 자연수다. 
+각 수의 범위: 10000보다 작거나 같은 자연수. 
+
+분석: 위의 수 정렬하기 2 문제와 비교했을 때 n이 10배 더 크다. 자연수라는 조건이 있으니까 기수정렬 쓰면 될 거 같은데, 사실 기수정렬이 기억이 안 난다.
+
+아래 코드는 수 정렬하기 2에서 썼던 코드 그대로다. 이대로 제출하면 메모리 초과 에러가 난다. 기수정렬은 메모리를 더 쓰지 않나? 일단 
+
+```python
+import heapq
+import sys
+
+heap = []
+
+n = int(sys.stdin.readline().strip())  # 빠른 입력
+
+for i in range(n):
+    d = int(sys.stdin.readline().strip())  # 빠른 입력
+
+    heapq.heappush(heap, d)
+
+while heap:
+    print(heapq.heappop(heap))
 
 ```
 
