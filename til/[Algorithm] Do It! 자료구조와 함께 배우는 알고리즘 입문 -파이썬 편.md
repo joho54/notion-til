@@ -20,7 +20,9 @@
 
 pass: 일련의 비교 교환 과정. 버블 정렬에서는 첫 번째 패스로 가장 작은 원소를 구할 수 있음.
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/db2cb1a5-5d4c-4ea7-933e-5797c5871104/IMG_9884.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YBKHQKMB%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDIzi7rM2EV273KIv8BiBQKcv2inYU03F%2Bt5uLrtWXlqgIgBN8yX7tJ7Ks7tj0zK3U%2BWCG0i4XOmEkm%2BVTFcpCAcEgq%2FwMIQxAAGgw2Mzc0MjMxODM4MDUiDJTUwKYFo4iquB8ClCrcA%2B%2B0CUavwXhR9Orj%2BGGduqkS6qLMQBJL0ptfnfrBHfA%2FicCm7GLnIDf0Pbj30EZrtq4iQGzMsfml5XSU80lqzUILUC6sbuuMlerV60eq56aYmyttUNrNp1DGS5R5jIIN5qGbtViq2ylXOL%2FXWGJrFFpH6eZ5sNDEbcYF7KFQHMJwmaj7JJafPMaRiyq7pHOOitXyXjKZXBV9jztrLgt8hyLvX9Wkw9KDMHGHlONv3s%2FXcSqA29L7V9J7xHRR6UBofmqG6CDskzjT4mw5mdqCZL6eM6HQFTF%2FDJeYJVQhCBNhmsneslV0MJEWDtPFMtjFQQTQg6ECREzzNHuFS74b%2Fsv3ld7UNeugkaj7r5ORsZw7UDg3u62sTnLrnbKkGnN%2F7ApNswVlsC8MaaLg5U6camAbziL3gCcr5xSNsPmMnq7S7PpQMJRJy0ZWsHj49OVyaCrhKPjV4th1TGGuMuyqbsRWbrnm9uwYL216q4gsLW0Ae6d1UpoDiNSScue6TJPTl14PQUZO%2FscbQbNWXu664Z1CykJM89vdKBmVOcZ21TZkKPDV%2Becu8YlqFK9XXaMtbLqP88CmQSCPKRTWF8tZwWiLWxmupGkSx3kqVnVbLVo8xASsUy5K4kWqmYOzMPHs374GOqUBet4r0g6hN4Iv%2BGhO%2FW1P28blOF9Jzfwcz3d4AjPZJkOpI3Iv1usJ8Uy4tflkfmLi%2F%2FM9XVP1l0FIAyIdMyVNHdXr6tBx2Rnp2WCPFTfahCe0zBKlMnePADAgunBseMMiftSfORs4vrs98nyD0BmeT8jMR1MyEQLKA8oain4eUa6dszcdT73tLLr7KmezchHi86KEJ7jIScjal5Ub4s1fRT3qJhBo&X-Amz-Signature=359483b3ba466989bb87a6abc46d2f71ffbbc8621335bf9b7b2588c835753553&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9884.heic)
+
+![](./images/IMG_9884.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662UR744HK%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003610Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDM5nAGlNkm5ATrnGHc0SJNPrx906lxRGMmsED1bZZMKgIhAOArLqsF6%2BGS%2BuhtMvh7ddQwC5fWCmyRVDzOWhO96cHWKv8DCGYQABoMNjM3NDIzMTgzODA1IgzEe9UcAiP5xFpqTAMq3AN%2BW%2B8%2B7lVtrcNaEJPq0XrSzDYhFd7bn%2BxCR7K7eq52SAT3RCG52%2Bk2L3DBOAzPUSAGaeP1ZkURqn6LW8WtQmBB1dAdfkJorWq1QgnQiSkkn6HL0H6EdugkjRA9mrik%2BGOHzDdx0HCZcDiwWqJ7phsoubb28QF9M1rPPLu3yAA9mUL6VlxMavXcVCj%2B2XJtBdv%2BrDaUKk3n5dJcP%2FND%2FjbIgyarB3KfeSrTLLmLD9yoQTG3BvFvFF5dITAbQhvKHe8xbCmezOgP2PIcLGT2sewGYSD9HFue1fEzOcPnD7g9jF6EShytNajT5Iqk%2B8tyYdJWK95EXs0bOarnu5uWzl2NwfaXPi%2FGenz%2FmeoV11Fw%2B6oW5JBpPYA59%2BuIOKPbHV7XuClAu%2B%2ByGxHKHxEjSMVrHhtBwbB2TGsn43FRiYa7ljbBFJH0i3Q2IKMGh6oHlJgCi3KqlBCCIU1td2JyKKRn6vo4fq67GsvOw6iYK3Afz%2BmwpTaP3q%2BClWvjZOLzjllTjzo%2FLUk3YkbKzlTIDLEeHVSdJ%2Bre%2BiuTeI7AicmdL0ejMk6CrB6rZyoE33d0IVmAQimR2hZ%2FgC2A1zqhz3A1DmJ2e79hPpTDms3t3DyQeUFS5PABD5CbHis1YTDSsee%2BBjqkAXMgVnZSicP930FErnMvcmWnGbeUxwV1BKV6Rok3wk69T%2F3Mn9EbmcVuJuWXIG%2FrTG6QJK4MIjXHNEXOb60AMtssrnR7zmV4EYPrYRizqPv4662hK%2FOSzvrGyYhXAyL6y6Wml2qI7wh%2FVTftEbE%2Byc1zYhS3ay1d9tw04NNKTKI92XF3bikQTAEu%2B4waaXv6jhl%2Fe6w0B3U685VDsoWcQZK8eBNg&X-Amz-Signature=ce2ebd77584a1a7e4a74b78fbcaa089231e95684b240e50286f4bd1ed5a7a708&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 코드
 
@@ -62,7 +64,9 @@ def bubble_sort(a: MutableSequence):
 
 아래와 같은 상태일 때 스캔 범위(비교 범위)를 좁히는 부분 추가.
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/4bb85350-4f4a-4c1c-8c0a-0f24ba97063b/IMG_9885.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YBKHQKMB%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDIzi7rM2EV273KIv8BiBQKcv2inYU03F%2Bt5uLrtWXlqgIgBN8yX7tJ7Ks7tj0zK3U%2BWCG0i4XOmEkm%2BVTFcpCAcEgq%2FwMIQxAAGgw2Mzc0MjMxODM4MDUiDJTUwKYFo4iquB8ClCrcA%2B%2B0CUavwXhR9Orj%2BGGduqkS6qLMQBJL0ptfnfrBHfA%2FicCm7GLnIDf0Pbj30EZrtq4iQGzMsfml5XSU80lqzUILUC6sbuuMlerV60eq56aYmyttUNrNp1DGS5R5jIIN5qGbtViq2ylXOL%2FXWGJrFFpH6eZ5sNDEbcYF7KFQHMJwmaj7JJafPMaRiyq7pHOOitXyXjKZXBV9jztrLgt8hyLvX9Wkw9KDMHGHlONv3s%2FXcSqA29L7V9J7xHRR6UBofmqG6CDskzjT4mw5mdqCZL6eM6HQFTF%2FDJeYJVQhCBNhmsneslV0MJEWDtPFMtjFQQTQg6ECREzzNHuFS74b%2Fsv3ld7UNeugkaj7r5ORsZw7UDg3u62sTnLrnbKkGnN%2F7ApNswVlsC8MaaLg5U6camAbziL3gCcr5xSNsPmMnq7S7PpQMJRJy0ZWsHj49OVyaCrhKPjV4th1TGGuMuyqbsRWbrnm9uwYL216q4gsLW0Ae6d1UpoDiNSScue6TJPTl14PQUZO%2FscbQbNWXu664Z1CykJM89vdKBmVOcZ21TZkKPDV%2Becu8YlqFK9XXaMtbLqP88CmQSCPKRTWF8tZwWiLWxmupGkSx3kqVnVbLVo8xASsUy5K4kWqmYOzMPHs374GOqUBet4r0g6hN4Iv%2BGhO%2FW1P28blOF9Jzfwcz3d4AjPZJkOpI3Iv1usJ8Uy4tflkfmLi%2F%2FM9XVP1l0FIAyIdMyVNHdXr6tBx2Rnp2WCPFTfahCe0zBKlMnePADAgunBseMMiftSfORs4vrs98nyD0BmeT8jMR1MyEQLKA8oain4eUa6dszcdT73tLLr7KmezchHi86KEJ7jIScjal5Ub4s1fRT3qJhBo&X-Amz-Signature=7f0fdf82c4d1628a159cb857be47a452445e5bb03b0f74980a1f5ac9918e69e8&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9885.heic)
+
+![](./images/IMG_9885.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662UR744HK%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003610Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDM5nAGlNkm5ATrnGHc0SJNPrx906lxRGMmsED1bZZMKgIhAOArLqsF6%2BGS%2BuhtMvh7ddQwC5fWCmyRVDzOWhO96cHWKv8DCGYQABoMNjM3NDIzMTgzODA1IgzEe9UcAiP5xFpqTAMq3AN%2BW%2B8%2B7lVtrcNaEJPq0XrSzDYhFd7bn%2BxCR7K7eq52SAT3RCG52%2Bk2L3DBOAzPUSAGaeP1ZkURqn6LW8WtQmBB1dAdfkJorWq1QgnQiSkkn6HL0H6EdugkjRA9mrik%2BGOHzDdx0HCZcDiwWqJ7phsoubb28QF9M1rPPLu3yAA9mUL6VlxMavXcVCj%2B2XJtBdv%2BrDaUKk3n5dJcP%2FND%2FjbIgyarB3KfeSrTLLmLD9yoQTG3BvFvFF5dITAbQhvKHe8xbCmezOgP2PIcLGT2sewGYSD9HFue1fEzOcPnD7g9jF6EShytNajT5Iqk%2B8tyYdJWK95EXs0bOarnu5uWzl2NwfaXPi%2FGenz%2FmeoV11Fw%2B6oW5JBpPYA59%2BuIOKPbHV7XuClAu%2B%2ByGxHKHxEjSMVrHhtBwbB2TGsn43FRiYa7ljbBFJH0i3Q2IKMGh6oHlJgCi3KqlBCCIU1td2JyKKRn6vo4fq67GsvOw6iYK3Afz%2BmwpTaP3q%2BClWvjZOLzjllTjzo%2FLUk3YkbKzlTIDLEeHVSdJ%2Bre%2BiuTeI7AicmdL0ejMk6CrB6rZyoE33d0IVmAQimR2hZ%2FgC2A1zqhz3A1DmJ2e79hPpTDms3t3DyQeUFS5PABD5CbHis1YTDSsee%2BBjqkAXMgVnZSicP930FErnMvcmWnGbeUxwV1BKV6Rok3wk69T%2F3Mn9EbmcVuJuWXIG%2FrTG6QJK4MIjXHNEXOb60AMtssrnR7zmV4EYPrYRizqPv4662hK%2FOSzvrGyYhXAyL6y6Wml2qI7wh%2FVTftEbE%2Byc1zYhS3ay1d9tw04NNKTKI92XF3bikQTAEu%2B4waaXv6jhl%2Fe6w0B3U685VDsoWcQZK8eBNg&X-Amz-Signature=fa4c9bb0ea5d28f339fe362dc9b8807af0edd3269ef9b70c3ccee096cc0c09cb&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 코드: 스캔 범위 제한
 
@@ -125,21 +129,23 @@ def shaker_sort(a: MutableSequence) -> None:
 
 # 셸 정렬
 
-# 퀵 정렬
+# 퀵 정렬: 학습 종료
 
-## 기본 개념
+> 안 보고 구현한 다음, 재귀를 스택 형태로 바꾸는 연습을 반복해봅시다.
 
 ### 그림: 퀵 정렬의 예
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/daac6dc7-7587-4378-a249-39ce32d19c09/IMG_9899.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YBKHQKMB%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDIzi7rM2EV273KIv8BiBQKcv2inYU03F%2Bt5uLrtWXlqgIgBN8yX7tJ7Ks7tj0zK3U%2BWCG0i4XOmEkm%2BVTFcpCAcEgq%2FwMIQxAAGgw2Mzc0MjMxODM4MDUiDJTUwKYFo4iquB8ClCrcA%2B%2B0CUavwXhR9Orj%2BGGduqkS6qLMQBJL0ptfnfrBHfA%2FicCm7GLnIDf0Pbj30EZrtq4iQGzMsfml5XSU80lqzUILUC6sbuuMlerV60eq56aYmyttUNrNp1DGS5R5jIIN5qGbtViq2ylXOL%2FXWGJrFFpH6eZ5sNDEbcYF7KFQHMJwmaj7JJafPMaRiyq7pHOOitXyXjKZXBV9jztrLgt8hyLvX9Wkw9KDMHGHlONv3s%2FXcSqA29L7V9J7xHRR6UBofmqG6CDskzjT4mw5mdqCZL6eM6HQFTF%2FDJeYJVQhCBNhmsneslV0MJEWDtPFMtjFQQTQg6ECREzzNHuFS74b%2Fsv3ld7UNeugkaj7r5ORsZw7UDg3u62sTnLrnbKkGnN%2F7ApNswVlsC8MaaLg5U6camAbziL3gCcr5xSNsPmMnq7S7PpQMJRJy0ZWsHj49OVyaCrhKPjV4th1TGGuMuyqbsRWbrnm9uwYL216q4gsLW0Ae6d1UpoDiNSScue6TJPTl14PQUZO%2FscbQbNWXu664Z1CykJM89vdKBmVOcZ21TZkKPDV%2Becu8YlqFK9XXaMtbLqP88CmQSCPKRTWF8tZwWiLWxmupGkSx3kqVnVbLVo8xASsUy5K4kWqmYOzMPHs374GOqUBet4r0g6hN4Iv%2BGhO%2FW1P28blOF9Jzfwcz3d4AjPZJkOpI3Iv1usJ8Uy4tflkfmLi%2F%2FM9XVP1l0FIAyIdMyVNHdXr6tBx2Rnp2WCPFTfahCe0zBKlMnePADAgunBseMMiftSfORs4vrs98nyD0BmeT8jMR1MyEQLKA8oain4eUa6dszcdT73tLLr7KmezchHi86KEJ7jIScjal5Ub4s1fRT3qJhBo&X-Amz-Signature=4d5513a0d511ac8bc276e4e690791114800562bfd868510fe869c934075215e9&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9899.heic)
 
-### 개구코 1.
+![](./images/IMG_9899.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662UR744HK%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003610Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDM5nAGlNkm5ATrnGHc0SJNPrx906lxRGMmsED1bZZMKgIhAOArLqsF6%2BGS%2BuhtMvh7ddQwC5fWCmyRVDzOWhO96cHWKv8DCGYQABoMNjM3NDIzMTgzODA1IgzEe9UcAiP5xFpqTAMq3AN%2BW%2B8%2B7lVtrcNaEJPq0XrSzDYhFd7bn%2BxCR7K7eq52SAT3RCG52%2Bk2L3DBOAzPUSAGaeP1ZkURqn6LW8WtQmBB1dAdfkJorWq1QgnQiSkkn6HL0H6EdugkjRA9mrik%2BGOHzDdx0HCZcDiwWqJ7phsoubb28QF9M1rPPLu3yAA9mUL6VlxMavXcVCj%2B2XJtBdv%2BrDaUKk3n5dJcP%2FND%2FjbIgyarB3KfeSrTLLmLD9yoQTG3BvFvFF5dITAbQhvKHe8xbCmezOgP2PIcLGT2sewGYSD9HFue1fEzOcPnD7g9jF6EShytNajT5Iqk%2B8tyYdJWK95EXs0bOarnu5uWzl2NwfaXPi%2FGenz%2FmeoV11Fw%2B6oW5JBpPYA59%2BuIOKPbHV7XuClAu%2B%2ByGxHKHxEjSMVrHhtBwbB2TGsn43FRiYa7ljbBFJH0i3Q2IKMGh6oHlJgCi3KqlBCCIU1td2JyKKRn6vo4fq67GsvOw6iYK3Afz%2BmwpTaP3q%2BClWvjZOLzjllTjzo%2FLUk3YkbKzlTIDLEeHVSdJ%2Bre%2BiuTeI7AicmdL0ejMk6CrB6rZyoE33d0IVmAQimR2hZ%2FgC2A1zqhz3A1DmJ2e79hPpTDms3t3DyQeUFS5PABD5CbHis1YTDSsee%2BBjqkAXMgVnZSicP930FErnMvcmWnGbeUxwV1BKV6Rok3wk69T%2F3Mn9EbmcVuJuWXIG%2FrTG6QJK4MIjXHNEXOb60AMtssrnR7zmV4EYPrYRizqPv4662hK%2FOSzvrGyYhXAyL6y6Wml2qI7wh%2FVTftEbE%2Byc1zYhS3ay1d9tw04NNKTKI92XF3bikQTAEu%2B4waaXv6jhl%2Fe6w0B3U685VDsoWcQZK8eBNg&X-Amz-Signature=4053637e94e8b7f88f9996cfd635edb9e3ee438a855212442f9708ee0e3cdbb0&X-Amz-SignedHeaders=host&x-id=GetObject)
 
-개념
+## 개구코 1.
+
+### 개념
 
 재귀를 사용하지 않는 퀵정렬 구현은 pl, pr 포인터를 이용해야 한다. 아래는 이 아이디어만으로 직접 작성해본 퀵정렬 수도코드.
 
-구현
+### 구현
 
 ```python
 # 1. 일단 배열을 본다
@@ -214,7 +220,7 @@ q_sort(arr, 0, 6)
 print(arr)
 ```
 
-코멘트
+### 코멘트
 
 아무리 생각해도 제대로 된 인덱스 설정이 어렵다. 어떻게 하면 이 능력을 기를 수 있을까?
 
@@ -224,19 +230,23 @@ print(arr)
 
 → 이 정렬의 스탭을 쉐도잉 해보자.
 
-### 개구코 2
+## 개구코 2
 
-개념
+### 개념
 
 피벗을 중심으로 배열을 두 부분으로 나누는 코드 작성해보기. 
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/df47a3d5-dd47-4d92-97fb-03da13dadd98/IMG_9908.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YBKHQKMB%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDIzi7rM2EV273KIv8BiBQKcv2inYU03F%2Bt5uLrtWXlqgIgBN8yX7tJ7Ks7tj0zK3U%2BWCG0i4XOmEkm%2BVTFcpCAcEgq%2FwMIQxAAGgw2Mzc0MjMxODM4MDUiDJTUwKYFo4iquB8ClCrcA%2B%2B0CUavwXhR9Orj%2BGGduqkS6qLMQBJL0ptfnfrBHfA%2FicCm7GLnIDf0Pbj30EZrtq4iQGzMsfml5XSU80lqzUILUC6sbuuMlerV60eq56aYmyttUNrNp1DGS5R5jIIN5qGbtViq2ylXOL%2FXWGJrFFpH6eZ5sNDEbcYF7KFQHMJwmaj7JJafPMaRiyq7pHOOitXyXjKZXBV9jztrLgt8hyLvX9Wkw9KDMHGHlONv3s%2FXcSqA29L7V9J7xHRR6UBofmqG6CDskzjT4mw5mdqCZL6eM6HQFTF%2FDJeYJVQhCBNhmsneslV0MJEWDtPFMtjFQQTQg6ECREzzNHuFS74b%2Fsv3ld7UNeugkaj7r5ORsZw7UDg3u62sTnLrnbKkGnN%2F7ApNswVlsC8MaaLg5U6camAbziL3gCcr5xSNsPmMnq7S7PpQMJRJy0ZWsHj49OVyaCrhKPjV4th1TGGuMuyqbsRWbrnm9uwYL216q4gsLW0Ae6d1UpoDiNSScue6TJPTl14PQUZO%2FscbQbNWXu664Z1CykJM89vdKBmVOcZ21TZkKPDV%2Becu8YlqFK9XXaMtbLqP88CmQSCPKRTWF8tZwWiLWxmupGkSx3kqVnVbLVo8xASsUy5K4kWqmYOzMPHs374GOqUBet4r0g6hN4Iv%2BGhO%2FW1P28blOF9Jzfwcz3d4AjPZJkOpI3Iv1usJ8Uy4tflkfmLi%2F%2FM9XVP1l0FIAyIdMyVNHdXr6tBx2Rnp2WCPFTfahCe0zBKlMnePADAgunBseMMiftSfORs4vrs98nyD0BmeT8jMR1MyEQLKA8oain4eUa6dszcdT73tLLr7KmezchHi86KEJ7jIScjal5Ub4s1fRT3qJhBo&X-Amz-Signature=68b4f18663157bb510244e13fd0380cb2775082894c5c74c2a12d078ddd36036&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9908.heic)
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/1df4cf6d-3df4-4f6a-a610-db02190c5291/IMG_9909.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YBKHQKMB%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDIzi7rM2EV273KIv8BiBQKcv2inYU03F%2Bt5uLrtWXlqgIgBN8yX7tJ7Ks7tj0zK3U%2BWCG0i4XOmEkm%2BVTFcpCAcEgq%2FwMIQxAAGgw2Mzc0MjMxODM4MDUiDJTUwKYFo4iquB8ClCrcA%2B%2B0CUavwXhR9Orj%2BGGduqkS6qLMQBJL0ptfnfrBHfA%2FicCm7GLnIDf0Pbj30EZrtq4iQGzMsfml5XSU80lqzUILUC6sbuuMlerV60eq56aYmyttUNrNp1DGS5R5jIIN5qGbtViq2ylXOL%2FXWGJrFFpH6eZ5sNDEbcYF7KFQHMJwmaj7JJafPMaRiyq7pHOOitXyXjKZXBV9jztrLgt8hyLvX9Wkw9KDMHGHlONv3s%2FXcSqA29L7V9J7xHRR6UBofmqG6CDskzjT4mw5mdqCZL6eM6HQFTF%2FDJeYJVQhCBNhmsneslV0MJEWDtPFMtjFQQTQg6ECREzzNHuFS74b%2Fsv3ld7UNeugkaj7r5ORsZw7UDg3u62sTnLrnbKkGnN%2F7ApNswVlsC8MaaLg5U6camAbziL3gCcr5xSNsPmMnq7S7PpQMJRJy0ZWsHj49OVyaCrhKPjV4th1TGGuMuyqbsRWbrnm9uwYL216q4gsLW0Ae6d1UpoDiNSScue6TJPTl14PQUZO%2FscbQbNWXu664Z1CykJM89vdKBmVOcZ21TZkKPDV%2Becu8YlqFK9XXaMtbLqP88CmQSCPKRTWF8tZwWiLWxmupGkSx3kqVnVbLVo8xASsUy5K4kWqmYOzMPHs374GOqUBet4r0g6hN4Iv%2BGhO%2FW1P28blOF9Jzfwcz3d4AjPZJkOpI3Iv1usJ8Uy4tflkfmLi%2F%2FM9XVP1l0FIAyIdMyVNHdXr6tBx2Rnp2WCPFTfahCe0zBKlMnePADAgunBseMMiftSfORs4vrs98nyD0BmeT8jMR1MyEQLKA8oain4eUa6dszcdT73tLLr7KmezchHi86KEJ7jIScjal5Ub4s1fRT3qJhBo&X-Amz-Signature=acea61e260f9f00407d538d8b6a2b14de27097c3a112ce49995a182d6913f4c8&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9908.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662UR744HK%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003610Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDM5nAGlNkm5ATrnGHc0SJNPrx906lxRGMmsED1bZZMKgIhAOArLqsF6%2BGS%2BuhtMvh7ddQwC5fWCmyRVDzOWhO96cHWKv8DCGYQABoMNjM3NDIzMTgzODA1IgzEe9UcAiP5xFpqTAMq3AN%2BW%2B8%2B7lVtrcNaEJPq0XrSzDYhFd7bn%2BxCR7K7eq52SAT3RCG52%2Bk2L3DBOAzPUSAGaeP1ZkURqn6LW8WtQmBB1dAdfkJorWq1QgnQiSkkn6HL0H6EdugkjRA9mrik%2BGOHzDdx0HCZcDiwWqJ7phsoubb28QF9M1rPPLu3yAA9mUL6VlxMavXcVCj%2B2XJtBdv%2BrDaUKk3n5dJcP%2FND%2FjbIgyarB3KfeSrTLLmLD9yoQTG3BvFvFF5dITAbQhvKHe8xbCmezOgP2PIcLGT2sewGYSD9HFue1fEzOcPnD7g9jF6EShytNajT5Iqk%2B8tyYdJWK95EXs0bOarnu5uWzl2NwfaXPi%2FGenz%2FmeoV11Fw%2B6oW5JBpPYA59%2BuIOKPbHV7XuClAu%2B%2ByGxHKHxEjSMVrHhtBwbB2TGsn43FRiYa7ljbBFJH0i3Q2IKMGh6oHlJgCi3KqlBCCIU1td2JyKKRn6vo4fq67GsvOw6iYK3Afz%2BmwpTaP3q%2BClWvjZOLzjllTjzo%2FLUk3YkbKzlTIDLEeHVSdJ%2Bre%2BiuTeI7AicmdL0ejMk6CrB6rZyoE33d0IVmAQimR2hZ%2FgC2A1zqhz3A1DmJ2e79hPpTDms3t3DyQeUFS5PABD5CbHis1YTDSsee%2BBjqkAXMgVnZSicP930FErnMvcmWnGbeUxwV1BKV6Rok3wk69T%2F3Mn9EbmcVuJuWXIG%2FrTG6QJK4MIjXHNEXOb60AMtssrnR7zmV4EYPrYRizqPv4662hK%2FOSzvrGyYhXAyL6y6Wml2qI7wh%2FVTftEbE%2Byc1zYhS3ay1d9tw04NNKTKI92XF3bikQTAEu%2B4waaXv6jhl%2Fe6w0B3U685VDsoWcQZK8eBNg&X-Amz-Signature=c98f276b740acd2d6ab84b530a5656d6007d726b245751ff5ab8cf75c43122ab&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+![](./images/IMG_9909.heic)
+
+![](./images/IMG_9909.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662UR744HK%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003610Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDM5nAGlNkm5ATrnGHc0SJNPrx906lxRGMmsED1bZZMKgIhAOArLqsF6%2BGS%2BuhtMvh7ddQwC5fWCmyRVDzOWhO96cHWKv8DCGYQABoMNjM3NDIzMTgzODA1IgzEe9UcAiP5xFpqTAMq3AN%2BW%2B8%2B7lVtrcNaEJPq0XrSzDYhFd7bn%2BxCR7K7eq52SAT3RCG52%2Bk2L3DBOAzPUSAGaeP1ZkURqn6LW8WtQmBB1dAdfkJorWq1QgnQiSkkn6HL0H6EdugkjRA9mrik%2BGOHzDdx0HCZcDiwWqJ7phsoubb28QF9M1rPPLu3yAA9mUL6VlxMavXcVCj%2B2XJtBdv%2BrDaUKk3n5dJcP%2FND%2FjbIgyarB3KfeSrTLLmLD9yoQTG3BvFvFF5dITAbQhvKHe8xbCmezOgP2PIcLGT2sewGYSD9HFue1fEzOcPnD7g9jF6EShytNajT5Iqk%2B8tyYdJWK95EXs0bOarnu5uWzl2NwfaXPi%2FGenz%2FmeoV11Fw%2B6oW5JBpPYA59%2BuIOKPbHV7XuClAu%2B%2ByGxHKHxEjSMVrHhtBwbB2TGsn43FRiYa7ljbBFJH0i3Q2IKMGh6oHlJgCi3KqlBCCIU1td2JyKKRn6vo4fq67GsvOw6iYK3Afz%2BmwpTaP3q%2BClWvjZOLzjllTjzo%2FLUk3YkbKzlTIDLEeHVSdJ%2Bre%2BiuTeI7AicmdL0ejMk6CrB6rZyoE33d0IVmAQimR2hZ%2FgC2A1zqhz3A1DmJ2e79hPpTDms3t3DyQeUFS5PABD5CbHis1YTDSsee%2BBjqkAXMgVnZSicP930FErnMvcmWnGbeUxwV1BKV6Rok3wk69T%2F3Mn9EbmcVuJuWXIG%2FrTG6QJK4MIjXHNEXOb60AMtssrnR7zmV4EYPrYRizqPv4662hK%2FOSzvrGyYhXAyL6y6Wml2qI7wh%2FVTftEbE%2Byc1zYhS3ay1d9tw04NNKTKI92XF3bikQTAEu%2B4waaXv6jhl%2Fe6w0B3U685VDsoWcQZK8eBNg&X-Amz-Signature=368cbcd7a6bb651d7f7eaa0a467fd472cb49e67987c95d64f8786a0c39d9e768&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 위 그림을 그대로 해주면 될 거 같다.
 
-구현
+### 구현
 
 ```python
 def q_sort(A: list):
@@ -268,7 +278,7 @@ q_sort([5, 4, 3, 2 ,1])
 
 ```
 
-코멘트
+### 코멘트
 
 > 현재 코드에서 피벗을 기준으로 배열을 나누는 동작은 부분적으로 수행되지만, 완전히 올바르게 동작하지 않습니다.
 
@@ -306,11 +316,11 @@ q_sort([5, 4, 3, 2 ,1])
 
 ```
 
-### 개구코 3.
+## 개구코 3.
 
-개념: 구현한 파티셔닝을 토대로 퀵 정렬 만들기
+### 개념: 구현한 파티셔닝을 토대로 퀵 정렬 만들기
 
-구현: 그냥 해 봅시다
+### 구현: 그냥 해 봅시다
 
 ```python
 def paritioning(A: list, left, right):
@@ -349,14 +359,14 @@ print(A)
 
 ```
 
-코멘트
+### 코멘트
 
 성공~ 퀵 정렬은 ‘파티셔닝’과정과 ‘정렬’ 과정을 차례로 구현하면 잘 되네요.
 
 
-### 개구코 4.
+## 개구코 4. 비재귀적 퀵 정렬로 바꾸기
 
-개념: 비재귀적인 퀵 정렬 만들기
+### 개념: 비재귀적인 퀵 정렬 만들기
 
 > 비재귀적인 퀵 정렬은 이미 배운 재귀 함수 recur()를 비재귀적으로 구현하는 방법과 같이 만들 수 있습니다. 
 
@@ -379,7 +389,9 @@ def recur(n):
 
 이 코드의 상향식 재귀 분석 및 스택 동작 예측
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/23adf9a4-59f4-46ce-9a31-dff30aad8c8b/IMG_9910.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YBKHQKMB%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDIzi7rM2EV273KIv8BiBQKcv2inYU03F%2Bt5uLrtWXlqgIgBN8yX7tJ7Ks7tj0zK3U%2BWCG0i4XOmEkm%2BVTFcpCAcEgq%2FwMIQxAAGgw2Mzc0MjMxODM4MDUiDJTUwKYFo4iquB8ClCrcA%2B%2B0CUavwXhR9Orj%2BGGduqkS6qLMQBJL0ptfnfrBHfA%2FicCm7GLnIDf0Pbj30EZrtq4iQGzMsfml5XSU80lqzUILUC6sbuuMlerV60eq56aYmyttUNrNp1DGS5R5jIIN5qGbtViq2ylXOL%2FXWGJrFFpH6eZ5sNDEbcYF7KFQHMJwmaj7JJafPMaRiyq7pHOOitXyXjKZXBV9jztrLgt8hyLvX9Wkw9KDMHGHlONv3s%2FXcSqA29L7V9J7xHRR6UBofmqG6CDskzjT4mw5mdqCZL6eM6HQFTF%2FDJeYJVQhCBNhmsneslV0MJEWDtPFMtjFQQTQg6ECREzzNHuFS74b%2Fsv3ld7UNeugkaj7r5ORsZw7UDg3u62sTnLrnbKkGnN%2F7ApNswVlsC8MaaLg5U6camAbziL3gCcr5xSNsPmMnq7S7PpQMJRJy0ZWsHj49OVyaCrhKPjV4th1TGGuMuyqbsRWbrnm9uwYL216q4gsLW0Ae6d1UpoDiNSScue6TJPTl14PQUZO%2FscbQbNWXu664Z1CykJM89vdKBmVOcZ21TZkKPDV%2Becu8YlqFK9XXaMtbLqP88CmQSCPKRTWF8tZwWiLWxmupGkSx3kqVnVbLVo8xASsUy5K4kWqmYOzMPHs374GOqUBet4r0g6hN4Iv%2BGhO%2FW1P28blOF9Jzfwcz3d4AjPZJkOpI3Iv1usJ8Uy4tflkfmLi%2F%2FM9XVP1l0FIAyIdMyVNHdXr6tBx2Rnp2WCPFTfahCe0zBKlMnePADAgunBseMMiftSfORs4vrs98nyD0BmeT8jMR1MyEQLKA8oain4eUa6dszcdT73tLLr7KmezchHi86KEJ7jIScjal5Ub4s1fRT3qJhBo&X-Amz-Signature=bfcb431f5b84ee8086e44b032fb3da662f7004d4a774ea5cc5553880e30a6d37&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9910.heic)
+
+![](./images/IMG_9910.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662UR744HK%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003610Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDM5nAGlNkm5ATrnGHc0SJNPrx906lxRGMmsED1bZZMKgIhAOArLqsF6%2BGS%2BuhtMvh7ddQwC5fWCmyRVDzOWhO96cHWKv8DCGYQABoMNjM3NDIzMTgzODA1IgzEe9UcAiP5xFpqTAMq3AN%2BW%2B8%2B7lVtrcNaEJPq0XrSzDYhFd7bn%2BxCR7K7eq52SAT3RCG52%2Bk2L3DBOAzPUSAGaeP1ZkURqn6LW8WtQmBB1dAdfkJorWq1QgnQiSkkn6HL0H6EdugkjRA9mrik%2BGOHzDdx0HCZcDiwWqJ7phsoubb28QF9M1rPPLu3yAA9mUL6VlxMavXcVCj%2B2XJtBdv%2BrDaUKk3n5dJcP%2FND%2FjbIgyarB3KfeSrTLLmLD9yoQTG3BvFvFF5dITAbQhvKHe8xbCmezOgP2PIcLGT2sewGYSD9HFue1fEzOcPnD7g9jF6EShytNajT5Iqk%2B8tyYdJWK95EXs0bOarnu5uWzl2NwfaXPi%2FGenz%2FmeoV11Fw%2B6oW5JBpPYA59%2BuIOKPbHV7XuClAu%2B%2ByGxHKHxEjSMVrHhtBwbB2TGsn43FRiYa7ljbBFJH0i3Q2IKMGh6oHlJgCi3KqlBCCIU1td2JyKKRn6vo4fq67GsvOw6iYK3Afz%2BmwpTaP3q%2BClWvjZOLzjllTjzo%2FLUk3YkbKzlTIDLEeHVSdJ%2Bre%2BiuTeI7AicmdL0ejMk6CrB6rZyoE33d0IVmAQimR2hZ%2FgC2A1zqhz3A1DmJ2e79hPpTDms3t3DyQeUFS5PABD5CbHis1YTDSsee%2BBjqkAXMgVnZSicP930FErnMvcmWnGbeUxwV1BKV6Rok3wk69T%2F3Mn9EbmcVuJuWXIG%2FrTG6QJK4MIjXHNEXOb60AMtssrnR7zmV4EYPrYRizqPv4662hK%2FOSzvrGyYhXAyL6y6Wml2qI7wh%2FVTftEbE%2Byc1zYhS3ay1d9tw04NNKTKI92XF3bikQTAEu%2B4waaXv6jhl%2Fe6w0B3U685VDsoWcQZK8eBNg&X-Amz-Signature=cb5126ae8dc4d26b59dbbc66aa544afd308a9a95f3a2d64efac0380ded088b40&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 따라서 제대로 된 구현은 아래와 같을 것
 
@@ -396,7 +408,61 @@ def recur(n):
 
 진짜..이래도 기억이 안 난다. 다시 참조
 
-> 복습지시: 아래 코드를 비재귀적으로 표현하기
+## 개구코 5. 퀵 정렬에서 피벗과 겹치는 부분.
+
+### 개념
+
+퀵 정렬에서 pl, pr을 계속 스캔하며 포인터를 옮겨주면 피벗과 일치하는 그룹이 생길 수 있다. 이때는 배열 나누기가 완료되어 pl > pr + 1일 때 뿐이다.
+
+### 구현
+
+그림 참조
+
+![](./images/IMG_9927.heic)
+
+![](./images/IMG_9927.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662UR744HK%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003610Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDM5nAGlNkm5ATrnGHc0SJNPrx906lxRGMmsED1bZZMKgIhAOArLqsF6%2BGS%2BuhtMvh7ddQwC5fWCmyRVDzOWhO96cHWKv8DCGYQABoMNjM3NDIzMTgzODA1IgzEe9UcAiP5xFpqTAMq3AN%2BW%2B8%2B7lVtrcNaEJPq0XrSzDYhFd7bn%2BxCR7K7eq52SAT3RCG52%2Bk2L3DBOAzPUSAGaeP1ZkURqn6LW8WtQmBB1dAdfkJorWq1QgnQiSkkn6HL0H6EdugkjRA9mrik%2BGOHzDdx0HCZcDiwWqJ7phsoubb28QF9M1rPPLu3yAA9mUL6VlxMavXcVCj%2B2XJtBdv%2BrDaUKk3n5dJcP%2FND%2FjbIgyarB3KfeSrTLLmLD9yoQTG3BvFvFF5dITAbQhvKHe8xbCmezOgP2PIcLGT2sewGYSD9HFue1fEzOcPnD7g9jF6EShytNajT5Iqk%2B8tyYdJWK95EXs0bOarnu5uWzl2NwfaXPi%2FGenz%2FmeoV11Fw%2B6oW5JBpPYA59%2BuIOKPbHV7XuClAu%2B%2ByGxHKHxEjSMVrHhtBwbB2TGsn43FRiYa7ljbBFJH0i3Q2IKMGh6oHlJgCi3KqlBCCIU1td2JyKKRn6vo4fq67GsvOw6iYK3Afz%2BmwpTaP3q%2BClWvjZOLzjllTjzo%2FLUk3YkbKzlTIDLEeHVSdJ%2Bre%2BiuTeI7AicmdL0ejMk6CrB6rZyoE33d0IVmAQimR2hZ%2FgC2A1zqhz3A1DmJ2e79hPpTDms3t3DyQeUFS5PABD5CbHis1YTDSsee%2BBjqkAXMgVnZSicP930FErnMvcmWnGbeUxwV1BKV6Rok3wk69T%2F3Mn9EbmcVuJuWXIG%2FrTG6QJK4MIjXHNEXOb60AMtssrnR7zmV4EYPrYRizqPv4662hK%2FOSzvrGyYhXAyL6y6Wml2qI7wh%2FVTftEbE%2Byc1zYhS3ay1d9tw04NNKTKI92XF3bikQTAEu%2B4waaXv6jhl%2Fe6w0B3U685VDsoWcQZK8eBNg&X-Amz-Signature=762e171fe976978cafba4e9c828ee165a2e8da0e0b44b9f0a25798f065607c87&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+### 코멘트
+
+아마 피벗과 같은 값이 더 있어도, 피벗과 일치하는 그룹이라는 건 하나밖에 없을 거 같다. 그니까 이게 이렇게 표현하면 안 될 거 같은데. ‘그룹’이 아니라 그냥 피벗 값 하나만 들어올 수 있는 거 아닌가.
+
+## 개구코 6. 퀵 정렬을 스택으로 구현할 때 적절한 크기
+
+### 개념: 퀵 정렬 규칙에 의해 배열에서 원소 수가 n이면 스택에 쌓이는 데이터의 최대 개수는 log n보다 적다.
+
+따라서 원소 수 n이 100만 개라도, 스태의 최대 크기는 20이면 충분하다
+
+$log_2 1000000$
+
+이를 계산하면,
+
+$log_2 1000000 = \frac{\log_{10} 1000000}{\log_{10} 2}$
+
+상용로그 값을 이용하면,
+
+$\log_{10} 1000000 = 6$
+
+$log_{10} 2 \approx 0.3010$
+
+따라서,
+
+$log_2 1000000 = \frac{6}{0.3010} \approx 19.9$
+
+즉, 최대값은 약 19.9입니다.
+
+### 구현
+
+이건 어렵게 보면 어렵긴 한데, 그냥 트리로 그려보면 바로 이해 됨. 재귀 결정 트리에서 스택에 저장되어야 하는 값은 어차피 루트-리프까지의 한 경로밖에 없음. 다른 경로들은 형제 노드를 처리한 다음 처리하게 됨. 이전에 화이트보드에 그렸던 것을 참조
+
+![](./images/70f72466-8719-4e8b-b781-3b6bb71da2d6.png)
+
+![](./images/70f72466-8719-4e8b-b781-3b6bb71da2d6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664VCMDYZZ%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003611Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIGSmm6T014tu%2BGlGWbaXK%2BdTQkNq5dOfRmIhkS79PnDcAiEAjQCF7EpNZXGte6SMDgjM9BTYmviz6%2Bc3hiWeoCIDs6gq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDHWcWgYXTDteQ1m7hSrcAz3L2kCMgjogta1uk8eWEMAXuXIRuwkm4pYIvOmuIH0ckmTuN3WAUL9YhJZk2bbb%2BGcG4FA8EjcfRkq3N%2F4JBtVy0rs6Qtr%2BvJsRuTzkNRGok8rpckIrm3r9Jn8Rp0EkuaKTH0GdJPbXokozEdpZQJ5%2Bsq3UdXxszQCm88O5JdRdHPUcIcr%2Fw7MgNXEM38YW2rMXTzCAfK%2FnRGULSt0%2FmOtuO1AZVsfjkYE0mRT1ull2iJDnb0AnC%2FMjcN6LCSMklq3Xs%2BO9aVCmZHioXDF9eah81xSAptnAzacUFkW%2Fd5kgHE4626ygc7oP0s1ZQEG%2FJF3PXrfKKQxT38GrUAfrA%2B0dn4OScYoCHpZQgXft5lh1cF7rcSpumBI0ysdUv98iI2MVXfNtKi1eYhe0eUbaUBZBPE1EwcZg31O%2F9pljrAqJXQBNYXDnVAsfQXNsm92Q5Pp00bHnPHAgfxHZ0nHgOkYvZj7zmh9pe2J4hT%2Fx9mvgIGphah1Mn%2Fdg7GqFIGmi%2FXkn2Duk1sKxruuEF8dq654NWNOT9MdHQGtKpYQA9vzSDFWJ8NzdFdWnIxLH9L8cMJyVL2xoje587Tn1OMNCAugkqQAh6IQeihgzkFMW24v3sZ5tFbDNP29w9TjiMOiw574GOqUBLnhg3AcbP1yhslv9tk1fSCv1s369WVEpEMU3ASkIl8Vmrv%2FSfu%2FUUP9M6xjkRzrwYxiZmVjWgL5YFuTJoU%2FnVF0wivXl5rbKzgO6M%2FaW%2BvXOIuVP2d2AdQfKYKICzwegBA0rzr3VIsynsp6lHCNbm%2FT92gKMkAtHdRZeqFKs9lVKJZaZjwn%2BH%2FJ%2B%2F6FS0t7vPyW4e0XXjpInUJuZZFIkDPs2PH0Y&X-Amz-Signature=41140831d48bc9cce562518bf9afb38c07ddfe9245fff255328b3155982168cc&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+### 코멘트: 없음.
+
+## 복습: 재귀를 스택으로
+
+### 개념: 재귀를 스택으로 변경하는 Robust한 방법론
 
 ```python
 # 순수한 재귀 함수 구현하기
@@ -448,7 +514,7 @@ def recur(n: int) -> int:
 2. 중간 재귀 제거 및 스택 저장 과정을 추가.
 ```
 
-구현
+### 구현
 
 ```python
 from collections import deque
@@ -486,9 +552,242 @@ print('='*8)
 recur2(4)
 ```
 
-코멘트
+### 코멘트
 
-아 어려워. 왜 이 둘의 구현이 다른 거지?
+아 어려워. 왜 이 둘의 구현이 다른 거지? 정리한 다음 다시 구현. 아래와 같이 방법론을 수정하며 구현해 보았다.
+
+```python
+def recur(n: int) -> int:
+    if n > 0:
+        recur(n-1)
+        print(n)
+        recur(n-2)
+
+# 1. 그대로 while 문에 넣는다.
+
+from collections import deque
+
+def recur2(n: int) -> int:
+    s = deque()
+    while True:
+        if n > 0: 
+            # 중요한 사실: n은 이미 업데이트 된 상태다.
+            # recur(n-1) # 스택에 저장을 해줄 부분과 안 해줄 부분을 구별해야 함
+            s.append(n) #n을 저장하고
+            n = n - 1 # 네. 이렇게 해서 n이 0보다 크면 다 1씩 줄여서 처음으로 돌아가는 겁니다. 
+            continue
+        if s: # 이 부분은 n이 0 보다 작을때만 출력되지 않나? 
+            n = s.pop() #그러니까 n이 충분히 작아졌으면 이제 저장됐던 n을 팝해서 프린트 해주고 
+            #디크레멘트해서 다시 콜 해주는 겁니다. 만약에 n이 1보다 크면 알아서 조건문에 걸릴 거고요.
+            print(n)
+            # recur(n-2) # 
+            n = n - 2
+            continue
+        break
+recur(4)
+print("="*8)
+recur2(4)
+```
+
+이를 다시 robust 한 방법론으로 정리해보자.
+
+1. 재귀를 스택으로 만드는 기본: 함수의 첫 머리에 while True: 문을 삽입. 
+1. 꼬리재귀: 함수의 파라메터 값을 재귀와 동일한 방식으로 수정하여 continue
+1. 중간재귀(함수의 주요 구현 윗 부분): 이 부분도 꼬리 재귀와 똑같이 파라메터를 업데이트하여 함수의 처음으로 플로우를 보내야 함. 
+1. 3에서 주의할 점: 그대로 뒤로 보내면 5의 내용 때문에 파라메터값이 덮어씌워진다. 
+1. 스택은 실행 부분을 포함한다: 스택은 함수의 주요 실행 부분을 포함한다. 기본적으로 실행할 타이밍의 데이터를 스택에서 꺼내 와야 하고, 그것으로 작업을 한 다음, 꼬리 재귀를 실시해준다. 그 다음 중간 재귀에 걸리고 말고는 알 바 아님.
+제대로 이해한 거 맞나? 찝찝하지만 일단 또 넘어가자. 반복만이 답이다.
+
+## 복습: 재귀적 퀵 정렬 구현하기
+
+### Phase1. 단계 구별하기
+
+1. 파티셔닝
+1. quick_sort 함수 구현하기
+### Phase2. 코딩하기
+
+```python
+def partitioning(A: list, left, right):
+    if left >= right: # 만약 봐야 하는 파티션이 유효하지 않은 값(파티셔닝 할요소가 하나거나 없다면)이라면 패스
+        return
+    pivot = A[(left+right)//2]
+    pl, pr = left, right
+    while pl <= pr: # 파티션이 엇갈리지 않는 동안
+        while A[pl] < pivot and pl < right: # 첫 번째 조건: 파티셔닝의 기본 원리. # 두 번째 조건: 영역 유지
+            pl += 1
+        while A[pr] > pivot and pr > left: 
+            pr -= 1
+        if pl <= pr: # 포인터 값이 유효하다면
+            A[pl], A[pr] = A[pr], A[pl]
+            pl += 1
+            pr -= 1
+    partitioning(A, left, pr)
+    partitioning(A, pl, right)
+
+def quick_sort(A):
+    partitioning(A, 0, len(A)-1)
+        
+A = [4, 2, 5, 3, 243, 5534, 21, 3]
+quick_sort(A)
+print(A)
+```
+
+일단 단기기억 덕분인지는 모르겠으나, 정상적으로 작동하는 정렬 구현에 성공했다.
+
+## 연습: 위에서 구현한 재귀적 정렬을 스택으로 구현하기
+
+### Phase1. 구현 단계
+
+자, robust한 재귀 제거 방법을 떠올려보자
+
+1. 기본적으로 while True:로 코드를 감싸기
+1. 꼬리 재귀: 그냥 업데이트 해서 밀어버리면 됨. 밀어버리기 전에 두 재귀 중간에 있는 코드를 실행해야 함.
+1. 중간 재귀: 스택에 저장하고, 파라메터 업데이트해서 밀어야 함.
+### Phase2. 구현
+
+```python
+from collections import deque
+
+def partitioning(A: list, left, right):
+    s = deque()
+    while True:
+        # if left >= right: # 만약 봐야 하는 파티션이 유효하지 않은 값(파티셔닝 할요소가 하나거나 없다면)이라면 패스
+        #     return
+        pivot = A[(left+right)//2]
+        pl, pr = left, right
+        while pl <= pr: # 파티션이 엇갈리지 않는 동안
+            while A[pl] < pivot and pl < right: # 첫 번째 조건: 파티셔닝의 기본 원리. # 두 번째 조건: 영역 유지
+                pl += 1
+            while A[pr] > pivot and pr > left: 
+                pr -= 1
+            if pl <= pr: # 포인터 값이 유효하다면
+                A[pl], A[pr] = A[pr], A[pl]
+                pl += 1
+                pr -= 1
+        
+        if left < right:
+            # partitioning(A, left, pr)
+            s.append((left, pr)) # 저장해주고
+            left = left# 파라메터 업데이트 해 줍니다.
+            right = pr
+            continue
+        if s:
+            # partitioning(A, pl, right)
+            pl, right = s.pop()
+            left = pl
+            right = right
+            continue
+        break
+
+def quick_sort(A):
+    partitioning(A, 0, len(A)-1)
+        
+A = [4, 2, 5, 3, 243, 5534, 21, 3]
+quick_sort(A)
+print(A)
+
+################결과################
+[2, 3, 3, 5, 243, 5534, 21, 4]
+
+```
+
+이거는 이슈로 넘겨서 해결해볼까.
+
+# 이슈: 퀵 정렬 스택 표현 결과 뒷 부분 정렬 안 되는 문제.
+
+## Phase1.
+
+환경: 파이썬
+
+로그(이상 결과)
+
+```plain text
+A = [4, 2, 5, 3, 243, 5534, 21, 3]
+quick_sort(A)
+print(A)
+
+################결과################
+[2, 3, 3, 5, 243, 5534, 21, 4]
+```
+
+최근 변경사항: 재귀로 표현된 퀵 정렬의 파티셔닝 과정을 스택으로 바꿈.
+
+## Phase2-1
+
+### 확인
+
+문제는 당연히 스택에 있겠지? 앞 부분이 어느 정도 정렬되는 거 보면 완전 틀린 구현은 아닌 거 같은데, 어떤 걸 봐야할지 잘 모르겠음. 당연히 파티셔닝에 문제가 있을 거 같은데.
+
+```plain text
+        if left < right:
+            # partitioning(A, left, pr)
+            s.append((left, pr)) # 저장해주고
+            left = left# 파라메터 업데이트 해 줍니다.
+            right = pr
+            continue
+```
+
+파티션 뒷 부분을 스택에 저장해줘야 되나? 앞 부분은 어차피 다음 루프에서 보게 되잖아. 
+
+### 시도
+
+```python
+from collections import deque
+
+def partitioning(A: list, left, right):
+    s = deque()
+    while True:
+        # if left >= right: # 만약 봐야 하는 파티션이 유효하지 않은 값(파티셔닝 할요소가 하나거나 없다면)이라면 패스
+        #     return
+        pivot = A[(left+right)//2]
+        pl, pr = left, right
+        while pl <= pr: # 파티션이 엇갈리지 않는 동안
+            while A[pl] < pivot and pl < right: # 첫 번째 조건: 파티셔닝의 기본 원리. # 두 번째 조건: 영역 유지
+                pl += 1
+            while A[pr] > pivot and pr > left: 
+                pr -= 1
+            if pl <= pr: # 포인터 값이 유효하다면
+                A[pl], A[pr] = A[pr], A[pl]
+                pl += 1
+                pr -= 1
+        
+        if left < right:
+            # partitioning(A, left, pr)
+            s.append((pl, right)) # 저장해주고
+            left = left# 파라메터 업데이트 해 줍니다.
+            right = pr
+            continue
+        if s:
+            # partitioning(A, pl, right)
+            left, right = s.pop()
+            # left = pl
+            # right = right
+            continue
+        break
+
+def quick_sort(A):
+    partitioning(A, 0, len(A)-1)
+        
+A = [4, 2, 5, 3, 243, 5534, 21, 3]
+quick_sort(A)
+print(A)
+```
+
+### 결과분석: 성공!!
+
+스택에 저장하지 않으면 다음 루프에서 소실될 정보가 무엇인지 생각하니 해결됐다! 이 경우, (pl, right), 즉 파티션의 뒷 부분을 스택에 저장하고, 파티션의 앞 부분을 left, right 매개변수에 전달해주면 된다. 
+
+그럼 여기서 응용해서, 파티션의 뒷 부분부터 정렬할 수도 있을 거 같긴 하다.
+
+```python
+	
+if left < right:
+	s.append((left, pr))
+	left, right = pl,right
+	continue
+```
+
+이렇게 해도 정확히 똑같이 작동한다! 이렇게 하면 파티션의 뒷 부분부터 정렬하게 된다. (정렬 작업 순서가 바뀌는 것이지, 정렬 순서가 바뀌는 것은 아님)
 
 # 이슈: 퀵 정렬 구현중 index out of range 에러 발생
 
@@ -566,7 +865,7 @@ if pl <= pr:
 
 이와 같이 while문과 동일한 조건을 안에 네스트 시켜줬다.
 
-### 결과 분석
+### 결과 분석: 다른 에러 발생
 
 인덱스 에러는 해결 됨. 대신 다음 에러가 발생
 
@@ -680,7 +979,9 @@ print(A)
 
 ### 그림: 정렬을 마친 배열의 병합
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/57d32329-254c-46b7-85eb-6c7905b86749/IMG_9897.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=bac352b3040fff4fe380cb428c90f5e06e8d8826e761a38ddf20c209b6810264&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9897.heic)
+
+![](./images/IMG_9897.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QYYSDKR%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003612Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIQDgL%2FxXawN8yEQoDE3aTJ%2B9%2B5wZ24E8%2FY9Jpvys80D3zgIgd0nloIhsKWhoPPRdZEsVq0H6Z%2FN6G%2Fai9rCc0wINbyUq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDMJKaTrXvaSt28fgvyrcA1EdOR47N1xeEO91XZo3shrr5gM%2BKyjIf8atHtJuprznUf%2Bq6fPFPo0vlF9NXvixE5ot%2F3azcl7UcpAtYM4BLyxEZguPkv3YIIS5iIV7OgFQawcD1TIoYwuRYUqSMkC3K%2BHTWDRpovF7mAKY1BVSECV%2BxUQuuLcptoXQdJ1g4MDXIl2EIZARKHvUafTIZ2EqahcC98ZkVb%2BY8zE2K1PJFoXLH54oP7bRrZ2xNckEV8h2KH6wZHE0jOH2kzEr13uhCvpcnXkoJa6WU2SLPLgqq0lks6HmrxhdoK8%2B5N1o0F%2BtIfinS4xKZFpDB%2BBxrbS1fkJQYAGJw%2FKl3fhQ%2FryFbsunHs2tayrek6oAik3Se8cq6vt3EU2CHNUBxG4kvuqnVTTHMT%2BkaAdjIkfnjHNjSGTxSuh0belRZtxUd1hXEuzAL%2Bp9GqKnuyuwsii5cmb3DW%2FCtrdpFScjVUu5Gr4LutH7KyDtpdXdsbxD33Zr3hA3qWecEH9An6nGue8qHcFZVy%2BYicLPdLJ0h09%2BrUK1gRhBiIxev9aGJCb41YeIYcP%2FTNJBugAyGsIZv9Mfmg9vG3eEJwSxJ0xPTISCj4FCZ0PoDOIdje24dtUYOBxnx61Q89iJ5aDmRidKFFGQMOaw574GOqUBTWm1OknOmEeZW0aPgtFVhuwM%2FOjw9uujAOs%2Fo968wCcsFJSZBRu%2FPG4kfQjVhXq0yjKHoOyKH2ZQ1iTsOExxad0SeaHByOSd5r0wOkQy9EjVBE9jDAj%2BfBmOlm9b69eY17kTPJAFkteZOKJ4lQP75fG4MUYoeBVihpLSKZnCA%2F%2FiVXVASvsHpA0ueRq%2By7xeSBMl2h7%2BNSB8Tw7O4WnRiSTzleHQ&X-Amz-Signature=09ced2aa1401435454a2bdef18e4eb449a2c212b0c2340a0d76fe64202405046&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 코드: 해당 그림을 구현한 코드
 
@@ -718,7 +1019,9 @@ def merge_sorted_list(a: Sequence, b: Sequence, c: MutableSequence):
 
 ### 그림: 병합 정렬하는 방법
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/6b5838ad-1623-41fc-93d6-ddd0d95255a5/IMG_9898.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=d38e43524257a75328d38bfa0c7eda3fc0d744fcca6147d8c0e5d0a46a3f953a&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9898.heic)
+
+![](./images/IMG_9898.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QYYSDKR%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003612Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIQDgL%2FxXawN8yEQoDE3aTJ%2B9%2B5wZ24E8%2FY9Jpvys80D3zgIgd0nloIhsKWhoPPRdZEsVq0H6Z%2FN6G%2Fai9rCc0wINbyUq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDMJKaTrXvaSt28fgvyrcA1EdOR47N1xeEO91XZo3shrr5gM%2BKyjIf8atHtJuprznUf%2Bq6fPFPo0vlF9NXvixE5ot%2F3azcl7UcpAtYM4BLyxEZguPkv3YIIS5iIV7OgFQawcD1TIoYwuRYUqSMkC3K%2BHTWDRpovF7mAKY1BVSECV%2BxUQuuLcptoXQdJ1g4MDXIl2EIZARKHvUafTIZ2EqahcC98ZkVb%2BY8zE2K1PJFoXLH54oP7bRrZ2xNckEV8h2KH6wZHE0jOH2kzEr13uhCvpcnXkoJa6WU2SLPLgqq0lks6HmrxhdoK8%2B5N1o0F%2BtIfinS4xKZFpDB%2BBxrbS1fkJQYAGJw%2FKl3fhQ%2FryFbsunHs2tayrek6oAik3Se8cq6vt3EU2CHNUBxG4kvuqnVTTHMT%2BkaAdjIkfnjHNjSGTxSuh0belRZtxUd1hXEuzAL%2Bp9GqKnuyuwsii5cmb3DW%2FCtrdpFScjVUu5Gr4LutH7KyDtpdXdsbxD33Zr3hA3qWecEH9An6nGue8qHcFZVy%2BYicLPdLJ0h09%2BrUK1gRhBiIxev9aGJCb41YeIYcP%2FTNJBugAyGsIZv9Mfmg9vG3eEJwSxJ0xPTISCj4FCZ0PoDOIdje24dtUYOBxnx61Q89iJ5aDmRidKFFGQMOaw574GOqUBTWm1OknOmEeZW0aPgtFVhuwM%2FOjw9uujAOs%2Fo968wCcsFJSZBRu%2FPG4kfQjVhXq0yjKHoOyKH2ZQ1iTsOExxad0SeaHByOSd5r0wOkQy9EjVBE9jDAj%2BfBmOlm9b69eY17kTPJAFkteZOKJ4lQP75fG4MUYoeBVihpLSKZnCA%2F%2FiVXVASvsHpA0ueRq%2By7xeSBMl2h7%2BNSB8Tw7O4WnRiSTzleHQ&X-Amz-Signature=4d2b914818a7b050617850ca243f88c920bfbd1d7058add803c198f326aee1a4&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 코드: 병합정렬
 
@@ -730,7 +1033,7 @@ def merge_sort(a: MutableSequence) -> None:
 
     def _merge_sort(a: MutableSequence, left: int, right: int) -> None:
         """a[left] ~ a[right]를 재귀적으로 병합정렬"""
-        if left < right:
+        if left < right: # 파티션이 유효한 동안 
             center = (left + right) // 2
 
             _merge_sort(a, left, center) # 배열 앞부분을 병합 정렬
@@ -738,12 +1041,12 @@ def merge_sort(a: MutableSequence) -> None:
             p = j = 0
             i = k = left
 
-            while i <= center:
+            while i <= center: # 복사
                 buff[p] = a[i]
                 p += 1
                 i += 1
 
-            while i <= right and j < p:
+            while i <= right and j < p: # 병합
                 if buff[i] <= a[i]
                     a[k] = buff[j]
                     j += 1
@@ -752,7 +1055,7 @@ def merge_sort(a: MutableSequence) -> None:
                     i += 1
                 k += 1
             
-            while j < p:
+            while j < p: # 떨이
                 a[k] = buff[j]
                 k += 1
                 j += 1
@@ -763,17 +1066,827 @@ def merge_sort(a: MutableSequence) -> None:
 
 ```
 
+## 구현: 병합정렬
+
+### Phase1. 병합 정렬의 최소 요구 파악
+
+배열을 이해할 때는 수도코드를 이해하는 것보다, 정렬의 메커니즘을 코드와 연결시켜서 1차적인 암기와 개념화 작업을 동시에 해야 한다.
+
+1. 일단 이것도 파티션이 있다. 파티션을 잡고, 파티션이 유효할 때만 정렬 프로세스를 실행한다
+1. 센터를 잡는다
+1. 앞 파티션을 병합정렬 한다
+1. 뒤 파티션을 병합정렬 한다.
+1. 네 개 포인터를 초기화 한다. 어떤 기준으로 초기화하는 건지는 잘 모르겠다.
+1. 앞 파티션을 이터레이션 하면서(i ≤ center)
+1. 버퍼에다가 배열 값을 저장한다. 왜? 버퍼에 앞 부분을 따로 저장해놔야, 작은 파티션을 새로 덮어 씌워도 데이터가 안 날아가니까. 즉 이 과정은 not in place 한 병합 정렬이 필연적으로 해야 하는 백업이다.
+1. 아직 이해가 안 되는 조건이 유효한 동안(i ≤ right and j > p)
+1. buff[i] = 앞 파티션의 값과, a[i] =  뒤 파티션의 값을 비교해서
+1. 작은 쪽을 a[k](정렬 포인터)에 집어 넣어준다. 
+1. p, j, i, k 포인터가 너무 많아서 헷갈린다.
+1. 비교해서 집어넣어준 후에, while j < p 인 동안 a[k] = buff[j], k += 1, j += 1을 하며 a[k]에 버퍼 값을 저장해준다. 이건 떨이 데이터를 저장하는 과정으로 보인다.
+### 중요: p, j, i, k의 의미를 이해할 필요가 있다. 
+
+> 병합 과정을 그림으로 그려 보면서 이해.
+
+그림: 병합 정렬의 전체적인 흐름
+
+![](./images/IMG_9913.heic)
+
+![](./images/IMG_9913.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QYYSDKR%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003612Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIQDgL%2FxXawN8yEQoDE3aTJ%2B9%2B5wZ24E8%2FY9Jpvys80D3zgIgd0nloIhsKWhoPPRdZEsVq0H6Z%2FN6G%2Fai9rCc0wINbyUq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDMJKaTrXvaSt28fgvyrcA1EdOR47N1xeEO91XZo3shrr5gM%2BKyjIf8atHtJuprznUf%2Bq6fPFPo0vlF9NXvixE5ot%2F3azcl7UcpAtYM4BLyxEZguPkv3YIIS5iIV7OgFQawcD1TIoYwuRYUqSMkC3K%2BHTWDRpovF7mAKY1BVSECV%2BxUQuuLcptoXQdJ1g4MDXIl2EIZARKHvUafTIZ2EqahcC98ZkVb%2BY8zE2K1PJFoXLH54oP7bRrZ2xNckEV8h2KH6wZHE0jOH2kzEr13uhCvpcnXkoJa6WU2SLPLgqq0lks6HmrxhdoK8%2B5N1o0F%2BtIfinS4xKZFpDB%2BBxrbS1fkJQYAGJw%2FKl3fhQ%2FryFbsunHs2tayrek6oAik3Se8cq6vt3EU2CHNUBxG4kvuqnVTTHMT%2BkaAdjIkfnjHNjSGTxSuh0belRZtxUd1hXEuzAL%2Bp9GqKnuyuwsii5cmb3DW%2FCtrdpFScjVUu5Gr4LutH7KyDtpdXdsbxD33Zr3hA3qWecEH9An6nGue8qHcFZVy%2BYicLPdLJ0h09%2BrUK1gRhBiIxev9aGJCb41YeIYcP%2FTNJBugAyGsIZv9Mfmg9vG3eEJwSxJ0xPTISCj4FCZ0PoDOIdje24dtUYOBxnx61Q89iJ5aDmRidKFFGQMOaw574GOqUBTWm1OknOmEeZW0aPgtFVhuwM%2FOjw9uujAOs%2Fo968wCcsFJSZBRu%2FPG4kfQjVhXq0yjKHoOyKH2ZQ1iTsOExxad0SeaHByOSd5r0wOkQy9EjVBE9jDAj%2BfBmOlm9b69eY17kTPJAFkteZOKJ4lQP75fG4MUYoeBVihpLSKZnCA%2F%2FiVXVASvsHpA0ueRq%2By7xeSBMl2h7%2BNSB8Tw7O4WnRiSTzleHQ&X-Amz-Signature=844c32e5097a1ec0920bb66d270204bfce4e396c1ffa512939c32ba386ab9528&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+그림: 배열 a의 앞 부분을 배열 buff로 복사.
+
+![](./images/IMG_9914.heic)
+
+![](./images/IMG_9914.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QYYSDKR%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003612Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIQDgL%2FxXawN8yEQoDE3aTJ%2B9%2B5wZ24E8%2FY9Jpvys80D3zgIgd0nloIhsKWhoPPRdZEsVq0H6Z%2FN6G%2Fai9rCc0wINbyUq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDMJKaTrXvaSt28fgvyrcA1EdOR47N1xeEO91XZo3shrr5gM%2BKyjIf8atHtJuprznUf%2Bq6fPFPo0vlF9NXvixE5ot%2F3azcl7UcpAtYM4BLyxEZguPkv3YIIS5iIV7OgFQawcD1TIoYwuRYUqSMkC3K%2BHTWDRpovF7mAKY1BVSECV%2BxUQuuLcptoXQdJ1g4MDXIl2EIZARKHvUafTIZ2EqahcC98ZkVb%2BY8zE2K1PJFoXLH54oP7bRrZ2xNckEV8h2KH6wZHE0jOH2kzEr13uhCvpcnXkoJa6WU2SLPLgqq0lks6HmrxhdoK8%2B5N1o0F%2BtIfinS4xKZFpDB%2BBxrbS1fkJQYAGJw%2FKl3fhQ%2FryFbsunHs2tayrek6oAik3Se8cq6vt3EU2CHNUBxG4kvuqnVTTHMT%2BkaAdjIkfnjHNjSGTxSuh0belRZtxUd1hXEuzAL%2Bp9GqKnuyuwsii5cmb3DW%2FCtrdpFScjVUu5Gr4LutH7KyDtpdXdsbxD33Zr3hA3qWecEH9An6nGue8qHcFZVy%2BYicLPdLJ0h09%2BrUK1gRhBiIxev9aGJCb41YeIYcP%2FTNJBugAyGsIZv9Mfmg9vG3eEJwSxJ0xPTISCj4FCZ0PoDOIdje24dtUYOBxnx61Q89iJ5aDmRidKFFGQMOaw574GOqUBTWm1OknOmEeZW0aPgtFVhuwM%2FOjw9uujAOs%2Fo968wCcsFJSZBRu%2FPG4kfQjVhXq0yjKHoOyKH2ZQ1iTsOExxad0SeaHByOSd5r0wOkQy9EjVBE9jDAj%2BfBmOlm9b69eY17kTPJAFkteZOKJ4lQP75fG4MUYoeBVihpLSKZnCA%2F%2FiVXVASvsHpA0ueRq%2By7xeSBMl2h7%2BNSB8Tw7O4WnRiSTzleHQ&X-Amz-Signature=bd867e6ddd3645489852cd97ff7806bab2b082a27e571b28bf9286344c393ccb&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+```python
+while i <= center: # i는 처음에 left(파티션의 첫 값)으로, p는 0으로(buff의 첫 값으로) 초기화.
+	buff[p] = a[i] # 이 루프가 끝나고 나면 p는 버퍼의 center+1 인덱스를 가리키게 됨.
+	p += 1
+	i += 1
+```
+
+그림: 배열 a의 뒷 부분과 배열 buff를 a에 병합
+
+![](./images/IMG_9914_2.heic)
+
+![](./images/IMG_9914_2.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QYYSDKR%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003612Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIQDgL%2FxXawN8yEQoDE3aTJ%2B9%2B5wZ24E8%2FY9Jpvys80D3zgIgd0nloIhsKWhoPPRdZEsVq0H6Z%2FN6G%2Fai9rCc0wINbyUq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDMJKaTrXvaSt28fgvyrcA1EdOR47N1xeEO91XZo3shrr5gM%2BKyjIf8atHtJuprznUf%2Bq6fPFPo0vlF9NXvixE5ot%2F3azcl7UcpAtYM4BLyxEZguPkv3YIIS5iIV7OgFQawcD1TIoYwuRYUqSMkC3K%2BHTWDRpovF7mAKY1BVSECV%2BxUQuuLcptoXQdJ1g4MDXIl2EIZARKHvUafTIZ2EqahcC98ZkVb%2BY8zE2K1PJFoXLH54oP7bRrZ2xNckEV8h2KH6wZHE0jOH2kzEr13uhCvpcnXkoJa6WU2SLPLgqq0lks6HmrxhdoK8%2B5N1o0F%2BtIfinS4xKZFpDB%2BBxrbS1fkJQYAGJw%2FKl3fhQ%2FryFbsunHs2tayrek6oAik3Se8cq6vt3EU2CHNUBxG4kvuqnVTTHMT%2BkaAdjIkfnjHNjSGTxSuh0belRZtxUd1hXEuzAL%2Bp9GqKnuyuwsii5cmb3DW%2FCtrdpFScjVUu5Gr4LutH7KyDtpdXdsbxD33Zr3hA3qWecEH9An6nGue8qHcFZVy%2BYicLPdLJ0h09%2BrUK1gRhBiIxev9aGJCb41YeIYcP%2FTNJBugAyGsIZv9Mfmg9vG3eEJwSxJ0xPTISCj4FCZ0PoDOIdje24dtUYOBxnx61Q89iJ5aDmRidKFFGQMOaw574GOqUBTWm1OknOmEeZW0aPgtFVhuwM%2FOjw9uujAOs%2Fo968wCcsFJSZBRu%2FPG4kfQjVhXq0yjKHoOyKH2ZQ1iTsOExxad0SeaHByOSd5r0wOkQy9EjVBE9jDAj%2BfBmOlm9b69eY17kTPJAFkteZOKJ4lQP75fG4MUYoeBVihpLSKZnCA%2F%2FiVXVASvsHpA0ueRq%2By7xeSBMl2h7%2BNSB8Tw7O4WnRiSTzleHQ&X-Amz-Signature=50697b61ad907e7545512d4d10a6c874ac278a04faef3a6c9550aca596c493e4&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+```python
+# 첫 번째 조건: a의 파티션을 가리키는 i가 유효한 동안, j < p는 버퍼에서 포인터가 center 앞에 있는 동안.
+while i <= right and j < p: 
+	if buff[j]<= a[i]: # 알잘딱깔센으로 병합. a[k]는 그냥 포인터. 어떤 방식으로 병합됐든 k++
+		a[k] = buff[j]
+		j += 1
+	else:
+		a[k] = a[i]
+		i += 1
+	k += 1
+```
+
+그림: 배열 buff의 나머지 원소를 배열 a에 복사합니다.
+
+![](./images/IMG_9915.heic)
+
+![](./images/IMG_9915.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663QYYSDKR%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003612Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIQDgL%2FxXawN8yEQoDE3aTJ%2B9%2B5wZ24E8%2FY9Jpvys80D3zgIgd0nloIhsKWhoPPRdZEsVq0H6Z%2FN6G%2Fai9rCc0wINbyUq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDMJKaTrXvaSt28fgvyrcA1EdOR47N1xeEO91XZo3shrr5gM%2BKyjIf8atHtJuprznUf%2Bq6fPFPo0vlF9NXvixE5ot%2F3azcl7UcpAtYM4BLyxEZguPkv3YIIS5iIV7OgFQawcD1TIoYwuRYUqSMkC3K%2BHTWDRpovF7mAKY1BVSECV%2BxUQuuLcptoXQdJ1g4MDXIl2EIZARKHvUafTIZ2EqahcC98ZkVb%2BY8zE2K1PJFoXLH54oP7bRrZ2xNckEV8h2KH6wZHE0jOH2kzEr13uhCvpcnXkoJa6WU2SLPLgqq0lks6HmrxhdoK8%2B5N1o0F%2BtIfinS4xKZFpDB%2BBxrbS1fkJQYAGJw%2FKl3fhQ%2FryFbsunHs2tayrek6oAik3Se8cq6vt3EU2CHNUBxG4kvuqnVTTHMT%2BkaAdjIkfnjHNjSGTxSuh0belRZtxUd1hXEuzAL%2Bp9GqKnuyuwsii5cmb3DW%2FCtrdpFScjVUu5Gr4LutH7KyDtpdXdsbxD33Zr3hA3qWecEH9An6nGue8qHcFZVy%2BYicLPdLJ0h09%2BrUK1gRhBiIxev9aGJCb41YeIYcP%2FTNJBugAyGsIZv9Mfmg9vG3eEJwSxJ0xPTISCj4FCZ0PoDOIdje24dtUYOBxnx61Q89iJ5aDmRidKFFGQMOaw574GOqUBTWm1OknOmEeZW0aPgtFVhuwM%2FOjw9uujAOs%2Fo968wCcsFJSZBRu%2FPG4kfQjVhXq0yjKHoOyKH2ZQ1iTsOExxad0SeaHByOSd5r0wOkQy9EjVBE9jDAj%2BfBmOlm9b69eY17kTPJAFkteZOKJ4lQP75fG4MUYoeBVihpLSKZnCA%2F%2FiVXVASvsHpA0ueRq%2By7xeSBMl2h7%2BNSB8Tw7O4WnRiSTzleHQ&X-Amz-Signature=41d0cb94ad569b49fc50b0b07a9c4df4c4cc1f51c90b756f2915ed66d73c228c&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+```python
+while j < p: # 궁금한 점. a의 나머지 원소는 왜 a의 적절한 위치로 복사하지 않아도 되는 거지?
+	a[k] = buff[j]
+	k += 1
+	j += 1
+```
+
+궁금한 점: buff의 나머지 원소를 a로 복사하는 과정은 있는데, 왜 a의 나머지 뒷부분 파티션을 복사하는 과정은 없어?
+
+> ✅ 오른쪽 부분 배열을 복사하는 과정이 필요 없는 이유
+
+### Phase2. 직접 구현해보기
+
+구현요소 정리
+
+1. 파티션 유효성 검사
+1. 앞 파티션 재귀
+1. 뒤 파티션 재귀
+1. 버퍼에 복사
+1. 병합
+1. 떨이 처리
+완성 코드
+
+```python
+def partitioning(A: list, left, right):
+    # 파티션 유효성 검사
+    if left <= right:
+        partitioning(A, left, (left+right)//2-1)
+        partitioning(A, (left+right)//2, right)
+        # 인덱스 설정
+        p, k, i, j = 0, 0, 0, 0 # 헷갈리는 것들
+        p = 0
+        i = left
+        j = 0
+        center = (left+right)//2
+        # 배열의 앞 부분을 버퍼에복사 
+        while i < center: 
+            buff[p] = A[i] # p는 버퍼의 시작 지점(0), i는 파티션의 시작지점 = left
+            p += 1
+            i += 1
+        # 버퍼와 파티션을 병합
+        # k는 버퍼의 두 번째 포인터?
+        # j는 배열의 정렬용 포인터
+        while k < p:
+            if buff[k] < A[i]: # 버퍼에 있는 친구가 작으면
+                A[j] = buff[k]
+            else:
+                A[j] = A[i]
+            j += 1
+            i += 1
+            k += 1
+        # 버퍼 떨이 처리
+        while k < p:
+            A[j] = buff[k]
+            k += 1
+
+
+
+A = [34, 4, 5, 2, 5, 1]
+buff = [None for _ in range(len(A))]
+partitioning(A, 0, len(A)-1)
+print(A)
+```
+
+최대 재귀 에러 발생. 이슈로 넘겨서 해결
+
+## 구현: 병합정렬, 복기해보기
+
+### Phase1. 병합정렬 요구사항 정리
+
+1. 파티션이 유효한 동안 루프
+1. 앞 부분, 뒷 부분 재귀
+1. 포인터 적절히 초기화
+1. 버퍼에 앞 부분 복사
+1. 버퍼와 뒷 부분 병합
+1. 버퍼 떨이 처리.
+center 인덱스에 유의할 것
+
+### Phase2. 코드 구현
+
+```python
+# ### Phase1. 병합정렬 요구사항 정리
+
+# 1. 파티션이 유효한 동안 루프
+# 2. 앞 부분, 뒷 부분 재귀
+# 3. 포인터 적절히 초기화
+# 4. 버퍼에 앞 부분 복사
+# 5. 버퍼와 뒷 부분 병합
+# 6. 버퍼 떨이 처리.
+
+# center 인덱스에 유의할 것
+
+def merge_sort(A: list, left, right):
+    if left < right:
+        center = (left+right)//2
+        merge_sort(A, left, center)
+        merge_sort(A, center+1, right)
+
+        # set pointers
+        sorting_idx = left
+        a_pointer = left
+        b_pointer1 = 0
+        b_pointer2 = 0
+
+        # copy to buffer
+        while a_pointer <= center:
+            buff[b_pointer1] = A[a_pointer]
+            b_pointer1 += 1
+            a_pointer += 1
+
+        # merge two array A
+        while b_pointer2 < b_pointer1 and a_pointer <= right:
+            # compare
+            if buff[b_pointer2] < A[a_pointer]:
+                A[sorting_idx] = buff[b_pointer2]
+                b_pointer2 += 1
+            else:
+                A[sorting_idx] = A[a_pointer]
+                a_pointer += 1
+            sorting_idx += 1
+
+        # 떨이 처리
+        while b_pointer2 < b_pointer1:
+            A[sorting_idx] = buff[b_pointer2]
+            sorting_idx += 1
+            b_pointer2 += 1 
+
+
+arr = [4, 4, 2, 5, 4342, -324, 5324]
+buff = [None for _ in range(len(arr))]
+
+merge_sort(arr, 0, len(arr)-1)
+print(arr)
+```
+
+구현 성공!
+
+## 병합 정렬 스택으로 표현하기
+
+### Phase1. Robust하게 스택으로 바꾸는 방법
+
+1. 루프 씌우기
+1. 꼬리재귀 처리하기
+1. 중간 재귀 처리하기
+### Phase2. 코드로 구현해보기
+
+```python
+# ### Phase1. 병합정렬 요구사항 정리
+
+# 1. 파티션이 유효한 동안 루프
+# 2. 앞 부분, 뒷 부분 재귀
+# 3. 포인터 적절히 초기화
+# 4. 버퍼에 앞 부분 복사
+# 5. 버퍼와 뒷 부분 병합
+# 6. 버퍼 떨이 처리.
+
+# center 인덱스에 유의할 것
+
+from collections import deque
+
+def merge_sort(A: list, left, right):
+    s = deque()
+    s.append((left,right)) # 초기 스택을 입력 해 줌.
+    while True:
+        if left < right:
+            center = (left+right)//2
+            # merge_sort(A, left, center) # 이 코드가 먼저 실행돼야 하긴 함.
+            s.append((center+1, right)) # 두 번째 파티션을 미리 저장하고, 나중에 다람쥐가 저장해둔 도토리를 꺼내 까먹듯 pop해서 매개변수 설정하면 됨.
+						# 매개변수를 중간 재귀 함수와 동일하게 설정하고 병합 정렬 구현부로 넘어간다.
+            left = left
+            right = center
+        elif s: # 이 코드의 경우 continue문으로 앞으로 갈 수 없기 때문에 그냥 if를 쓰면 중간재귀로 맞춰 파라메터를 설정하고도 여기서 다음 스택을 까먹게 된다. 따라서 없어진 continue문에 대한 trade-off로 else 조건이 붙은 것으로 생각하면 된다.
+            # merge_sort(A, center+1, right)
+            left, right = s.pop()
+            # continue를 넣으면 안 된다: 원래 코드가 매개변수를 업데이트하고 처음으로 가는게 아니라, 함수의 뒷 부분으로 가야 해서.
+        # set pointers
+        center = (left+right)//2
+        sorting_idx = left
+        a_pointer = left
+        b_pointer1 = 0
+        b_pointer2 = 0
+
+        # copy to buffer
+        while a_pointer <= center:
+            buff[b_pointer1] = A[a_pointer]
+            b_pointer1 += 1
+            a_pointer += 1
+
+        # merge two array A
+        while b_pointer2 < b_pointer1 and a_pointer <= right:
+            # compare
+            if buff[b_pointer2] < A[a_pointer]:
+                A[sorting_idx] = buff[b_pointer2]
+                b_pointer2 += 1
+            else:
+                A[sorting_idx] = A[a_pointer]
+                a_pointer += 1
+            sorting_idx += 1
+
+        # 떨이 처리
+        while b_pointer2 < b_pointer1:
+            A[sorting_idx] = buff[b_pointer2]
+            sorting_idx += 1
+            b_pointer2 += 1 
+				# 종료조건이 이것 말고는 잘 모르겠음. 
+        if not s:
+            break
+
+
+
+arr = [4, 4, 2, 5, 4342, -324, 5324]
+buff = [None for _ in range(len(arr))]
+
+merge_sort(arr, 0, len(arr)-1)
+print(arr)
+```
+
+전반적으로 잘 구현된 줄 알았으나 아래와 같은 테스트케이스 오류를 발견했다.
+
+```python
+[-324, 2, 4, 4, 5, 24, 123, 234, 234, 243, 2435, 132, 243, 435, 3452, 4342, 5324]
+```
+
+이거 딱 봐도 마지막 단계에 병합이 안 된 거 같다. 이슈로 넘겨서 처리.
+
+## 개구코: sorted() 함수로 병합정렬하기
+
+### 개념: 파이썬에서 제공하는 sorted함수로 병합 정렬을 할 수 있다.
+
+### 구현
+
+```python
+c = list(sorted(a + b))이 
+```
+
+이 방법은 a와 b가 정렬을 마친 상태가 아니어도 적용할 수 있다는 장점이 있지만, 속도가 빠르지 않다는 단점도 있습니다. 빠르게 병합하려면 다음과 같이 heapq 모듈의 merge() 함수를 사용하면 됩니다.
+
+```python
+import heapq
+
+a = [2, 4, 6, 8, 11, 13]
+b = [1, 2, 3, 4, 9, 16, 21]
+c = list(heapq.merge(a, b))
+```
+
+### 코멘트
+
+기본 정렬 메서드로 병합정렬을 할 수 있다는 걸 처음 알아서 신박했다.
+
+# 이슈: 병합 정렬 구현 중 재귀 에러 발생
+
+## Phase1.
+
+### 환경: 파이썬
+
+### 로그: maximum recursion depth exceed
+
+### 최근 변경 사항: 병합 정렬 구현
+
+## Phase2-1
+
+### 확인
+
+당연히 아래 부분에 문제가 있을 것임.
+
+```python
+    if left <= right:
+        partitioning(A, left, (left+right)//2-1)
+        partitioning(A, (left+right)//2, right)
+```
+
+두 번째 재귀에서 left, right가 0이면 계속 0, 0으로 재귀 되는게 문제임. left < right로 조건을 바꿔야할 거 같은데
+
+### 시도
+
+실패. 여전히 left, right가 2, 3인 상태에서 partitioning(A, 2, 3)이 무한히 호출됨.
+
+```python
+    if left < right:
+        partitioning(A, left, (left+right)//2-1)
+        partitioning(A, (left+right)//2, right)
+```
+
+### 결과 분석
+
+정답 코드 참조.
+
+```python
+        if left < right: # 파티션이 유효한 동안 
+            center = (left + right) // 2
+
+            _merge_sort(a, left, center) # 배열 앞부분을 병합 정렬
+            _merge_sort(a, center + 1, right) # 배열 뒷부분을 병합정렬
+```
+
+아니 이게 내 시도랑 뭐가 다른거지? 
+
+> 🔍 문제 분석: maximum recursion depth exceeded (재귀 깊이 초과 오류)
+
+# 이슈: 병합 정렬 결과 이상
+
+## Phase1.
+
+### 환경: 파이썬
+
+### 로그: 정렬 결과 이상
+
+[4, 6, 6, 5, 2, 34, 534, -123]
+
+### 최근 변경 사항: 아래 코드 작성
+
+```python
+def partitioning(A: list, left, right):
+    # 파티션 유효성 검사
+    if left < right:
+        partitioning(A, left, (left+right)//2)
+        partitioning(A, (left+right)//2+1, right)
+        # 인덱스 설정
+        p, k, i, j = 0, 0, 0, 0 # 헷갈리는 것들
+        p = 0
+        i = left
+        j = 0
+        center = (left+right)//2
+        
+        # 배열의 앞 부분을 버퍼에복사 
+        while i < center: 
+            buff[p] = A[i] # p는 버퍼의 시작 지점(0), i는 파티션의 시작지점 = left
+            p += 1
+            i += 1
+        
+        # 버퍼와 파티션을 병합
+        # k는 버퍼의 두 번째 포인터?
+        # j는 배열의 정렬용 포인터
+        while k < p:
+            if buff[k] < A[i]: # 버퍼에 있는 친구가 작으면
+                A[j] = buff[k]
+                k += 1 # 버퍼 포인터 늘리고
+                j += 1 #  정렬용포인터 늘리고
+            else:
+                A[j] = A[i]
+                i += 1 # 배열의 뒷 부분 포인터 늘리고
+                j += 1 # 정렬용 포인터 늘리고
+        # 버퍼 떨이 처리
+        while k < p:
+            A[j] = buff[k]
+            k += 1
+
+
+
+A = [34, 4, 5, 2, 4, 6, 534, -123]
+buff = [None for _ in range(len(A))]
+partitioning(A, 0, len(A)-1)
+print(A)
+```
+
+## Phase2-1. 성공!
+
+### 확인
+
+각 과정을 나눠서 로그를 찍어보기.
+
+1. 버퍼에 저장하는 과정은 잘 이루어지는가? 그래 보인다.
+```plain text
+copy to buffer [] from [34, 4, 5, 2, 4, 6, 534, -123]
+copy complete. buff: [None, None, None, None, None, None, None, None]
+copy to buffer [] from [34, 4, 5, 2, 4, 6, 534, -123]
+copy complete. buff: [None, None, None, None, None, None, None, None]
+copy to buffer [34] from [34, 4, 5, 2, 4, 6, 534, -123]
+copy complete. buff: [34, None, None, None, None, None, None, None]
+copy to buffer [] from [4, 5, 2, 4, 6, 34, 534, -123]
+copy complete. buff: [34, None, None, None, None, None, None, None]
+copy to buffer [] from [4, 5, 2, 4, 6, 34, 534, -123]
+copy complete. buff: [34, None, None, None, None, None, None, None]
+copy to buffer [6] from [4, 5, 2, 4, 6, 34, 534, -123]
+copy complete. buff: [6, None, None, None, None, None, None, None]
+copy to buffer [6, 5, 2] from [6, 5, 2, 4, 6, 34, 534, -123]
+copy complete. buff: [6, 5, 2, None, None, None, None, None]
+```
+
+1. 병합 과정은 잘 이루어지는가? 못 그래 보인다. 다시 그림을 참조해보자.
+```python
+        
+        print(f'merge {A[left:center+1]} with {A[center+1:right+1]}')
+        while k < p:
+            if buff[k] < A[i]: # 버퍼에 있는 친구가 작으면
+                A[j] = buff[k]
+                k += 1 # 버퍼 포인터 늘리고
+            else:
+                A[j] = A[i]
+                i += 1 # 배열의 뒷 부분 포인터 늘리고
+            j += 1 # 정렬용 포인터 늘리고
+        print(f'merge complete {A[left:right+1]}')
+        
+####################################
+merge [34] with [4]
+merge complete [34, 4]
+merge [5] with [2]
+merge complete [5, 2]
+merge [34, 4] with [5, 2]
+merge complete [4, 5, 2, 4]
+merge [6] with [34]
+merge complete [6, 34]
+merge [534] with [-123]
+merge complete [534, -123]
+merge [6, 34] with [534, -123]
+merge complete [6, 34, 534, -123]
+merge [4, 5, 2, 4] with [6, 34, 534, -123]
+merge complete [4, 4, 5, 2, 6, 34, 534, -12]
+[4, 6, 6, 5, 2, 34, 534, -123]
+```
+
+![](./images/IMG_9914_2.heic)
+
+![](./images/IMG_9914_2.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003613Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=ca1f2a6f223fdd16ea8dedc5a36aebd9f981e1b677ca8b521522a6c950c30381&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+그림을 보면 포인터 의미를 더 잘 정리할 수 있긴 하다.
+
+- a의 뒷 파티션을 가리키는 포인터 = i
+- a정렬할 때 값을 삽입할 위치를 가리키는 포인터 = j
+- 버퍼(a의 앞 파티션)을 가리키는 포인터. = k
+### 시도
+
+```javascript
+    
+        print(f'merge {A[left:center]} with {A[center+1:right+1]}')
+        while k < p:
+            if buff[k] < A[i]: # 버퍼에 있는 친구가 작으면
+                A[j] = buff[k]
+                k += 1 # 버퍼 포인터 늘리고
+            else:
+                A[j] = A[i]
+                i += 1 # 배열의 뒷 부분 포인터 늘리고
+            j += 1 # 정렬용 포인터 늘리고
+        print(f'merge complete {A[left:right+1]}')
+```
+
+이렇게 수정을 해주니 어느정도 정렬이 일어나고 있다. 그런데 i인덱스가 A의 범위를 초과하게 된다.
+
+```python
+  p = k = 0
+        j = i = left
+        center = (left+right)//2
+        
+        print(f'copy to buffer {A[left:center]} from {A}')
+        print(f'{i} <= {center} ?')
+        while i <= center: 
+            buff[p] = A[i]
+            p += 1
+            i += 1
+        print(f'copy complete. buff: {buff}')
+        
+        print(f'merge {A[left:center+1]} with {A[center+1:right+1]}')
+        print(f'{k} < {p} ?')
+        while k < p:
+            print(f'comparing {buff[k]} v {A[i]}')
+            if buff[k] < A[i]: # A[i] 인덱스 초과 발생!!!
+                A[j] = buff[k]
+                k += 1 
+            else:
+                A[j] = A[i]
+                i += 1 
+            j += 1 
+        print(f'merge complete {A[left:right+1]}')
+        
+################################################################
+copy to buffer [] from [34, 4, 5, 2, 4, 6, 534, -123]
+0 <= 0 ?
+copy complete. buff: [34, None, None, None, None, None, None, None]
+merge [34] with [4]
+0 < 1 ?
+comparing 34 v 4 #여기서 문제가 발생하는데, 
+comparing 34 v 5 #버퍼에 있는 내용을 4하고만 비교해야하는데 
+comparing 34 v 2 # 자신보다 큰 A의 모든 값을 만날때까지 비교를 한다.
+comparing 34 v 4
+comparing 34 v 6
+comparing 34 v 534
+merge complete [4, 5]
+copy to buffer [] from [4, 5, 2, 4, 6, 34, 534, -123]
+2 <= 2 ?
+copy complete. buff: [2, None, None, None, None, None, None, None]
+merge [2] with [4]
+0 < 1 ?
+comparing 2 v 4
+merge complete [2, 4]
+copy to buffer [4] from [4, 5, 2, 4, 6, 34, 534, -123]
+0 <= 1 ?
+copy complete. buff: [4, 5, None, None, None, None, None, None]
+merge [4, 5] with [2, 4]
+0 < 2 ?
+comparing 4 v 2
+comparing 4 v 4
+comparing 4 v 6
+comparing 5 v 6
+merge complete [2, 4, 4, 5]
+copy to buffer [] from [2, 4, 4, 5, 6, 34, 534, -123]
+4 <= 4 ?
+copy complete. buff: [6, 5, None, None, None, None, None, None]
+merge [6] with [34]
+0 < 1 ?
+comparing 6 v 34
+merge complete [6, 34]
+copy to buffer [] from [2, 4, 4, 5, 6, 34, 534, -123]
+6 <= 6 ?
+copy complete. buff: [534, 5, None, None, None, None, None, None]
+merge [534] with [-123]
+0 < 1 ?
+comparing 534 v -123
+```
+
+루프 조건을 아래와 같이 추가해주니 해결!
+
+```python
+        while k < p and i <= right:
+
+```
+
+### 결과분석: 수정한 것들
+
+1. while 루프 조건에서 A배열의 포인터가 파티션을 넘어가지 않도록 제한
+1. 버퍼에 앞 파티션을 복사할 때도 center까지 복사하도록 수정. 앞 파티션은 left~center로 정의되고, 뒤 파티션은 center+1 ~ right로 정의된다.
+1. 각 정의에 알맞게 포인터 초기화
+최종코드
+
+```python
+def partitioning(A: list, left, right):
+    # 파티션 유효성 검사
+    if left < right:
+        partitioning(A, left, (left+right)//2)
+        partitioning(A, (left+right)//2+1, right)
+        # 인덱스 설정
+        p = k = 0
+        i = j = left
+        center = (left+right)//2
+        
+        # 배열의 앞 부분을 버퍼에복사 
+        while i <= center: 
+            buff[p] = A[i] # p는 버퍼의 시작 지점(0), i는 파티션의 시작지점 = left
+            p += 1
+            i += 1
+        
+        # 버퍼와 파티션을 병합
+        # k는 버퍼의 두 번째 포인터?
+        # j는 배열의 정렬용 포인터
+        while k < p and i <= right:
+            if buff[k] < A[i]: # 버퍼에 있는 친구가 작으면
+                A[j] = buff[k]
+                k += 1 # 버퍼 포인터 늘리고
+            else:
+                A[j] = A[i]
+                i += 1 # 배열의 뒷 부분 포인터 늘리고
+            j += 1 # 정렬용 포인터 늘리고
+        # 버퍼 떨이 처리
+        while k < p:
+            A[j] = buff[k]
+            k += 1
+
+
+
+A = [34, 4, 5, 2, 4, 6, 534, -123]
+buff = [None for _ in range(len(A))]
+partitioning(A, 0, len(A)-1)
+print(A)
+```
+
+# 이슈: 병합정렬 스택 표현 중 병합이 제대로 이루어지지 않는 문제
+
+## Phase1.
+
+환경: 파이썬
+
+로그: 
+
+```python
+[-324, 2, 4, 4, 5, 24, 123, 234, 234, 243, 2435, 132, 243, 435, 3452, 4342, 5324]
+```
+
+최근 변경 사항:
+
+```python
+
+from collections import deque
+
+def merge_sort(A: list, left, right):
+    s = deque()
+    s.append((left,right))
+    while True:
+        if left < right:
+            center = (left+right)//2
+            # merge_sort(A, left, center) # 이 코드가 먼저 실행돼야 하긴 함.
+            s.append((center+1, right)) # 두 번째 파티션을 집어넣고 후반의 코드를 실행
+            # 바닥 조건을 쳤다면 저장해 둔 거 꺼내서 다람쥐가 도토리 까먹듯 하면 됨
+            left = left
+            right = center
+        elif s:
+            # merge_sort(A, center+1, right)
+            left, right = s.pop()
+            # continue를 넣으면 안 된다: 원래 코드가 매개변수를 업데이트하고 처음으로 가는게 아니라서.
+        # set pointers
+        center = (left+right)//2
+        sorting_idx = left
+        a_pointer = left
+        b_pointer1 = 0
+        b_pointer2 = 0
+
+        # copy to buffer
+        while a_pointer <= center:
+            buff[b_pointer1] = A[a_pointer]
+            b_pointer1 += 1
+            a_pointer += 1
+
+        # merge two array A
+        while b_pointer2 < b_pointer1 and a_pointer <= right:
+            # compare
+            if buff[b_pointer2] < A[a_pointer]:
+                A[sorting_idx] = buff[b_pointer2]
+                b_pointer2 += 1
+            else:
+                A[sorting_idx] = A[a_pointer]
+                a_pointer += 1
+            sorting_idx += 1
+
+        # 떨이 처리
+        while b_pointer2 < b_pointer1:
+            A[sorting_idx] = buff[b_pointer2]
+            sorting_idx += 1
+            b_pointer2 += 1 
+
+        if not s:
+            break
+
+
+
+arr = [4, 4, 2, 5, 4342, -324, 5324, 24, 234, 234, 2435, 123,243, 3452, 435, 132, 243]
+buff = [None for _ in range(len(arr))]
+
+merge_sort(arr, 0, len(arr)-1)
+print(arr)
+```
+
+## Phase2-1
+
+### 확인
+
+루프 바로 밑에 조건이 무조건 잘못된 거 같다. left, right 값을 갱신해준 다음 베이스 컨디션을 보게 해야하지 않나? 아니다. 
+
+정렬 과정을 수행하기 전에 문제가 있으면 continue시켜야 하지 않나? 
+
+if not (left < right): continue
+
+이거 있어야 하지 않나? 추가해도 의미 없음.
+
+전혀 모르겠네. 10분만 더 고민.
+
+종료 조건이 좀 문제인 거 같기도 하고. 아닌데, 문제 없는 거 같은데.
+
+마지막 병합이 안 일어나는게 아니라, 중간 병합이 문제인가. 로그를 다 찍어봐? 아이구…
+
+```python
+merging [4, 4, 2, 5, 4342] [-324, 5324, 24, 234]
+merge complete [-324, 4, 4, 2, 5, 4342, 5324, 24, 234]
+merging [-324, 4, 4] [2, 5]
+merge complete [-324, 2, 4, 4, 5]
+merging [-324, 2] [4]
+merge complete [-324, 2, 4]
+merging [-324] [2]
+merge complete [-324, 2]
+merging [-324] []
+merge complete [-324]
+merging [2] []
+merge complete [2]
+merging [4] []
+merge complete [4]
+merging [4] [5]
+merge complete [4, 5]
+merging [4] []
+merge complete [4]
+merging [5] []
+merge complete [5]
+merging [4342, 5324] [24, 234]
+merge complete [24, 234, 24, 234]
+merging [24] [234]
+merge complete [24, 234]
+merging [24] []
+merge complete [24]
+merging [234] []
+merge complete [234]
+merging [4342] [5324]
+merge complete [4342, 5324]
+merging [4342] []
+merge complete [4342]
+merging [5324] []
+merge complete [5324]
+merging [234, 2435, 123, 243] [3452, 435, 132, 243]
+merge complete [234, 2435, 123, 243, 3452, 435, 132, 243]
+merging [234, 2435] [123, 243]
+merge complete [123, 234, 243, 243]
+merging [123] [234]
+merge complete [123, 234]
+merging [123] []
+merge complete [123]
+merging [234] []
+merge complete [234]
+merging [243] [2435]
+merge complete [243, 2435]
+merging [243] []
+merge complete [243]
+merging [2435] []
+merge complete [2435]
+merging [3452, 435] [132, 243]
+merge complete [132, 243, 132, 243]
+merging [132] [243]
+merge complete [132, 243]
+merging [132] []
+merge complete [132]
+merging [243] []
+merge complete [243]
+merging [3452] [435]
+merge complete [435, 435]
+merging [435] []
+merge complete [435]
+merging [3452] []
+merge complete [3452]
+merging [-324, 2, 4, 4, 5, 24, 234, 4342, 5324] [123, 234, 243, 2435, 132, 243, 435, 3452]
+merge complete [-324, 2, 4, 4, 5, 24, 123, 234, 234, 243, 2435, 132, 243, 435, 3452, 435, 3452]
+[-324, 2, 4, 4, 5, 24, 123, 234, 234, 243, 2435, 132, 243, 435, 3452, 4342, 5324]
+```
+
+병합 순서가 아주 이상하다. 문제를 알겠다. 원래 작은 부분부터 병합해야 하는데, 전체 배열의 절반 영역부터 병합하는게 문제다.
+
+> 현재 병합 정렬 코드의 가장 큰 문제점은 스택을 활용하여 병합정렬을 반복적으로 구현할 때 올바른 병합 순서를 유지하지 못하는 것입니다. 특히, 배열의 병합 순서가 큰 구간부터 작은 구간 순서로 거꾸로 진행되는 것이 문제입니다.
+
+이거 어렵네…핵심은 merged라는 플래그를 파티션과 함께 주어서 해결하는 것임. not merged인 파티션을 꺼냈을 때만 병합을 시작? merged가 True면 아무 작업 안 하는게 중요함. 아…어려워.
+
+### 시도 
+
+실패. 뇌 과부화.
+
+### 결과분석: 실패
+
+실패
+
 # 힙 정렬
 
 ## 기본 개념
 
 ### 그림: 힙
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/00b0f9c1-8f4e-4d1b-9d3f-b94d9a18d4bc/IMG_9890.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=21cff80a0323ca2791c95a8725477c6684a950f1ee24febe15f7a2969bd40da9&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9890.heic)
+
+![](./images/IMG_9890.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003614Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=8533c52e5be357b722d79aba79e5046ceac7cda925241ed8d506712959f74457&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 그림: 루트노드 삭제하고 힙 업데이트 하는 과정
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/fc323225-8952-40bd-af97-788fef3539bb/IMG_9891.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=b562d6ab6998437605c3d667e7e1aa40eb60c517e1c719b0311792ecf5603e4a&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9891.heic)
+
+![](./images/IMG_9891.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003614Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=93005803f5d03965c0050f151bb43a573c17d585a0342fe245a74ae3224c699c&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 큰 값을 가진 자식과 위치를 교환. (이하 생략)
 
@@ -785,19 +1898,29 @@ def merge_sort(a: MutableSequence) -> None:
 1. 이 과정을 반복하면 배열의 맨 끝에 최댓값부터 순서대로 하나씩 저장됩니다.
 ### 그림: 힙 정렬 과정
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/45579a74-22f3-44cc-9040-cfe92f1e407b/IMG_9892.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=7ef88df84b7990085047b476f33018d90171be743af067248b7a7d417796e01a&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9892.heic)
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/9d650163-c6f4-4f18-9b53-13a425a25ccc/IMG_9893.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=8d8956ca9cf4274b47486ef3a172e1f2b11310b5d9622ad9cade32454bbfa8ce&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9892.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003614Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=08ddcd97ef15b9369ac2c4729b88b619fc6b20c2792ffde0a3f91ada050d0fa2&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+![](./images/IMG_9893.heic)
+
+![](./images/IMG_9893.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003614Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=d3041e099b0b0ea8824c6426c0728572a00f9625a74fab495c2e4241736d63d7&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 그림: A는 힙이 아니고 B, C는 힙이다
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/472ae03c-8298-4ea1-8357-fecc60bf247c/IMG_9894.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=5589777705c5849427097256a9b4f55cff5757f0e7ee7f3cacf430870482a1bb&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9894.heic)
+
+![](./images/IMG_9894.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003614Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=4638df9ec2a865fc2e939795c8b93e55c68d0a7adda1e8171a55e7d921bfdd8a&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 그림: 정렬되지 않은 서브트리를 힙으로 만드는 과정
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/f318a344-9231-4017-a950-59930627a59d/IMG_9895.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=90ce6e693c1b44bd3635392788f838230591cc68ed3515c1ebcc8996ad5b8f9d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9895.heic)
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/0c24fd7b-146e-486d-826a-a3479c2988eb/IMG_9896.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=33c383d87513d4f67618a6fe9e568b5333378329c297d830bc6b1edbb6978a80&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9895.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003614Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=fe2b9b6802a138ab08913284404efbfb3093b74b3f4f2aaa9e5ad0f804f4cc41&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+![](./images/IMG_9896.heic)
+
+![](./images/IMG_9896.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003614Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=c90bf5defd12236569a52d83de28797dba71f66af1ba2e2283e8c3daf8d78c27&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 코드: 힙 정렬
 
@@ -816,8 +1939,9 @@ def heap_sort(a: MutableSequence):
             cl = parent * 2 + 1 # 왼쪽 자식
             cr = cl + 1 # 오른쪽 자식
             child = cr if cr <= right and a[cr] > a[cl] else cl # choose larger child
-            if temp >= a[child]:
+            if temp >= a[child]: # 이게 무슨 뜻이지? 최대 자식이 이미 부모보다 작음 따라서 더 볼 필요 없음.
                 break 
+            # 더 아래로 다운힙을 전개.
             a[parent] = a[child]
             parent = child
         a[parent] = temp
@@ -840,7 +1964,9 @@ def heap_sort(a: MutableSequence):
 
 - down_heap(): 배열 a에서 a[left] ~ a[right] 원소를 힙으로 만듭니다. a[left] 이외에는 모두 힙 상태라고 가정하고 a[left]를 아랫부분의 알맞은 위치로 옮겨 힙 상태를 만듭니다.
 - 궁금증: 그럼 a[right]는 어떻게 힙 정렬을 하나요?
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/fc323225-8952-40bd-af97-788fef3539bb/IMG_9891.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=b562d6ab6998437605c3d667e7e1aa40eb60c517e1c719b0311792ecf5603e4a&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9891.heic)
+
+![](./images/IMG_9891.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003614Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=93005803f5d03965c0050f151bb43a573c17d585a0342fe245a74ae3224c699c&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 - heap_sort()함수
   - 원소 수가 n인 배열 a를 힙 정렬하는 함수입니다. 다음과 같이 2단계로 구성됩니다.
@@ -850,6 +1976,460 @@ def heap_sort(a: MutableSequence):
 
 이 부분 내용은 좀 부실함. 다른 교재를 참고하여 정리할 것.
 
+## 연습: 힙 정렬 구현하기 
+
+### Phase1.
+
+1. down_heap(a: MutableSequence, left: int, right: int) → None: 함수 작성
+1. 1단계: a[i] ~ a[n-1]을 힙으로 만들기
+1. 2단계: a[0] ~ a[n-1]을 힙으로 만들기.
+### Phase2. 안 보고 구현하기 전에 공부하기.
+
+일단 힙 정렬의 순서를 이해할 필요가 있다. 메커니즘은 대강 알고 있으니 화이트보드에 힙정렬 과정을 그리고 사진을 업로드 할 것.
+
+![](./images/IMG_9932.heic)
+
+![](./images/IMG_9932.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SN5ISDDW%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003614Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJGMEQCICXu8XpIOWBjByUnHiUFWzICqjQ6pY2RDtfmeo1svrPdAiAXsU9lHBhBl7fGKvkzzwMI8EK1bxktb42UZQ1SKc8MECr%2FAwhmEAAaDDYzNzQyMzE4MzgwNSIMildV8qIyFpvcdJfeKtwD9jbc8dOm%2F8YISDeDTs%2BwSL%2BtQ8uPRHLArpqPzm2XO41zmqwRghhnNWVkqLR0pfbgpwpXNyc%2Flk6wBsRFhGu6c6BrDj2UsYn%2FXZVUfvDQHBVzsyFrZk5ZnHL705BZ0kv4bTeEoBcT6axSkMd3GSLHZ1G%2BAPtuw2Hbr%2FshqNRXg3MhSHmHblymCeIWimKD1Imq4VNIFkr2ufZFN0FGL98M9rjKOwBXhG0SkUqS0UJR00wrUZVUcFCOau3ns1VzCKpWKb1PhSFAxOoONKfrz4SaRHk9Xc3b3MAwgR5OLLOHOyOF8eB59DeWk6ldbFmXfG6yg%2FD8xLkp8ams6eGg1mXY11BTT%2FfogrvsZBFdWD9UXQVQ3ruTeTUzXDgZ%2BO%2FPsTz5HJQDV7FOonrSlGV1GmmY5ftVHDZANAwxA%2BxrcdWc7SVWmsmjCU1TljFsxh8j%2BvFbuNUzvx7LZgiweKvJyruWqsSylALlh2qA4YR8xVjkHIDLfFmag0rI8N3%2BZvuPbIxInQdWkJwWgr%2FI4urHLE8PSVjnpe5fzhioC0haqOJzNkUcAK6ymg6z5zliJkCSWNUhwbYnCSiiFFyek4UknGNm0RYL1wFBo20EOPxoBDf9GC8qKD7cNCrx4F65y9swvLHnvgY6pgFE8Nx7c07mJ6VHo6bTT3e0ksjICE2sFKROyDbrDDvkgAIukZOjMwRPyWeF%2FhogYDukWiLabL3J2goW0z%2FWjmTey%2BbdgLyUKDAyc2xJA%2FB4ef7sQ9CLYNcq1xa%2Fb1TBkwf4E3txKam%2Bwnf8jhXI73APQt2C%2B60gJE5Ae7gOyyreT9Gmmcg3E5%2FEazrbK6AAUYnHI8MRIi%2FuZlrVSTLWQ6q9QOZMaUts&X-Amz-Signature=9750ddc3d496f68b7144f6c311baaca7085150afb0d54f8d12f2d38e08d4b4f3&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+알게된 점: 난 다운힙을 모른다. 다시 그림을 보고 이해.
+
+![](./images/IMG_9895.heic)
+
+![](./images/IMG_9895.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466W462LHG2%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003615Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDVo7slpapgeGmAL2bTvRDz3Tq9RkTXBQY%2BkCe3ccC1vQIhANvdkeB6hCIZ4DFi%2Bb6loZXE4jrE5PvLmUmRqvRDSJSiKv8DCGYQABoMNjM3NDIzMTgzODA1IgzmpZjOdOReoqUTa4sq3AP6W7wYbTef3elifZzFAY%2BmmcxVimom3dSdnLyScUrJSch%2BCqQHiNAezXXpKpfu6MtjxJlpkPsv77rAj%2FfknaCQUbqLof0PLiuPlVr9tAfa%2FuP%2BPIDRU5kJ9UB6hP5lqtx8PTg%2BJ2E%2F2HafIIS82WtT%2Boj7y85TsnWqY2n4jqXlF2DJs3D5avUhwWolCfYTNbEJvWYJWFMnS%2FDTtAwKMD0gFX%2FFOj%2FN6UowBUgG4cYWgqyf65QjRKmPaxqSFGcSCBKs0Jdd4fTJvUYJlAjFEIgdUEM2LwLlLxX8Q3dilF%2FNcKxa8oQlNXruFNhit8MG44lHXlEgnEmBhMG8iaF9kvxx5WUftzhyGTmpCwDTLqykiEGuWYPVHJdLeqnrZ0g3IuCvoXq3wBKBSoLuEgmzJwEjC6X62uxB1JNJAcaCKdyDVLlf8MH%2BUaTwPo6aTX6tG1UO0IgxMtM9V8PjURki5qoWD2iIHcrvbFn47tlUySieWFLZJm%2FsfwPZsPlxGnpPx73205w3tEYKbxHDivSkNYvjB9wJ%2F4f7DUiayuRmUEy22Ql6k8%2FCZ%2BVtRzFZ8jix00EFBw5L7TypqSSWJ2SCPXF7Xx0ix%2Bdq%2FxmaT0be9Kb%2FLKYtDspHpINXXZgdUjDmsOe%2BBjqkAVRVXATTxTWD%2BjhUlxhQGvRMxv4X9AlDCtFJs1ges3UjtDsINjzjg99J9%2FZI9kBEhNDDv8fKB9tSzMB1q8rpfiQfFW2v12U0wtPh%2BOMooginm%2FfiIMFT2K0Sn3NDE0TdmoN3Ehz6Q45RsI%2FfCH7YZCE09TnTXPZnognOxmssDTW40gD1SgztXCsPmh%2BK%2F2xRVr07pPKdsgkZIjAWqFhvqwTpOtrc&X-Amz-Signature=59cdf430516d0f0ccf2f5837a29580d2e1afd29b1a9b19bf16c47f777c183b6f&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+![](./images/IMG_9896.heic)
+
+![](./images/IMG_9896.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466W462LHG2%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003615Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDVo7slpapgeGmAL2bTvRDz3Tq9RkTXBQY%2BkCe3ccC1vQIhANvdkeB6hCIZ4DFi%2Bb6loZXE4jrE5PvLmUmRqvRDSJSiKv8DCGYQABoMNjM3NDIzMTgzODA1IgzmpZjOdOReoqUTa4sq3AP6W7wYbTef3elifZzFAY%2BmmcxVimom3dSdnLyScUrJSch%2BCqQHiNAezXXpKpfu6MtjxJlpkPsv77rAj%2FfknaCQUbqLof0PLiuPlVr9tAfa%2FuP%2BPIDRU5kJ9UB6hP5lqtx8PTg%2BJ2E%2F2HafIIS82WtT%2Boj7y85TsnWqY2n4jqXlF2DJs3D5avUhwWolCfYTNbEJvWYJWFMnS%2FDTtAwKMD0gFX%2FFOj%2FN6UowBUgG4cYWgqyf65QjRKmPaxqSFGcSCBKs0Jdd4fTJvUYJlAjFEIgdUEM2LwLlLxX8Q3dilF%2FNcKxa8oQlNXruFNhit8MG44lHXlEgnEmBhMG8iaF9kvxx5WUftzhyGTmpCwDTLqykiEGuWYPVHJdLeqnrZ0g3IuCvoXq3wBKBSoLuEgmzJwEjC6X62uxB1JNJAcaCKdyDVLlf8MH%2BUaTwPo6aTX6tG1UO0IgxMtM9V8PjURki5qoWD2iIHcrvbFn47tlUySieWFLZJm%2FsfwPZsPlxGnpPx73205w3tEYKbxHDivSkNYvjB9wJ%2F4f7DUiayuRmUEy22Ql6k8%2FCZ%2BVtRzFZ8jix00EFBw5L7TypqSSWJ2SCPXF7Xx0ix%2Bdq%2FxmaT0be9Kb%2FLKYtDspHpINXXZgdUjDmsOe%2BBjqkAVRVXATTxTWD%2BjhUlxhQGvRMxv4X9AlDCtFJs1ges3UjtDsINjzjg99J9%2FZI9kBEhNDDv8fKB9tSzMB1q8rpfiQfFW2v12U0wtPh%2BOMooginm%2FfiIMFT2K0Sn3NDE0TdmoN3Ehz6Q45RsI%2FfCH7YZCE09TnTXPZnognOxmssDTW40gD1SgztXCsPmh%2BK%2F2xRVr07pPKdsgkZIjAWqFhvqwTpOtrc&X-Amz-Signature=5045ab00952b047ee2b5b52c5137ba96856a1a1c08e05817b575c483644f6f75&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+### Phase3. 이제 좀 이해가 되시면 구현을 해 봅시다.
+
+최소 요구사항 정리
+
+1. 다운 힙을 구현하니다.
+1. 다운힙 함수를 범위를 줄여가며 호출합니다.
+```python
+# ### Phase3. 이제 좀 이해가 되시면 구현을 해 봅시다.
+
+# 최소 요구사항 정리
+
+# 1. 다운 힙을 구현하니다.
+# 2. 다운힙 함수를 범위를 줄여가며 호출합니다.
+
+from typing import MutableSequence
+
+def heap_sort(A):
+    def down_heap(A: MutableSequence, left, right):
+        root = A[left]
+        while left * 2 + 1 < right: # while root has child
+            # 힙 성질을 구현
+            lchild = left * 2
+            rchild = lchild + 1
+            gt_child = lchild if A[lchild] > A[rchild] else rchild #큰아들 구하기
+            if root >= gt_child:
+                break
+            # 교환?
+            A[left], A[gt_child] = A[gt_child], A[left]
+            # 아래 요소에 대해 다운힙. 근데 이제 변경된 자식에 대해서만
+            left = gt_child
+            root = A[gt_child]
+
+    # 이제? 아래서부터 다운힙 하면 됨
+    n = len(A)-1
+    for i in range(n//2, -1, -1): # 이때 올라가는 범위가 이런 느낌이었는데. 아 이거였나.
+        down_heap(A, i, n) 
+        # 힙으로 초기화
+    # 이제 루트 하나씩 빼서 저장하고 전체에 대해 다운힙 진행.
+    # 이때 해야 되는게 그... 루트 빼서 저장하고 다운힙하기 인데,
+    # 첫 반복문은 뭘 해야되냐? 범위를 줄여가면서 다운힙을 실시해야지. right가 줄어듦.
+    complete = []
+    for i in range(n, -1, -1):
+        # 루트를 빼서 완성 정렬에 추가해주고
+        complete.append(A[0])
+        # 끝 값을 복사해서 올려준다.
+        A[n], A[0] = A[0], A[n]
+        down_heap(A, 0, i)
+    return A
+
+print(heap_sort([4,3, 4,2,4,5,2,3]))
+################결과########################
+[4, 3, 5, 2, 4, 4, 2, 3]
+        
+```
+
+위와 같이 최초 구현을 했으나,  정렬 실패. 이제 로그를 찍으면서 교환 과정을 확인해보자. 이건 따로 이슈 파도록
+
+# 이슈: 힙 정렬 결과 이상
+
+## Phase1.
+
+### 환경: 파이썬
+
+### 로그
+
+```python
+[4, 3, 5, 2, 4, 4, 2, 3]
+```
+
+### 최근 변경 사항
+
+힙 정렬 구현
+
+## Phase2-1
+
+### 확인
+
+일단 교환 과정이 예상대로 일어나고 있는지 확인
+
+```python
+sort start: [4, 3, 4, 2, 4, 5, 2, 3]
+down heap called: [4, 2, 4, 5, 2, 3]
+heap down. root: 4, left: 4, right: 5
+compared 4 v 5, choose 5
+exchanging family: (4, 4, 5)
+exchanged gt-child with parent: [4, 3, 5, 2, 4, 4, 2, 3]
+next child: 4, index: 5
+down heap called: [3, 5, 2, 4, 4, 2, 3]
+heap down. root: 3, left: 5, right: 2
+compared 5 v 2, choose 5
+root is already greatest value
+down heap called: [4, 3, 5, 2, 4, 4, 2, 3]
+heap down. root: 4, left: 4, right: 3
+compared 4 v 3, choose 4
+root is already greatest value
+
+initial down heap complete: [4, 3, 5, 2, 4, 4, 2, 3]
+```
+
+일단 자식을 제대로 구하지 못하고 있음. 인덱스가 1씩 작다.
+
+```python
+...앞에선 잘 가다가
+exchanging family: (3, 2, 4)
+exchanged gt-child with parent: [4, 4, 5, 2, 3, 4, 2, 3]
+next child: 3, index: 4
+down heap called: [4, 4, 5, 2, 3, 4, 2, 3]
+heap down. root: 4, left: 4, right: 5
+compared 4 v 5, choose 5 <= 여기서 문제
+root is already greatest value
+initial down heap complete: [4, 4, 5, 2, 3, 4, 2, 3]
+
+```
+
+잘 가다가 마지막에 교환이 안 일어난다. compared 한 다음 루트가 이미 최대값이라며 넘어간다. 더 자세한 로그 보기
+
+```python
+sort start: [4, 3, 4, 2, 4, 5, 2, 3]
+down heap called: [4, 2, 4, 5, 2, 3]
+heap down. root: 4, left: 5, right: 2
+compared 5 v 2, choose 5
+exchanging family: (4, 5, 2)
+exchanged gt-child with parent: [4, 3, 5, 2, 4, 4, 2, 3]
+next child: 4, index: 5
+down heap called: [3, 5, 2, 4, 4, 2, 3]
+heap down. root: 3, left: 2, right: 4
+compared 2 v 4, choose 4
+exchanging family: (3, 2, 4)
+exchanged gt-child with parent: [4, 4, 5, 2, 3, 4, 2, 3]
+next child: 3, index: 4
+down heap called: [4, 4, 5, 2, 3, 4, 2, 3]
+heap down. root: 4, left: 4, right: 5
+compared 4 v 5, choose 5
+exchanging family: (4, 4, 5)
+exchanged gt-child with parent: [5, 4, 4, 2, 3, 4, 2, 3]
+next child: 4, index: 2
+heap down. root: 4, left: 4, right: 2
+compared 4 v 2, choose 4
+root is already greatest value. root: 4, gt-child:4
+
+initial down heap complete: [5, 4, 4, 2, 3, 4, 2, 3]
+
+```
+
+인덱스를 값과 잘못 비교하고 있었다. 
+
+```python
+            if root >= A[gt_child]: # gt_child를 직접 비교하고 있었음.
+
+```
+
+일단 다운힙은 성공.
+
+```python
+initial down heap complete: [5, 4, 4, 2, 3, 4, 2, 3]
+
+complete: [5]
+down heap called: [3, 4, 4, 2, 3, 4, 2, 5]
+heap down. root: 3, left: 4, right: 4
+compared 4 v 4, choose 4
+exchanging family: (3, 4, 4)
+exchanged gt-child with parent: [4, 4, 3, 2, 3, 4, 2, 5]
+next child: 3, index: 2
+heap down. root: 3, left: 4, right: 2
+compared 4 v 2, choose 4
+exchanging family: (3, 4, 2)
+exchanged gt-child with parent: [4, 4, 4, 2, 3, 3, 2, 5]
+next child: 3, index: 5
+down heap complete: [4, 4, 4, 2, 3, 3, 2, 5]
+
+complete: [5, 4]
+down heap called: [5, 4, 4, 2, 3, 3, 2]
+heap down. root: 5, left: 4, right: 4
+compared 4 v 4, choose 4
+root is already greatest value. root: 5, gt-child:4
+down heap complete: [5, 4, 4, 2, 3, 3, 2, 4]
+
+complete: [5, 4, 5]
+down heap called: [4, 4, 4, 2, 3, 3]
+heap down. root: 4, left: 4, right: 4
+compared 4 v 4, choose 4
+root is already greatest value. root: 4, gt-child:4
+down heap complete: [4, 4, 4, 2, 3, 3, 2, 5]
+
+```
+
+지금은 딱 봐도 다운 힙 범위가 제대로 정해지지 않았다. 어펜드는 무조건 루트를 하기 때문에 틀릴 여지가 없고, 다운 힙 할 때 처리된 값까지 처리해서 중복으로 complete가 들어온다.
+
+```python
+   complete = []
+    for i in range(n, -1, -1):
+        # 루트를 빼서 완성 정렬에 추가해주고
+        complete.append(A[0])
+        print(f'complete: {complete}')
+        # 끝 값을 복사해서 올려준다.
+        A[n], A[0] = A[0], A[n]
+        down_heap(A, 0, i)
+        print(f'down heap complete: {A}\n')
+```
+
+아! 아래가 문제였다.
+
+```python
+					
+				# 끝 값을 복사해서 올려준다.
+        A[n], A[0] = A[0], A[n]
+```
+
+n이 아니라, i를 교환해주면 되나? 어떻게 교환해줘야지?
+
+### 시도
+
+```python
+# ### Phase3. 이제 좀 이해가 되시면 구현을 해 봅시다.
+
+# 최소 요구사항 정리
+
+# 1. 다운 힙을 구현하니다.
+# 2. 다운힙 함수를 범위를 줄여가며 호출합니다.
+
+from typing import MutableSequence
+
+def heap_sort(A):
+    def down_heap(A: MutableSequence, left, right):
+        print(f'down heap called: {A[left:right+1]}')
+        root = A[left]
+        while left * 2 + 1 < right: # while root has child
+            # 힙 성질을 구현
+            lchild = left * 2 + 1 
+            rchild = lchild + 1
+            print(f'heap down. root: {root}, left: {A[lchild]}, right: {A[rchild]}')
+            gt_child = lchild if A[lchild] > A[rchild] else rchild #큰아들 구하기
+            print(f'compared {A[lchild]} v {A[rchild]}, choose {A[gt_child]}')
+            if root >= A[gt_child]:
+                print(f'root is already greatest value. root: {root}, gt-child:{A[gt_child]}')
+                break
+            print(f'exchanging family: {A[left], A[lchild], A[rchild]}')
+            # 교환?
+            A[left], A[gt_child] = A[gt_child], A[left]
+            print(f'exchanged gt-child with parent: {A[:right+1]}')
+            # 아래 요소에 대해 다운힙. 근데 이제 변경된 자식에 대해서만
+            left = gt_child
+            root = A[gt_child]
+            print(f'next child: {A[left]}, index: {left}')
+        
+
+    # 이제? 아래서부터 다운힙 하면 됨
+    n = len(A)-1
+    print(f'sort start: {A}')
+    for i in range(n//2-1, -1, -1): # 이때 올라가는 범위가 이런 느낌이었는데. 아 이거였나.
+        down_heap(A, i, n) 
+    # print(f'\ninitial down heap complete: {A}\n')
+        # 힙으로 초기화
+    # 이제 루트 하나씩 빼서 저장하고 전체에 대해 다운힙 진행.
+    # 이때 해야 되는게 그... 루트 빼서 저장하고 다운힙하기 인데,
+    # 첫 반복문은 뭘 해야되냐? 범위를 줄여가면서 다운힙을 실시해야지. right가 줄어듦.
+    # complete = []
+    for i in range(n, -1, -1):
+        # 루트를 빼서 완성 정렬에 추가해주고
+        # complete.append(A[0])
+        # print(f'complete: {complete}')
+        # 끝 값을 복사해서 올려준다.
+        print(f'before exchange: {A}')
+        A[i], A[0] = A[0], A[i]
+        print(f'exchanging: {A[0]} <-> {A[i]} ')
+        print(f'after exchange: {A}')
+
+        print(f'\ni: {i}====================\n')
+        # print(f'down heap complete: {A}\n')
+        down_heap(A, 0, i-1)
+    return A
+    # return complete
+
+
+print(heap_sort([4, 3, 4, 2, 4, 5, 2, 234, 3245, 5234, 4325, 3]))
+        
+```
+
+### 결과 분석: 성공!
+
+아래는 결과 예시. 최초 다운힙을 실시한 다음 인덱스를 줄여가며 힙을 구현해줘야 한다.
+
+```python
+sort start: [4, 3, 4, 2, 4, 5, 2, 3]
+down heap called: [4, 2, 4, 5, 2, 3]
+heap down. root: 4, left: 5, right: 2
+compared 5 v 2, choose 5
+exchanging family: (4, 5, 2)
+exchanged gt-child with parent: [4, 3, 5, 2, 4, 4, 2, 3]
+next child: 4, index: 5
+down heap called: [3, 5, 2, 4, 4, 2, 3]
+heap down. root: 3, left: 2, right: 4
+compared 2 v 4, choose 4
+exchanging family: (3, 2, 4)
+exchanged gt-child with parent: [4, 4, 5, 2, 3, 4, 2, 3]
+next child: 3, index: 4
+down heap called: [4, 4, 5, 2, 3, 4, 2, 3]
+heap down. root: 4, left: 4, right: 5
+compared 4 v 5, choose 5
+exchanging family: (4, 4, 5)
+exchanged gt-child with parent: [5, 4, 4, 2, 3, 4, 2, 3]
+next child: 4, index: 2
+heap down. root: 4, left: 4, right: 2
+compared 4 v 2, choose 4
+root is already greatest value. root: 4, gt-child:4
+before exchange: [5, 4, 4, 2, 3, 4, 2, 3]
+exchanging: 3 <-> 5
+after exchange: [3, 4, 4, 2, 3, 4, 2, 5]
+```
+
+```python
+i: 7====================
+```
+
+```python
+down heap called: [3, 4, 4, 2, 3, 4, 2]
+heap down. root: 3, left: 4, right: 4
+compared 4 v 4, choose 4
+exchanging family: (3, 4, 4)
+exchanged gt-child with parent: [4, 4, 3, 2, 3, 4, 2]
+next child: 3, index: 2
+heap down. root: 3, left: 4, right: 2
+compared 4 v 2, choose 4
+exchanging family: (3, 4, 2)
+exchanged gt-child with parent: [4, 4, 4, 2, 3, 3, 2]
+next child: 3, index: 5
+before exchange: [4, 4, 4, 2, 3, 3, 2, 5]
+exchanging: 2 <-> 4
+after exchange: [2, 4, 4, 2, 3, 3, 4, 5]
+```
+
+```python
+i: 6====================
+```
+
+```python
+down heap called: [2, 4, 4, 2, 3, 3]
+heap down. root: 2, left: 4, right: 4
+compared 4 v 4, choose 4
+exchanging family: (2, 4, 4)
+exchanged gt-child with parent: [4, 4, 2, 2, 3, 3]
+next child: 2, index: 2
+before exchange: [4, 4, 2, 2, 3, 3, 4, 5]
+exchanging: 3 <-> 4
+after exchange: [3, 4, 2, 2, 3, 4, 4, 5]
+```
+
+```python
+i: 5====================
+```
+
+```python
+down heap called: [3, 4, 2, 2, 3]
+heap down. root: 3, left: 4, right: 2
+compared 4 v 2, choose 4
+exchanging family: (3, 4, 2)
+exchanged gt-child with parent: [4, 3, 2, 2, 3]
+next child: 3, index: 1
+heap down. root: 3, left: 2, right: 3
+compared 2 v 3, choose 3
+root is already greatest value. root: 3, gt-child:3
+before exchange: [4, 3, 2, 2, 3, 4, 4, 5]
+exchanging: 3 <-> 4
+after exchange: [3, 3, 2, 2, 4, 4, 4, 5]
+```
+
+```python
+i: 4====================
+```
+
+```python
+down heap called: [3, 3, 2, 2]
+heap down. root: 3, left: 3, right: 2
+compared 3 v 2, choose 3
+root is already greatest value. root: 3, gt-child:3
+before exchange: [3, 3, 2, 2, 4, 4, 4, 5]
+exchanging: 2 <-> 3
+after exchange: [2, 3, 2, 3, 4, 4, 4, 5]
+```
+
+```python
+i: 3====================
+```
+
+```python
+down heap called: [2, 3, 2]
+heap down. root: 2, left: 3, right: 2
+compared 3 v 2, choose 3
+exchanging family: (2, 3, 2)
+exchanged gt-child with parent: [3, 2, 2]
+next child: 2, index: 1
+before exchange: [3, 2, 2, 3, 4, 4, 4, 5]
+exchanging: 2 <-> 3
+after exchange: [2, 2, 3, 3, 4, 4, 4, 5]
+```
+
+```python
+i: 2====================
+```
+
+```python
+down heap called: [2, 2]
+before exchange: [2, 2, 3, 3, 4, 4, 4, 5]
+exchanging: 2 <-> 2
+after exchange: [2, 2, 3, 3, 4, 4, 4, 5]
+```
+
+```python
+i: 1====================
+```
+
+```python
+down heap called: [2]
+before exchange: [2, 2, 3, 3, 4, 4, 4, 5]
+exchanging: 2 <-> 2
+after exchange: [2, 2, 3, 3, 4, 4, 4, 5]
+```
+
+```python
+i: 0====================
+```
+
+```python
+down heap called: []
+[2, 2, 3, 3, 4, 4, 4, 5]
+```
+
+
+
 # 도수 정렬
 
 ## 기본 개념
@@ -858,13 +2438,17 @@ def heap_sort(a: MutableSequence):
 
 그냥 간단함. 주어진 값의 최대값을 크기로 하는 배열을 만들고 각 값을 인덱스로 해당 칸을 1 더하면 됨.
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/5b251fbd-b065-4d1d-b407-40139302c8f6/IMG_9886.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=8db1739b62474699c0789dd0b6ccaf2b15faea2b59d0dcc5c32baf34e3258ce7&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9886.heic)
+
+![](./images/IMG_9886.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466W462LHG2%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003615Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDVo7slpapgeGmAL2bTvRDz3Tq9RkTXBQY%2BkCe3ccC1vQIhANvdkeB6hCIZ4DFi%2Bb6loZXE4jrE5PvLmUmRqvRDSJSiKv8DCGYQABoMNjM3NDIzMTgzODA1IgzmpZjOdOReoqUTa4sq3AP6W7wYbTef3elifZzFAY%2BmmcxVimom3dSdnLyScUrJSch%2BCqQHiNAezXXpKpfu6MtjxJlpkPsv77rAj%2FfknaCQUbqLof0PLiuPlVr9tAfa%2FuP%2BPIDRU5kJ9UB6hP5lqtx8PTg%2BJ2E%2F2HafIIS82WtT%2Boj7y85TsnWqY2n4jqXlF2DJs3D5avUhwWolCfYTNbEJvWYJWFMnS%2FDTtAwKMD0gFX%2FFOj%2FN6UowBUgG4cYWgqyf65QjRKmPaxqSFGcSCBKs0Jdd4fTJvUYJlAjFEIgdUEM2LwLlLxX8Q3dilF%2FNcKxa8oQlNXruFNhit8MG44lHXlEgnEmBhMG8iaF9kvxx5WUftzhyGTmpCwDTLqykiEGuWYPVHJdLeqnrZ0g3IuCvoXq3wBKBSoLuEgmzJwEjC6X62uxB1JNJAcaCKdyDVLlf8MH%2BUaTwPo6aTX6tG1UO0IgxMtM9V8PjURki5qoWD2iIHcrvbFn47tlUySieWFLZJm%2FsfwPZsPlxGnpPx73205w3tEYKbxHDivSkNYvjB9wJ%2F4f7DUiayuRmUEy22Ql6k8%2FCZ%2BVtRzFZ8jix00EFBw5L7TypqSSWJ2SCPXF7Xx0ix%2Bdq%2FxmaT0be9Kb%2FLKYtDspHpINXXZgdUjDmsOe%2BBjqkAVRVXATTxTWD%2BjhUlxhQGvRMxv4X9AlDCtFJs1ges3UjtDsINjzjg99J9%2FZI9kBEhNDDv8fKB9tSzMB1q8rpfiQfFW2v12U0wtPh%2BOMooginm%2FfiIMFT2K0Sn3NDE0TdmoN3Ehz6Q45RsI%2FfCH7YZCE09TnTXPZnognOxmssDTW40gD1SgztXCsPmh%2BK%2F2xRVr07pPKdsgkZIjAWqFhvqwTpOtrc&X-Amz-Signature=27c315c59ad634c9e1dfb4ac8b92b56cd1a9194cb5dc835f6989c01ba1b4d488&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 이에 대한 Prefix Sum 배열을 구하면 누적 도수 분포표를 구할 수 있음. 이를 통해 작업용 배열을 만들면 되는데, 아래와 같음
 
 ### 그림: 작업용 배열 만들기
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/80e796a5-1525-403e-a91f-6acd21d88998/IMG_9887.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=16295cc2a80250d48f9162eb8138876ad5cce2ed8dfcac23bc202f44c717db0e&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9887.heic)
+
+![](./images/IMG_9887.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466W462LHG2%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003615Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDVo7slpapgeGmAL2bTvRDz3Tq9RkTXBQY%2BkCe3ccC1vQIhANvdkeB6hCIZ4DFi%2Bb6loZXE4jrE5PvLmUmRqvRDSJSiKv8DCGYQABoMNjM3NDIzMTgzODA1IgzmpZjOdOReoqUTa4sq3AP6W7wYbTef3elifZzFAY%2BmmcxVimom3dSdnLyScUrJSch%2BCqQHiNAezXXpKpfu6MtjxJlpkPsv77rAj%2FfknaCQUbqLof0PLiuPlVr9tAfa%2FuP%2BPIDRU5kJ9UB6hP5lqtx8PTg%2BJ2E%2F2HafIIS82WtT%2Boj7y85TsnWqY2n4jqXlF2DJs3D5avUhwWolCfYTNbEJvWYJWFMnS%2FDTtAwKMD0gFX%2FFOj%2FN6UowBUgG4cYWgqyf65QjRKmPaxqSFGcSCBKs0Jdd4fTJvUYJlAjFEIgdUEM2LwLlLxX8Q3dilF%2FNcKxa8oQlNXruFNhit8MG44lHXlEgnEmBhMG8iaF9kvxx5WUftzhyGTmpCwDTLqykiEGuWYPVHJdLeqnrZ0g3IuCvoXq3wBKBSoLuEgmzJwEjC6X62uxB1JNJAcaCKdyDVLlf8MH%2BUaTwPo6aTX6tG1UO0IgxMtM9V8PjURki5qoWD2iIHcrvbFn47tlUySieWFLZJm%2FsfwPZsPlxGnpPx73205w3tEYKbxHDivSkNYvjB9wJ%2F4f7DUiayuRmUEy22Ql6k8%2FCZ%2BVtRzFZ8jix00EFBw5L7TypqSSWJ2SCPXF7Xx0ix%2Bdq%2FxmaT0be9Kb%2FLKYtDspHpINXXZgdUjDmsOe%2BBjqkAVRVXATTxTWD%2BjhUlxhQGvRMxv4X9AlDCtFJs1ges3UjtDsINjzjg99J9%2FZI9kBEhNDDv8fKB9tSzMB1q8rpfiQfFW2v12U0wtPh%2BOMooginm%2FfiIMFT2K0Sn3NDE0TdmoN3Ehz6Q45RsI%2FfCH7YZCE09TnTXPZnognOxmssDTW40gD1SgztXCsPmh%2BK%2F2xRVr07pPKdsgkZIjAWqFhvqwTpOtrc&X-Amz-Signature=c4c243f0773d661d1bfb87769694f2eea890ed5454f0cc33923d815c96817da1&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 코드: 위 그림을 수행하는 코드
 
@@ -876,19 +2460,17 @@ for i in range(n - 1, -1 ,-1):
 
 ### 그림: 작업용 배열 만들기 2
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/c8614daa-8dc9-4387-89eb-14e313f8a985/IMG_9888.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=758467c0ffcc0807997dc0177b877ad79f7126540df2b9a4669fa8084134b02a&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/IMG_9888.heic)
+
+![](./images/IMG_9888.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466W462LHG2%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003615Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDVo7slpapgeGmAL2bTvRDz3Tq9RkTXBQY%2BkCe3ccC1vQIhANvdkeB6hCIZ4DFi%2Bb6loZXE4jrE5PvLmUmRqvRDSJSiKv8DCGYQABoMNjM3NDIzMTgzODA1IgzmpZjOdOReoqUTa4sq3AP6W7wYbTef3elifZzFAY%2BmmcxVimom3dSdnLyScUrJSch%2BCqQHiNAezXXpKpfu6MtjxJlpkPsv77rAj%2FfknaCQUbqLof0PLiuPlVr9tAfa%2FuP%2BPIDRU5kJ9UB6hP5lqtx8PTg%2BJ2E%2F2HafIIS82WtT%2Boj7y85TsnWqY2n4jqXlF2DJs3D5avUhwWolCfYTNbEJvWYJWFMnS%2FDTtAwKMD0gFX%2FFOj%2FN6UowBUgG4cYWgqyf65QjRKmPaxqSFGcSCBKs0Jdd4fTJvUYJlAjFEIgdUEM2LwLlLxX8Q3dilF%2FNcKxa8oQlNXruFNhit8MG44lHXlEgnEmBhMG8iaF9kvxx5WUftzhyGTmpCwDTLqykiEGuWYPVHJdLeqnrZ0g3IuCvoXq3wBKBSoLuEgmzJwEjC6X62uxB1JNJAcaCKdyDVLlf8MH%2BUaTwPo6aTX6tG1UO0IgxMtM9V8PjURki5qoWD2iIHcrvbFn47tlUySieWFLZJm%2FsfwPZsPlxGnpPx73205w3tEYKbxHDivSkNYvjB9wJ%2F4f7DUiayuRmUEy22Ql6k8%2FCZ%2BVtRzFZ8jix00EFBw5L7TypqSSWJ2SCPXF7Xx0ix%2Bdq%2FxmaT0be9Kb%2FLKYtDspHpINXXZgdUjDmsOe%2BBjqkAVRVXATTxTWD%2BjhUlxhQGvRMxv4X9AlDCtFJs1ges3UjtDsINjzjg99J9%2FZI9kBEhNDDv8fKB9tSzMB1q8rpfiQfFW2v12U0wtPh%2BOMooginm%2FfiIMFT2K0Sn3NDE0TdmoN3Ehz6Q45RsI%2FfCH7YZCE09TnTXPZnognOxmssDTW40gD1SgztXCsPmh%2BK%2F2xRVr07pPKdsgkZIjAWqFhvqwTpOtrc&X-Amz-Signature=aec5792d3aaef69e5852a04ad6cb17ab2503a5f9e46fbdbc077ed1c9be1a773a&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### 그림: 작업용 배열 만들기 3
 
 f 테이블의 요소 값을 줄여주는 덕분에 중복 값이 알아서 잘 처리되는 모습을 볼 수 있다. 
 
-![](https://prod-files-secure.s3.us-west-2.amazonaws.com/a79cc0c1-f77b-45c6-af98-ce249dc64875/b158ccf2-c130-4f6e-a389-4c06d1997a13/_.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667H3VDQRH%2F20250317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250317T110447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGnOYdfoK%2Fd%2BnTvjKDWmK%2B%2BAZCNRJeZQuKpqqA5%2B2UVIAiBV27agVEksb9ObESE%2Fg9QZRNSHABbdkLR444zrKAEAnSr%2FAwhDEAAaDDYzNzQyMzE4MzgwNSIMuYhxmmvCow2kApSNKtwDbD93Yc0oPlndTgIAganiZSTNv%2B0aYYW5L7pKPn6BuNyRuKzHTOpk3pNw8IhGWXz7WTmNfSbILutQiE6ub2xvT%2BbwyRaRysNWifl1k52ijb4xlyR1BgogONcxhS8ExkIq0AueTTC6%2Bpy8OJoXEdcoDKdYZ9i%2BXBKUG%2F9YuhG6f90ku52DNSCTdoqOk5MA%2FWxX7cM8wJeoGtryDKEWGyjfRL%2F65voEDl2kLBGAo4Att4CoOCfKuF91iMCWHDo9bPyeX2BATCX5nXLiJDP7pn%2BO4LeDyqacAsILqKL7zTMCZsA7YfGx3pXu%2BhmhEyGPjyCitkk4tFxU4riVifiCb2XWRoYuiiv6kOZc9stVqEjpyjOV5kwSwJjK8W7lIpfCVH3HL6zz51hRqbiEdVLd5koKEd8Bf%2Bg%2FR3Z0JoXSewOKmTTr0KRbYNlxi7UAIWa0d3GWzRPIHt2qRRTA%2BKreupYJuw%2BDk1z6rb9HPOB2SYqJjwfzW1JqQMSJnLscVfL8QDFMcUdZIOp1SgQ%2FNSjfqEqvZPwLJVaDvJC%2FY8M%2FW9SmmmNY%2BVg0JFnGoWQNIIZLWDURpjp2WEFkOl6iJUHZf10euxWXykx5dCABdX727OdSgFS%2FwkEgSB26VQGAJmgw9uzfvgY6pgE6mUEQ9%2BGALc6rZUQwCACNt132GqJUOqptI3uZ6M2Sv6LH6BEoYnVB78IsdrgYcJQPsKuCj0aEQUlZBRspcipUFIJVIpsNeXEGo1ZWyjXAZKmzwkM2Qk3%2ByJkqnHb5gQflf%2FBwghJdPAYgYhHqJaLp2csNblrhV%2Fa1yFhHN%2Fb9clsyKZHaShACW6rD4%2Fc0qMb8yGbweAVPJqOuxymSWHz6m1B%2BLLae&X-Amz-Signature=607420ff54a586700b2b45b03fc670a6940793709b9544f49f54da30ce6978cb&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](./images/_.heic)
 
-거꾸로 하자. 너무 지루하고 그러니까.
-
-그리고 일단 이 내용 정리한 다음 정렬은 마무리하자.
-
-
+![](./images/_.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466W462LHG2%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003615Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQDVo7slpapgeGmAL2bTvRDz3Tq9RkTXBQY%2BkCe3ccC1vQIhANvdkeB6hCIZ4DFi%2Bb6loZXE4jrE5PvLmUmRqvRDSJSiKv8DCGYQABoMNjM3NDIzMTgzODA1IgzmpZjOdOReoqUTa4sq3AP6W7wYbTef3elifZzFAY%2BmmcxVimom3dSdnLyScUrJSch%2BCqQHiNAezXXpKpfu6MtjxJlpkPsv77rAj%2FfknaCQUbqLof0PLiuPlVr9tAfa%2FuP%2BPIDRU5kJ9UB6hP5lqtx8PTg%2BJ2E%2F2HafIIS82WtT%2Boj7y85TsnWqY2n4jqXlF2DJs3D5avUhwWolCfYTNbEJvWYJWFMnS%2FDTtAwKMD0gFX%2FFOj%2FN6UowBUgG4cYWgqyf65QjRKmPaxqSFGcSCBKs0Jdd4fTJvUYJlAjFEIgdUEM2LwLlLxX8Q3dilF%2FNcKxa8oQlNXruFNhit8MG44lHXlEgnEmBhMG8iaF9kvxx5WUftzhyGTmpCwDTLqykiEGuWYPVHJdLeqnrZ0g3IuCvoXq3wBKBSoLuEgmzJwEjC6X62uxB1JNJAcaCKdyDVLlf8MH%2BUaTwPo6aTX6tG1UO0IgxMtM9V8PjURki5qoWD2iIHcrvbFn47tlUySieWFLZJm%2FsfwPZsPlxGnpPx73205w3tEYKbxHDivSkNYvjB9wJ%2F4f7DUiayuRmUEy22Ql6k8%2FCZ%2BVtRzFZ8jix00EFBw5L7TypqSSWJ2SCPXF7Xx0ix%2Bdq%2FxmaT0be9Kb%2FLKYtDspHpINXXZgdUjDmsOe%2BBjqkAVRVXATTxTWD%2BjhUlxhQGvRMxv4X9AlDCtFJs1ges3UjtDsINjzjg99J9%2FZI9kBEhNDDv8fKB9tSzMB1q8rpfiQfFW2v12U0wtPh%2BOMooginm%2FfiIMFT2K0Sn3NDE0TdmoN3Ehz6Q45RsI%2FfCH7YZCE09TnTXPZnognOxmssDTW40gD1SgztXCsPmh%2BK%2F2xRVr07pPKdsgkZIjAWqFhvqwTpOtrc&X-Amz-Signature=17b4d101346e2751dc598f6de54584797fc143dc258452d18c48fe1ffda2bb1f&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 

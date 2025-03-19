@@ -1,6 +1,7 @@
 import os
 import requests
 from dotenv import load_dotenv
+from urllib.parse import urlparse, unquote
 
 load_dotenv()
 
@@ -91,30 +92,47 @@ def convert_to_markdown(blocks, indent=0):
             content = "".join([text["plain_text"] for text in texts])
             language = block["code"].get("language", "")
             md_text += f"```{language}\n{content}\n```\n\n"
-            
+                    
         elif block_type == "image":
             image_data = block["image"]
+
+            # 이미지 URL 가져오기
             if image_data["type"] == "external":
                 image_url = image_data["external"]["url"]
             else:
                 image_url = image_data["file"]["url"]
 
-            # 이미지 파일명 생성
-            image_filename = os.path.join(image_save_path, os.path.basename(image_url))
+            # 1) URL 파싱 후, 쿼리 파라미터를 제거한 파일명 추출
+            parsed_url = urlparse(image_url)
+            # ex) "https://example.com/path/to/image.jpg?some=query" 
+            #     -> parsed_url.path = "/path/to/image.jpg"
+            #     -> unquote(os.path.basename(parsed_url.path)) = "image.jpg"
+            filename = unquote(os.path.basename(parsed_url.path))  # 한글/공백 decoding
 
-            # 이미지 다운로드 및 저장
-            response = requests.get(image_url)
+            # 2) 저장될 전체 경로 생성
+            image_filename = os.path.join(image_save_path, filename)
+
+            # 3) 이미지 다운로드 (스트리밍 모드 추천)
+            response = requests.get(image_url, stream=True)
             if response.status_code == 200:
                 with open(image_filename, "wb") as file:
-                    file.write(response.content)
+                    for chunk in response.iter_content(chunk_size=8192):
+                        if chunk:
+                            file.write(chunk)
+            else:
+                # 200이 아닐 경우(에러 상황 처리)
+                print(f"이미지 다운로드 실패: {image_url} [status code: {response.status_code}]")
 
-            # 캡션 처리
+            # 4) 캡션 처리
             caption_texts = image_data.get("caption", [])
             caption = (
                 "".join([text["plain_text"] for text in caption_texts])
                 if caption_texts
                 else ""
             )
+
+            # 5) 마크다운 텍스트 변경 (저장된 이미지 경로 사용)
+            md_text += f"![{caption}](./images/{filename})\n\n"
 
             # 마크다운 텍스트 변경 (저장된 이미지 경로 사용)
             md_text += f"![{caption}](./images/{os.path.basename(image_url)})\n\n"
