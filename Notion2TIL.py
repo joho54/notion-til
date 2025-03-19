@@ -4,6 +4,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# 이미지 저장 폴더 설정
+image_save_path = "./images"
+os.makedirs(image_save_path, exist_ok=True)
+
 # Notion API 설정
 NOTION_API_KEY = os.getenv('NOTION_API_KEY')
 PAGE_ID = os.getenv('PAGE_ID') 
@@ -87,19 +91,33 @@ def convert_to_markdown(blocks, indent=0):
             content = "".join([text["plain_text"] for text in texts])
             language = block["code"].get("language", "")
             md_text += f"```{language}\n{content}\n```\n\n"
+            
         elif block_type == "image":
             image_data = block["image"]
             if image_data["type"] == "external":
                 image_url = image_data["external"]["url"]
             else:
                 image_url = image_data["file"]["url"]
+
+            # 이미지 파일명 생성
+            image_filename = os.path.join(image_save_path, os.path.basename(image_url))
+
+            # 이미지 다운로드 및 저장
+            response = requests.get(image_url)
+            if response.status_code == 200:
+                with open(image_filename, "wb") as file:
+                    file.write(response.content)
+
+            # 캡션 처리
             caption_texts = image_data.get("caption", [])
             caption = (
                 "".join([text["plain_text"] for text in caption_texts])
                 if caption_texts
                 else ""
             )
-            md_text += f"![{caption}]({image_url})\n\n"
+
+            # 마크다운 텍스트 변경 (저장된 이미지 경로 사용)
+            md_text += f"![{caption}](./images/{os.path.basename(image_url)})\n\n"
         elif block_type == "quote":
             texts = block["quote"].get("rich_text", [])
             content = "".join([text["plain_text"] for text in texts])
