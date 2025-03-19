@@ -133,6 +133,7 @@ def convert_to_markdown(blocks, indent=0):
 
             # 5) 마크다운 텍스트 변경 (저장된 이미지 경로 사용)
             md_text += f"![{caption}](../images/{filename})\n\n"
+            
         elif block_type == "quote":
             texts = block["quote"].get("rich_text", [])
             content = "".join([text["plain_text"] for text in texts])
