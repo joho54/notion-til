@@ -46,7 +46,7 @@ int main()
 
 ### 그림: 컴파일 시스템
 
-![](./images/IMG_9865.heic)
+![](./images/IMG_9865.png)
 
 ## 명제들
 
@@ -81,7 +81,7 @@ main:
 
 ### 그림: 일반적인 컴퓨터 시스템의 하드웨어 구성
 
-![](./images/IMG_9867.heic)
+![](./images/IMG_9867.png)
 
 
 
@@ -192,7 +192,7 @@ The processor …
 
 ### 그림: Reading the hello command from the keyboard
 
-![](./images/IMG_9904.heic)
+![](./images/IMG_9904.png)
 
 ### 개구코 8
 

@@ -128,13 +128,13 @@
 
 
 
-![](./images/IMG_9924.heic)
+![](./images/IMG_9924.png)
 
-![](./images/IMG_9925.heic)
+![](./images/IMG_9925.png)
 
 저녁에 다시 했는데 또 까먹었다. 그래서 다시 복습.
 
-![](./images/IMG_9934.heic)
+![](./images/IMG_9934.png)
 
 ## 아포리즘: 키워드는 구체화된 질문으로 치환해서 날 몰아붙여야 한다.
 
