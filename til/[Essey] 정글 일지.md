@@ -130,17 +130,11 @@
 
 ![](./images/IMG_9924.heic)
 
-![](./images/IMG_9924.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TEAXNGPY%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003742Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIC5ZMxl8FDBrjgINkmtp%2Bm%2FsAOUMh0aromFnQrJuR3GPAiEAyIQ2jlzW6iQdvuRYB8xiMDelqfnBSqga1tF4hgfHzocq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDP7zd89mYiBjlmdf5SrcA3gcbyNzqRrocLLKHLCsqbe553deK1JOXISICBQOyAbGiNEpqd6kcYQWZ58%2BfbVwvGo%2FWLra0LAyIeP5Z5GoReM%2BPZeyjYgPP8Jjcb%2Fx1Qy6hoScpDOsZY7QIxokwMTDpMOFMSsJCW1MWD6jvYefsMY5avTBeOM0x78EE1b%2FL4MLA40MW1ACJpFGuSfzOlrIICIipzNmt%2BJHnQ%2BWz%2FhIJ1oFCIvBqOPPVcoX0zH0XYAIcDTdG3Rwq4kyGYlEcX019LbFWrz5Vlii%2FVS2t1PRVQjlatz5mBh0oWpZA0Y51Y87Iye%2FcTPTTcPdiEr20ZVHNLXHLXvVcrPRUB3oWMW94WuKWW2LnnAysDyrVzCa5LeYqzSeDTDPUFQmVv85eBMj5xMpNmnAiiHSBdtQFDXHDjsKdTs6IanBsAYZPfSY3gFWhzGEVabJId%2F6jEnN1vHANmiKVngSn8Go%2BsR%2FbqBvD0djIBJ1h4I80vHLloJTYHDx5tDRstLBMrhAwOyBwuu1BTEx5tN5StLHceUDpY7G3e%2BtVaPFLiLtb39rf0y7fBenjllZYvnQGw1cvVeJ24OWXNqjaNHSG9W8kv%2BgtNtwj2SjRUiI4v1pCQkzzVH54TznWbyH7TJGLj%2FeE5wZMMWw574GOqUBEuAYB5jUNZ%2FuJh7ZX8p4hzWkJeMgxO9aDVLKog77ndIa7w3C%2FDJvKwx2IY5d9ogN7qHv%2FXutcsIa5iLZPXfNMq3%2BtxINmrrWvioVViCN1lJTDuOwE%2BTYD1WbxZqfGkg%2FyyLmgifUd%2BwR7KZAzp0Gi0YclMuRSb5q5LFxLKOvKggbT73ppiSrs3S4dM9UCT62ymr6jvW7OT40okbi5cRbWgBtNRKm&X-Amz-Signature=906b95b1fe85feb7e25581d6b0d52c2de68ba2db6be02981676e3e06e5fe61aa&X-Amz-SignedHeaders=host&x-id=GetObject)
-
 ![](./images/IMG_9925.heic)
-
-![](./images/IMG_9925.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TEAXNGPY%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003742Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIC5ZMxl8FDBrjgINkmtp%2Bm%2FsAOUMh0aromFnQrJuR3GPAiEAyIQ2jlzW6iQdvuRYB8xiMDelqfnBSqga1tF4hgfHzocq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDP7zd89mYiBjlmdf5SrcA3gcbyNzqRrocLLKHLCsqbe553deK1JOXISICBQOyAbGiNEpqd6kcYQWZ58%2BfbVwvGo%2FWLra0LAyIeP5Z5GoReM%2BPZeyjYgPP8Jjcb%2Fx1Qy6hoScpDOsZY7QIxokwMTDpMOFMSsJCW1MWD6jvYefsMY5avTBeOM0x78EE1b%2FL4MLA40MW1ACJpFGuSfzOlrIICIipzNmt%2BJHnQ%2BWz%2FhIJ1oFCIvBqOPPVcoX0zH0XYAIcDTdG3Rwq4kyGYlEcX019LbFWrz5Vlii%2FVS2t1PRVQjlatz5mBh0oWpZA0Y51Y87Iye%2FcTPTTcPdiEr20ZVHNLXHLXvVcrPRUB3oWMW94WuKWW2LnnAysDyrVzCa5LeYqzSeDTDPUFQmVv85eBMj5xMpNmnAiiHSBdtQFDXHDjsKdTs6IanBsAYZPfSY3gFWhzGEVabJId%2F6jEnN1vHANmiKVngSn8Go%2BsR%2FbqBvD0djIBJ1h4I80vHLloJTYHDx5tDRstLBMrhAwOyBwuu1BTEx5tN5StLHceUDpY7G3e%2BtVaPFLiLtb39rf0y7fBenjllZYvnQGw1cvVeJ24OWXNqjaNHSG9W8kv%2BgtNtwj2SjRUiI4v1pCQkzzVH54TznWbyH7TJGLj%2FeE5wZMMWw574GOqUBEuAYB5jUNZ%2FuJh7ZX8p4hzWkJeMgxO9aDVLKog77ndIa7w3C%2FDJvKwx2IY5d9ogN7qHv%2FXutcsIa5iLZPXfNMq3%2BtxINmrrWvioVViCN1lJTDuOwE%2BTYD1WbxZqfGkg%2FyyLmgifUd%2BwR7KZAzp0Gi0YclMuRSb5q5LFxLKOvKggbT73ppiSrs3S4dM9UCT62ymr6jvW7OT40okbi5cRbWgBtNRKm&X-Amz-Signature=956d016129a405660d951d1a872abbe3bff432f5b8cc4f3999ad664a02beffdd&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 저녁에 다시 했는데 또 까먹었다. 그래서 다시 복습.
 
 ![](./images/IMG_9934.heic)
-
-![](./images/IMG_9934.heic?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TEAXNGPY%2F20250319%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250319T003742Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIC5ZMxl8FDBrjgINkmtp%2Bm%2FsAOUMh0aromFnQrJuR3GPAiEAyIQ2jlzW6iQdvuRYB8xiMDelqfnBSqga1tF4hgfHzocq%2FwMIZhAAGgw2Mzc0MjMxODM4MDUiDP7zd89mYiBjlmdf5SrcA3gcbyNzqRrocLLKHLCsqbe553deK1JOXISICBQOyAbGiNEpqd6kcYQWZ58%2BfbVwvGo%2FWLra0LAyIeP5Z5GoReM%2BPZeyjYgPP8Jjcb%2Fx1Qy6hoScpDOsZY7QIxokwMTDpMOFMSsJCW1MWD6jvYefsMY5avTBeOM0x78EE1b%2FL4MLA40MW1ACJpFGuSfzOlrIICIipzNmt%2BJHnQ%2BWz%2FhIJ1oFCIvBqOPPVcoX0zH0XYAIcDTdG3Rwq4kyGYlEcX019LbFWrz5Vlii%2FVS2t1PRVQjlatz5mBh0oWpZA0Y51Y87Iye%2FcTPTTcPdiEr20ZVHNLXHLXvVcrPRUB3oWMW94WuKWW2LnnAysDyrVzCa5LeYqzSeDTDPUFQmVv85eBMj5xMpNmnAiiHSBdtQFDXHDjsKdTs6IanBsAYZPfSY3gFWhzGEVabJId%2F6jEnN1vHANmiKVngSn8Go%2BsR%2FbqBvD0djIBJ1h4I80vHLloJTYHDx5tDRstLBMrhAwOyBwuu1BTEx5tN5StLHceUDpY7G3e%2BtVaPFLiLtb39rf0y7fBenjllZYvnQGw1cvVeJ24OWXNqjaNHSG9W8kv%2BgtNtwj2SjRUiI4v1pCQkzzVH54TznWbyH7TJGLj%2FeE5wZMMWw574GOqUBEuAYB5jUNZ%2FuJh7ZX8p4hzWkJeMgxO9aDVLKog77ndIa7w3C%2FDJvKwx2IY5d9ogN7qHv%2FXutcsIa5iLZPXfNMq3%2BtxINmrrWvioVViCN1lJTDuOwE%2BTYD1WbxZqfGkg%2FyyLmgifUd%2BwR7KZAzp0Gi0YclMuRSb5q5LFxLKOvKggbT73ppiSrs3S4dM9UCT62ymr6jvW7OT40okbi5cRbWgBtNRKm&X-Amz-Signature=2cd27f3acba10d7ace3921e150a2f455e242147286519d23ac5249149700d31e&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ## 아포리즘: 키워드는 구체화된 질문으로 치환해서 날 몰아붙여야 한다.
 
@@ -295,7 +289,26 @@ def fibo_recur(n):
 
 > 재귀로 피보나치 수열을 저장하는 것은 가능하지만, 재귀의 특성상 중복 호출이 많아지고, 추가적인 관리 코드가 필요해지는 경우가 많습니다. 특히 중복된 계산을 피하기 위해 메모이제이션이 필수적이고, 리스트에 값을 저장하는 타이밍을 신경 써야 합니다.
 
-메모이제이션을 활용할 줄 알긴 해야하는데…
+메모이제이션을 활용할 줄 알긴 해야하는데… 이건 근데 거의 디피 부분이니까 일단 보류?
 
+풀었던 문제 리뷰하는 시간? 
+
+책 읽는 시간? 
+
+문자열 관련 책을 읽어 봐? 
+
+# 2025.03.19.
+
+## 공부 후보
+
+> 웬만하면 다 구현해보는 연습이 좋은 거 같기도 하고. 
+
+1. 복습 구현: 퀵 정렬, 병합정렬, 힙정렬 복습 구현
+1. 기초 정렬 구현: 버블 정렬, 삽입 정렬, 쉘 정렬, 또 뭐 있지
+1. 탐색 공부: 책 보고
+1. 스택 구현
+1. 큐 구현
+1. 풀었던 문제를 다시 정의하고 풀어보기? 
+1. 책 읽으면서 더 공부할 내용 정리하기
 
 

@@ -30,7 +30,7 @@
 구현
 
 1. 수도코드
-![](../images/IMG_9905.heic)
+![](./images/IMG_9905.heic)
 
 1. 구현코드
 ```python

@@ -6,7 +6,7 @@ from urllib.parse import urlparse, unquote
 load_dotenv()
 
 # 이미지 저장 폴더 설정
-image_save_path = "./images"
+image_save_path = "./til/images"
 os.makedirs(image_save_path, exist_ok=True)
 
 # Notion API 설정
@@ -132,7 +132,7 @@ def convert_to_markdown(blocks, indent=0):
             )
 
             # 5) 마크다운 텍스트 변경 (저장된 이미지 경로 사용)
-            md_text += f"![{caption}](../images/{filename})\n\n"
+            md_text += f"![{caption}](./images/{filename})\n\n"
             
         elif block_type == "quote":
             texts = block["quote"].get("rich_text", [])
