@@ -15,7 +15,133 @@
 > 읽을 때는 모, 그 정도로? 일단. 
 딱히 구현 material이 없어도 구현을 이런 저런 핑계삼아 해보는 것도 좋겠다. 정렬은 자다가 건드려도 튀어나와야 한다니까.
 
+# 이 책을 읽는 방법 - 체크리스트로 사용
 
+📖 “Introduction to Algorithms” (CLRS) 효과적으로 활용하는 방법
+
+CLRS는 알고리즘 학습의 바이블이지만, 너무 방대해서 처음부터 끝까지 읽기는 현실적으로 어렵습니다. 따라서 필요한 부분만 전략적으로 학습하는 것이 중요합니다.
+
+2. CLRS에서 꼭 봐야 할 핵심 내용 (우선순위 학습 순서)
+
+🚀 2단계: 탐색과 그래프 알고리즘 (면접 대비 필수)
+
+✅ Chapter 9: 선택 알고리즘 (Median & Order Statistics)
+
+✅ Chapter 10-12: 해시 테이블(Hash Table), BST(이진 검색 트리), Red-Black Tree
+
+✅ Chapter 15: 동적 계획법 (DP, Dynamic Programming)
+
+✅ Chapter 22-24: 그래프 탐색 (BFS, DFS), 최단 경로 알고리즘 (Dijkstra, Bellman-Ford, Floyd-Warshall), 최소 신장 트리 (MST)
+
+➡ 면접 대비나 대회 준비를 한다면 이 단계가 매우 중요하며, 구현 연습도 반드시 함께해야 한다.
+
+🚀 3단계: 심화 및 고급 주제 (연구나 심층 학습 목적)
+
+✅ Chapter 25-26: 최대 유량(Maximum Flow)
+
+✅ Chapter 30: NP-완전 문제(NP-Completeness)
+
+✅ Chapter 34: 알고리즘 설계 기법 (근사 알고리즘, 탐욕 알고리즘)
+
+➡ 이 단계는 코딩 테스트보다는 “이론적인 알고리즘 공부”가 필요할 때 활용하는 것이 좋다.
+
+3. CLRS 학습법 (효율적으로 공부하는 방법)
+
+📌 1. 알고리즘 개념 학습 + 간단한 구현 연습
+
+•	각 챕터에서 중요한 알고리즘을 공부한 뒤,
+
+•	직접 Python이나 C++로 간단히 구현해보며 핵심 원리를 익힌다.
+
+•	예제 코드가 너무 복잡하면, 핵심 부분만 추려서 직접 구현하는 것이 효과적이다.
+
+예시) 힙 정렬을 공부할 때
+
+1.	CLRS에서 힙 정렬(Heap Sort) 개념 읽기
+
+2.	파이썬으로 힙 정렬을 직접 구현
+
+3.	LeetCode / 백준 / 프로그래머스에서 힙 관련 문제 풀기
+
+📌 2. 수식이나 증명은 선택적으로 학습
+
+•	CLRS는 수학적 증명이 많지만, 모든 증명을 이해하려고 할 필요는 없다.
+
+•	증명이 너무 어려우면, 핵심 아이디어와 개념만 익히고 넘어가도 괜찮다.
+
+•	다만, 시간 복잡도 분석(빅오 표기법, 마스터 정리 등)은 꼭 익혀야 한다.
+
+📌 3. 문제 풀이 병행
+
+•	CLRS의 이론을 공부한 뒤, 코딩 문제를 바로 풀어보는 것이 가장 중요하다.
+
+•	백준(BOJ), LeetCode, Codeforces, 프로그래머스에서 관련 문제를 찾아서 연습하는 것이 효과적.
+
+•	특히 그래프, DP, 정렬 문제는 CLRS 내용을 공부한 후 바로 문제를 풀면 학습 효과가 좋다.
+
+4. CLRS를 활용한 추천 학습 플랜
+
+> ✅
+
+> ✅
+
+📅 1~2주차 (기본 개념 + 정렬 + 탐색)
+
+✅ 알고리즘 개념 + 시간 복잡도 분석 (Ch. 13)
+
+✅ 정렬 (힙 정렬, 퀵 정렬, 계수 정렬) (Ch. 68)
+
+✅ BST(이진 검색 트리) 기본 개념 익히기 (Ch. 10-12)
+
+✅ 문제 풀이: 기본 정렬 문제, 힙 문제 풀기
+
+📅 3~4주차 (탐색 + 그래프 알고리즘)
+
+✅ 탐색(이진 탐색, 선택 알고리즘) (Ch. 9)
+
+✅ 그래프 탐색 (BFS, DFS) (Ch. 22)
+
+✅ 최단 경로 알고리즘 (Dijkstra, Bellman-Ford) (Ch. 24)
+
+✅ 문제 풀이: 그래프 기본 문제, 최단 경로 문제 풀기
+
+📅 5~6주차 (동적 계획법 + 고급 그래프)
+
+✅ 동적 계획법 (DP) 개념 및 대표 문제 (Ch. 15)
+
+✅ 최소 신장 트리(MST, Kruskal, Prim) (Ch. 23)
+
+✅ 문제 풀이: DP 문제 + MST 문제
+
+📅 7~8주차 (응용 및 심화 주제)
+
+✅ 네트워크 플로우 (Ch. 25-26)
+
+✅ NP-완전성 개념 (Ch. 30)
+
+✅ 근사 알고리즘 (Ch. 34)
+
+✅ 문제 풀이: Hard 난이도 문제 도전
+
+5. 정리
+
+🔹 CLRS는 완독하는 책이 아니라, 필요할 때 찾아보는 참고서로 활용하는 것이 좋다.
+
+🔹 우선순위를 정하고, 중요한 부분(정렬, 그래프, DP)부터 학습하면 효율적이다.
+
+🔹 이론만 공부하지 말고, 반드시 코딩 문제를 병행하면서 학습해야 실력이 는다.
+
+🔹 초보자는 너무 어려운 증명보다는 개념과 알고리즘 구현에 집중하는 것이 좋다.
+
+📌 결론: CLRS를 무작정 처음부터 읽기보다는, 필요할 때 참고하고, 코딩 문제 풀이와 병행하며 효율적으로 학습하는 것이 가장 효과적인 활용법이다. 🚀
+
+
+
+# Chapter 1-3: 알고리즘 개념 및 복잡도 분석 (O(n), O(log n))
+
+> 여기도 일단 책 먼저 스캔하고, 개구코로 정리? ㅇㅇ.
+
+## 개구코 1.
 
 # Sorting and Order Statistics
 
@@ -156,9 +282,7 @@ quick_sort(arr)
 
 무한 루프가 발생하는 이유는 당연히 len(s) ≠ 0 조건이 안 먹혀서 그런 것임. 그렇다면 s.popleft()가 적절히 이루어지지 않는다는 의미. 
 
-바닥 조건 수행 후에 스택이 비어있지 않으면 자연스럽게 다음으로 넘어가서 s에서 팝 하게 되는데, 그럼 결국 마지막에 s.popleft()가 실행된 다음에 larger나 smaller가 없으면 스택은 자연스럽게 비어야 하지 않나? 왜지? 
-
-if larger, if smaller의 의미가 불분명하다.
+바닥 조건 수행 후에 스택이 비어있지 않으면 자연스럽게 다음으로 넘어가서 s에서 팝 하게 되는데, 그럼 결국 마지막에 s.popleft()가 실행된 다음에 larger나 smaller가 없으면 스택은 자연스럽게 비어야 하지 않나? 왜지? if larger, if smaller의 의미가 불분명하다.
 
 ```python
 >>> if []: print('hi')
@@ -430,4 +554,60 @@ quick_sort(arr)
 ```
 
 너무 시간을 많이 써서 일단 이만큼 하고 그냥 다음 개념으로 넘어갑시다. 
+
+# Designing Algorithms 
+
+> 개구코로 읽으시죠
+
+## 개구코1. 
+
+### 개념: incremental methods vs divide and conquer
+
+insertion sort uses the incremental methods.
+
+### 구현
+
+없음
+
+### 코멘트
+
+문제를 해결하는 두가지 방식 분류를 이제야 알게 된 느낌. incremental methods와 divide and conquer.
+
+## 개구코2.
+
+### 개념: Advantage of the algorithm following divide and conquer method is that analyzing its running time is often straightforward.
+
+### 구현: 
+
+없음
+
+### 코멘트
+
+분할정복은 메서드가 더 복잡해보이지만 오히려 실행 시간을 더 명확히 계산할 수 있다고 한다. 왜?
+
+> 좋은 질문이에요. “분할정복(Divide and Conquer)“이 실행 시간이 더 명확하게 계산될 수 있는 이유는 주로 다음과 같은 구조적 특징 덕분입니다:
+
+## 개구코3.
+
+### 개념: steps of divide and conquer method
+
+in the divide-and-conquer method, if the problem is small enough-the base case- you just solve it directly without recursing. Otherwise - the recursive case -you perform three characterstic steps
+
+- Divide: the problem into one or more subprolems that are smaller instances of the same problem
+- Conquer: the subproblems by solving them recursively
+- Combine: the subproblem solutions to form a solution to the original problem.
+### 구현
+
+Steps of merge sort
+
+- Divide the subarray A[p:r] to be sorted into two adjacent subarray, each of half the size. To do so, compute the midpoint q of A[p:r](taking the average of p and r) and divide A[p:r]into subarrays A[p:q] and A[q+1:r].
+- Conquer by sorting each of the two subarrays A[p:q] and A[q+1:r] recursively using merge sort.
+- Combine by merging the two sorted subarrays A[p:q] and A[q+1:r] back into A[p:r], producing the sorted answer.
+### 코멘트
+
+이미 divide 시점에서도 주어진 배열이 무언가의 부분 배열이라는 점에 눈에 띈다. 어떤 집합을 대상으로 작업을 한다고 치면, 그 집합 전체도 그 집합의 부분집합이라는 점에 주목하는 것처럼 느껴진다. 이게 결정 트리를 이용한 풀이에서도 마찬가지겠지?
+
+> 이야, 정말 날카로운 통찰이에요(^0^). 맞아요—당신이 말한 그 **“전체도 부분집합이다”**라는 개념은 **결정 트리(decision tree)**나 **분할정복(divide and conquer)**의 사고방식에서 굉장히 핵심적인 철학이에요.
+
+# 
 

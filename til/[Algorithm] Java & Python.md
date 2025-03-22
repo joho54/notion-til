@@ -1991,3 +1991,368 @@ LCS 길이는 구했지만, 그걸 출력하는 방법을 모르겠음. 이건 �
 
 •	dp[i-1][j] > dp[i][j-1]이면 위쪽으로 이동, 아니면 왼쪽으로 이동.
 
+# 수학|구현: 더하기 사이클
+
+https://www.acmicpc.net/problem/1110
+
+## Phase1. 17분
+
+### 문제
+
+0보다 크거나 같고, 99보다 작거나 같은 정수가 주어질 때 다음과 같은 연산을 할 수 있다. 먼저 주어진 수가 10보다 작다면 앞에 0을 붙여 두 자리 수로 만들고, 각 자리의 숫자를 더한다. 그 다음, 주어진 수의 가장 오른쪽 자리 수와 앞에서 구한 합의 가장 오른쪽 자리 수를 이어 붙이면 새로운 수를 만들 수 있다. 
+
+### 코드
+
+```javascript
+# Phase1. 문제 읽기: 이해했어
+# Phase2. 문제 머리로 풀어보기: 26 2+6=8 -> 68, 6+8=14 -> 84, 8+4=12->42, 4+2=6->26!,
+# Phase3. 수도코드 작성하기
+# Phase4. 구현하기
+
+def calc(n: int, initial_n: int, depth):
+    """stringify and get list from the n and get processed num"""
+    # base condition
+    # print(n)
+    if initial_n == n and depth != 0:
+        print(depth)
+        return
+    n = list(map(int, list(str(n))))
+    last_n = n[-1]
+    processed = sum(n)
+    last_proc = processed%10
+    pass_n = int(f'{last_n}{last_proc}')
+
+    calc(pass_n, initial_n, depth+1)
+
+n = int(input())
+calc(n, n, 0)
+
+```
+
+## Phase2. 피드백
+
+아래는 “더하기 사이클” 문제를 해결한 재귀 코드에 대한 피드백과, 보다 일반적으로 사용되는 반복문 버전 예시입니다.
+
+1. 재귀 코드에 대한 피드백
+
+질문에서 제시된 코드는 다음과 같습니다:
+
+```plain text
+def calc(n: int, initial_n: int, depth):
+    if initial_n == n and depth != 0:
+        print(depth)
+        return
+    n = list(map(int, list(str(n))))
+    last_n = n[-1]
+    processed = sum(n)
+    last_proc = processed % 10
+    pass_n = int(f'{last_n}{last_proc}')
+
+    calc(pass_n, initial_n, depth+1)
+
+n = int(input())
+calc(n, n, 0)
+```
+
+동작 방식
+
+1.	기본 아이디어
+
+•	현재 숫자 n을 문자열로 분해 → 각 자릿수를 더함(processed) → 오른쪽 자리(last_n)와 processed의 마지막 자리(last_proc)를 합쳐 다음 숫자(pass_n)를 만든다.
+
+2.	재귀 종료 조건
+
+•	재귀 깊이(depth)가 0이 아닐 때, “만약 현재 숫자가 초깃값(initial_n)과 같아지면 사이클이 완성되었다” → 횟수(depth)를 출력 후 종료.
+
+3.	재귀 호출
+
+•	만들어진 다음 숫자를 인자로 하여 depth+1 증가 후 재귀.
+
+잘 동작하지만, 주의할 점
+
+1.	재귀보다는 반복문이 더 직관적
+
+•	문제는 한 번의 반복이 끝날 때마다 다음 숫자를 만드는 구조이므로, 재귀보다는 “while True: → 조건 만족 시 break” 형태가 더 흔하게 사용됩니다.
+
+•	재귀도 문제없이 동작하긴 하지만, 파이썬은 기본적으로 재귀 제한(기본 1000)이 있으므로, 이 문제처럼 반복 횟수가 크지는 않더라도(최대 60번 이하로 끝나긴 합니다), “반복문이 조금 더 안전하고 간단하다”는 점이 일반적입니다.
+
+2.	문자열로 처리 시, 0~9 숫자의 앞자리 0 처리도 자동으로 해결
+
+•	문제에서 “한 자리 수라면 앞에 0을 붙여 두 자리로 만든다”라고 했지만, 실제로 str(n)으로 만들면 “‘7’” → '7'이니, 내부 계산에서 자릿수를 더하거나 마지막 자리만 뽑을 때는 동일하게 동작합니다.
+
+3.	성능·복잡도
+
+•	재귀나 반복문이나, 한 사이클 계산은 O(1)에 가깝습니다(자릿수가 최대 2자리). 반복 횟수도 최대 수십 번. 성능 문제는 전혀 없습니다.
+
+2. 반복문 버전 구현 예시
+
+아래는 동일 로직을 while 루프로 구현한 간단한 예시입니다.
+
+```plain text
+def cycle_length(n: int) -> int:
+    # 초기값 저장
+    original = n
+    count = 0
+
+    while True:
+        count += 1
+        # 1) 각 자릿수 더하기
+        #    - 두 자리로 확장(예: 7 -> "07") 후 각 자리 int 변환하는 방법
+        #    - 혹은 단순히 n의 10의 자리, 1의 자리 계산로직 써도 됨
+
+        # 문자열 기반
+        s = f"{n:02d}"  # 항상 2자리 문자열로
+        digits_sum = int(s[0]) + int(s[1])  # 자릿수 합
+
+        # 새로운 숫자 = 원래 수의 오른쪽 자리 + 합의 오른쪽 자리
+        right_digit_of_n = s[1]                 # n의 마지막 자리(문자열)
+        right_digit_of_sum = str(digits_sum)[-1]  # 합의 마지막 자리
+        new_num = int(right_digit_of_n + right_digit_of_sum)
+
+        # 다음 반복 준비
+        n = new_num
+
+        if n == original:
+            break
+
+    return count
+
+# 실행 부분
+input_num = int(input().strip())
+result = cycle_length(input_num)
+print(result)
+```
+
+주요 포인트
+
+1.	두 자리 형식 지정:
+
+•	f"{n:02d}" 은 정수 n을 항상 2자리로 맞춰 문자열로 만듭니다.
+
+•	이렇게 하면, n이 7이면 "07", 0이면 "00"이 되어, 문제에서 말한 “앞에 0을 붙인다” 처리가 자동으로 됩니다.
+
+2.	오른쪽 자리 추출:
+
+•	right_digit_of_n = s[1] (원본 숫자의 오른쪽 자리)
+
+•	right_digit_of_sum = str(digits_sum)[-1] (합의 마지막 자리)
+
+•	그리고 이어붙여서 new_num = int(...).
+
+3.	반복 종료:
+
+•	while True: 안에서, 만약 새로 만든 숫자가 처음 숫자(original)와 같으면 break → 반복 횟수(count) 반환.
+
+3. “왜 문자열을 쓰면 앞자리 0 처리가 별도 로직 없이 되는가?”
+
+•	문제에서 “주어진 수가 10보다 작으면 앞에 0을 붙인다” 라고 했는데,
+
+•	문자열 방식: 단순히 str(n)으로 만든 뒤, 필요하면 f"{n:02d}"를 써서 자동 패딩을 하면, 한 자리 수(7)는 “07”이 되고, 정수 변환·합산에 사용할 때 편합니다.
+
+•	반면 정수 연산 방식으로 풀려면:
+
+```plain text
+tens = n // 10    # 10의 자리
+ones = n % 10     # 1의 자리
+s = tens + ones   # 자릿수 합
+new_num = (ones * 10) + (s % 10)
+```
+
+형태로도 간단하게 표현할 수 있습니다.
+
+둘 중 어떤 방식을 쓰든 정답은 같고, 취향이나 습관에 따라 달라집니다.
+
+4. 요약 & 권장 사항
+
+1.	재귀 코드는 문제를 잘 풀었고, 논리적으로 맞습니다.
+
+•	다만, 파이썬에서 이 문제를 재귀로 풀 이유는 크게 없고, 반복문이 좀 더 직관적이고 안전합니다.
+
+2.	문자열 처리 vs 정수 연산
+
+•	문자열 처리로 앞자리 0 이슈를 손쉽게 해결할 수 있습니다.
+
+•	정수 연산 방식도 충분히 간단하므로, 가독성이나 자신이 편한 쪽을 쓰면 됩니다.
+
+3.	최대 반복 횟수
+
+•	실제로 이 문제의 최대 사이클은 60 이하(주어진 범위에서) 정도로 알려져 있습니다. 재귀/반복 모두 부담 없이 해결이 가능합니다.
+
+결론적으로, 현재 코드는 정답을 제대로 출력하므로 문제 없습니다.
+
+다만 유지보수나 가독성 면에서 반복문을 권장하는 편이며, 문자열 포맷(02d) 또는 정수 연산을 이용해 구현하면 앞자리 0 처리도 쉽게 해결할 수 있습니다.
+
+
+
+# 브루트포스:  부분수열의 합
+
+## Phase1. 30분 초과
+
+최초 풀이
+
+```python
+n, s = tuple(map(int, input().split()))
+arr = tuple(map(int, input().split()))
+
+flag = [False] * n
+cnt = 0
+
+def recur(A: list):
+    global cnt
+    if sum(A) == s:
+        cnt += 1
+        return
+    elif not (False in flag):
+        return
+    
+    for i in range(n):
+        if not flag[i]:
+            flag[i] = True
+            recur([*A, arr[i]])
+            flag[i] = False
+recur([])
+print(cnt)
+```
+
+시간 초과 발생. 다음과 같이 배열이 아니라 값을 넘겨주는 방식으로 수정
+
+```python
+n, s = tuple(map(int, input().split()))
+arr = tuple(map(int, input().split()))
+
+# n, s = 5, 0
+# arr = [-7, -3, -2, 5, 8]
+
+flag = [False] * n
+cnt = 0
+
+def recur(A: int, start):
+    global cnt
+    if A == s and (True in flag):
+        # print(f'base condition hit. {A}, {flag}\n')
+        cnt += 1
+        return
+    elif not (False in flag):
+        return
+    
+    for i in range(start, n):
+        if not flag[i]:
+            flag[i] = True
+            recur(A + arr[i], i)
+            flag[i] = False
+        
+        
+recur(0, 0)
+print(cnt)
+```
+
+그러나 논리적 오류 발생. 
+
+## Phase2. 코드 검토
+
+```python
+    if A == s and (True in flag):
+        # print(f'base condition hit. {A}, {flag}\n')
+        cnt += 1
+        return
+```
+
+여기서 return을 해버리면 먼저 계산한 부분 수열의 합에 뒤에 계산한 부분 수열의 합도 맞는 경우를 계산하지 못할 수도 있음. return을 제거하면 됨. 
+
+아래는 전체 풀이 내용
+
+```python
+# Phase1. 문제 읽기: 크기가 양수인 부분수열: 크기가 음수일 순 없으니, 0인 부분수열 제외하라는 말인듯
+# Phase2. 손으로 풀기: 
+# 5, 0 / -7 -3 -2 5 8
+# Phase3. 수도 코드
+# n 값이 최대 20으로, n^2 알고리즘으로도 충분함. 재귀로 모든 합을 구해서 맞으면 카운터 증가시키기?
+# 베이스 컨디션: 모든 요소를 더했거나, 합의 값이 s와 같아졌거나
+# 반복하면서 재귀, 플래그 관리
+# Phase4. 코드 구현
+
+n, s = tuple(map(int, input().split()))
+arr = tuple(map(int, input().split()))
+
+# n, s = 5, -100000 
+# arr = [-7, -3, -2, 5, -100000]
+
+flag = [False] * n
+cnt = 0
+
+def recur(A: int, start):
+    global cnt
+    if A == s and (True in flag):
+        cnt += 1
+    elif not (False in flag):
+        return
+    
+    for i in range(start, n):
+        if not flag[i]:
+            flag[i] = True
+            recur(A + arr[i], i+1)
+            flag[i] = False
+        
+        
+recur(0, 0)
+print(cnt)
+
+"""
+이슈: 부분수열 개수가 중복 계산됨.
+Phase1 
+환경: 파이썬
+로그: 
+base condition hit. 0, [False, True, True, True, False]
+
+-3 -2 5 
+base condition hit. 0, [False, True, True, True, False]
+
+-3 -2 5 
+base condition hit. 0, [False, True, True, True, False]
+
+-3 -2 5 
+base condition hit. 0, [False, True, True, True, False]
+
+-3 -2 5 
+base condition hit. 0, [False, True, True, True, False]
+
+-3 -2 5 
+base condition hit. 0, [False, True, True, True, False]
+
+-3 -2 5 
+6
+최근 변경 사항: 코드 구현
+
+Phase2
+확인: 같은 케이스가 자꾸 더해짐. 앞에서부터 차례로 해주면 안 되나? 
+시도: 재귀할 때 start 인덱스를 설정
+결과분석: 반복해서 더해지는 문제 해결
+
+이슈: 오답 발생
+Phase1.
+환경: 파이썬
+로그: 틀렸습니다
+최근 변경 사항: start 인덱스 설정함.
+
+Phase2-1
+확인: 그냥 틀림 어디서 틀리는 거지? 이럴 때는 경계값 테스트 해야지
+경계값: 1 <=n <= 20, -1000000 <= S <= 100000
+반복문 수행할 때 
+시도:
+입력이 다음과 같을 때 
+n, s = 5, -100000 
+arr = [-7, -3, -2, 5, -100000]
+출력이 2가 나옴. (-3, -2, 5, -100000)과 (-100000) 모두 정답. -> return이 문제였음!
+결과분석: 성공.
+"""
+
+```
+
+## Phase3. 코드 리뷰 후 알게 된 사실: 어떤 문제에서는 결정트리가 완전 이진 트리가 되어야 한다.
+
+이번 문제 같은 경우, 재귀로 결정 트리의 밑바닥까지 가기 전까지는 특정 부분수열의 합이 s가 되는지 알 수 없다(요소가 음수일 수도 있기 때문에 상한선을 통한 제한이 불가능).
+
+그래서 다음과 같은 완전 이진 트리가 결정 트리의 필연적인 모습이어야 한다. 이걸 생각 안 하고 ‘이건 비효율적인 재귀다’라고 생각할 수 없다.
+
+![](./images/IMG_9952.png)
+
