@@ -609,5 +609,120 @@ Steps of merge sort
 
 > 이야, 정말 날카로운 통찰이에요(^0^). 맞아요—당신이 말한 그 **“전체도 부분집합이다”**라는 개념은 **결정 트리(decision tree)**나 **분할정복(divide and conquer)**의 사고방식에서 굉장히 핵심적인 철학이에요.
 
-# 
+# Divide and Conquer
+
+## 개구코 1. Well defined vs ill defined recurrence.
+
+### 개념
+
+There may be zero, one, or many functions that satisfy the statement of the recurrence. The recurrence is well defined if there is at least one function that satisfies it, and ill defined otherwise.
+
+### 코멘트: 무슨 의미지?
+
+해당 문장은 “주어진 점화식을 만족하는 함수(혹은 수열)가 없을 수도, 하나만 존재할 수도, 여러 개 존재할 수도 있다”는 뜻입니다.
+
+•	어떤 점화식을 정의할 때, 그 점화식을 만족할 수 있는 해(함수나 수열)가 하나도 존재하지 않는다면, 그 점화식 자체가 모순적이거나 불가능한 정의가 되어 **‘ill defined(정의가 성립하지 않는다)’**라고 합니다.
+
+•	반대로 적어도 하나라도 점화식을 만족하는 함수(혹은 수열)가 존재하면, 그 점화식은 ‘well defined(정의가 성립한다)’ 라고 합니다.
+
+•	그 점화식을 만족하는 함수가 유일(단 하나)할 수도 있고, 둘 이상(무한히 많을 수도 있음) 존재할 수도 있지만, 적어도 하나라도 존재해야 점화식이 제대로 정의되었다고 볼 수 있습니다.
+
+요약하자면,
+
+•	“zero”: 해가 아예 없는 경우 → 점화식이 모순이므로 ill defined(정의가 성립하지 않음)
+
+•	“one”: 해가 정확히 하나 있는 경우 → well defined(정의가 성립함)
+
+•	“many”: 해가 여러 개 존재하는 경우 → 역시 well defined(정의가 성립함)
+
+결국 “해가 단 하나라도 존재하는가?”가 ‘well defined’의 기준이 된다는 의미입니다.
+
+## 개구코 2.  Algorithmic recurrences
+
+### 개념
+
+A recurrence T(n) is algorithmic if, for every sufficient large threshold constant $n_0>0$, the following two properties hold:
+
+1. For all n < n_0, we have T(n) = O(1)
+1. For all n \ge n_0, every path of recursion terminates in a defined base case within a finite number of recursive invocations.
+### 개념: Break down
+
+- Why would a recurrence T(n) that represents a (correct) divide-and-conquer algorithm’s worst-case running time satisfy these properties for all sufficiently large threshold constants? (왜 점화식은 위 조건만 만족해도 의외로 모든 큰 문제를 해결할 수 있는가?)
+- The first property says that there exist constants c1, c2 such that 0 < c1 ≤ T(n) ≤ c2 for n < n0. 
+- For every legal input, the algorithm must output the solution to the problem it’s solving in finite time. 
+- Thus we can let c1 be the minimum amount of time to call and return from a procedure which must be positive, because machine instructions need to be executed to invoke a procedure.
+- The running time of the algorithm may not be defined for some values of n if there are no legal inputs of that size, but it must be defined for at least one, or else the “algorithm” doesn’t solve any problem.
+- Thus we can let c2 be the algorithm’s maximum running time on any input of size n < n0, where n0 is sufficiently large that the algorithm solves at least one problem of size less than n0.
+- The maximum is well defined, since there are at most a finite number of inputs of size less than n0, and there is at least one if n0 is sufficiently large. 
+- Consequently, T(n) satisfies the “first property”
+- If the second property fails to hold for T(n), then the algorithm isn’t correct, because it would end up in an infinite recursive loop or otherwise fial to compute a solution.
+- Thus, it stands to reason that a recurrence for the worst-case running time of a correct divide-and-conquer algorithm would be “algorithmic”.
+### 구현: 없음
+
+### 코멘트
+
+1번째 조건은 base case, 2번째 조건은 recursion case를 의미하는거 같다? 아니다. 2번째 조건은 ‘유한번 내로’ 재귀가 끝나는 조건을 의미한다. 합당한 입력값의 경계선인 n0를 넘어서는 입력에 대해서는, 모든 재귀가 제거된다는 뜻이다.
+
+### 자세한 설명
+
+두 조건을 “1. 베이스 케이스”와 “2. 재귀가 유한 단계 내에 베이스 케이스로 도달함을 보장하는 조건” 정도로 해석하시면 됩니다. 다만 엄밀히는,
+
+1.	(베이스 케이스로서의 O(1) 조건)
+
+“상수 n_0”보다 작은 모든 n에 대해 T(n) = O(1) 이라는 것은,
+
+‘n_0’ 미만 영역(즉 충분히 작은 문제 크기)에 대해서는 상수 시간에 해결이 가능하다는 의미입니다.
+
+보통 알고리즘 구현 시, 문제 크기가 충분히 작아지면(예: n = 1 혹은 n이 작을 때)
+
+재귀를 멈추고 직접(상수 시간) 처리하는 “베이스 케이스”와 대응합니다.
+
+2.	(재귀 호출이 유한 번 안에 끝남을 보장)
+
+“n_0 이상의 모든 n에 대해, 어떤 경로로 재귀 호출을 타고 내려가도
+
+유한 횟수 안에 정의된 베이스 케이스로 도달”한다는 것은,
+
+문제 크기가 충분히 큰 경우에도 재귀가 무한히 이어지지 않고
+
+반드시 더 작은 문제로 내려가서 결국 (1)번의 베이스 케이스를 만나게 된다는 뜻입니다.
+
+즉 잘 정의된 재귀 구조(well-founded recursion)라는 점을 보장합니다.
+
+정리하면,
+
+•	조건 (1): “충분히 작은 입력에 대해선, T(n)을 상수 시간으로 처리한다(= 베이스 케이스).”
+
+•	조건 (2): “충분히 큰 입력에 대해서도, 재귀가 결국 (1)의 케이스까지 유한 번 만에 도달한다.”
+
+이렇게 두 조건을 만족해야, 점화식(재귀식) 자체가 현실적으로 구현 가능한 알고리즘을 반영하게 되고, 이를 **‘algorithmic recurrence(알고리즘적 점화식)’**라고 부릅니다.
+
+## 개구코 3. 재귀식 풀기
+
+### 개념: 재귀식을 푸는 4가지 방법론
+
+1. substitution method: you guess the form of a bound and then use mathematical induction to prove your guess correct and solve for constants. This method is perhaps the most robust method for solving recurrences, but it also requires you to make a good guess and to procedure an inductive proof.
+1. recursion-tree method: models the recurrence as a tree whose nodes represent the costs incurred at various levels of the recursion. To solve the recurrence, ou determine the costs at each level and add them up, perhaps using techniques for bounding summations from Section A.2. Even if you don’t usse this mehtod to formally prove a bound, it cna be helpful in guessing the form of the obund for use in the substitution method.
+1. master method: the easiest method, wen it applies. It provides bounds for recurrences of the form T(n)=aT(n/b) + f(n), where a > 0 and b > 1 are constants and f(n) is a given “driving” function. This type of recurrence tends to arise more frequently in the study of algorithms than any other. It characterizes a divide-and-conquer algorithm that creates a subproblems, each of which is 1/ times the size of the original problem, using f(n) time for the divide and combine steps. To apply the master method, you need to memorize three cases, but once you do, you can easily determine asymptotic bounds on running times for many divide-and-conquer algorithms
+1. Akra-Bazzi method: a general method for solving divide-and-conquer recurrences. Although it involves calculus, it can be used to attack more complicated recurrences than those addressed by the master method.
+## 개구코 4.
+
+### 개념
+
+### 구현
+
+```plain text
+MATRIX-MULTIPLICATION-RECURSIVE(A, B, C, n)
+	if n == 1
+	// Base case.
+		c11 = c11 + a11*b11
+		return
+	//Divide
+	partition A, B, and C into n/2 x n/2 submatrices
+		A11, A12, A21, A22; B11, B21, B22
+```
+
+### 코멘트
+
+
 

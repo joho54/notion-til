@@ -570,7 +570,354 @@ class ChainedHash:
 - 난 해시가 뭐고 키가 뭔지 모르는구나. 해시값을 기준으로 키를 찾는 것인가? 일반적인 키, 밸류 관계로 생각했는데, 잘 대응이 안 된다. 하나의 해쉬 값에 여러 키가 대응되는 것인거 같다.
 - 해쉬는 키도 아니고 밸류도 아니야? 그렇다.
 - 내가 해쉬 테이블에 노드를 추가하는 과정을 제대로 이해하지 못했음을 깨달았다. → 그림으로 그리고 아래에 이미지 첨부하세요
+![](./images/IMG_9978.png)
+
 ### 수도 코드를 보지 않고 작성한 다음 검토해보기
 
+어떤 클래스를 구현해야 하나요?
+
+- Node, ChainedHash
+어떤 함수를 구현해야 하나요?
+
+- 모든 생성자
+- 해쉬
+  - 해쉬벨류
+  - 검색
+  - 추가
+  - 제거
+  - 덤프
+아래에 사진을 첨부하세요
+
+![](./images/IMG_9979.png)
+
+![](./images/IMG_9980.png)
+
+검토
+
+몸이 고생한 덕분에 뭐 대충 동작은 다 이해한 거 같다.
+
 ### 코드로 구현해보기
+
+> 위 내용만 참고해서 코드로 ChainedHash를 구현합니다.
+
+```python
+import hashlib
+from typing import Any
+
+class Node:
+    def __init__(self, key, value, next):
+        self.key = key
+        self.value = value
+        self.next = next
+
+class ChainedHash:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.hash_table = [None] * capacity
+        
+    def hash_value(self, key: Any):
+        if isinstance(key, int):
+            return key % self.capacity
+        return int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.capacity
+    
+    def find(self, key: Any):
+        hash = self.hash_value(key=key)
+        p = self.hash_table[hash]
+        while p is not None:
+            if p.key == key:
+                return p.value
+            p = p.next
+        return False
+    
+    def add(self, key: Any, value: Any):
+        hash = self.hash_value(key)
+        p = self.hash_table[hash]
+        while p is not None:
+            if p.key == key:
+                return False
+            p = p.next
+        temp = Node(key, value, self.hash_table[hash]) # 기존 첫 요소를 내 뒤로 설정.
+        self.hash_table[hash] = temp # 내가 일등 먹음. 각 해쉬의 마지막 요소는 next가 None
+        return True
+    
+    def remove(self, key: Any):
+        hash = self.hash_value(key)
+        p = self.hash_table[hash]
+        pp = None
+        while p is not None:
+            if p.key == key: # 일치하는 키를 찾았을 경우
+                if pp is None: # 앞 요소가 none일 경우, 그대로 p만 배제
+                    self.hash_table[hash] = pp
+                else: # 앞 요소가 있을 경우!
+                    pp.next = p.next # 끝인가?
+            pp = p # 왜 저장해? 끊고 나서 next를 서로 엇갈리게 지정해줘야 함.
+            p = p.next
+        return False
+    
+    def dump(self):
+        for i in range(self.capacity): #그니까.
+            p = self.hash_table[i] # 이터레이션을 어떻게 함?
+            print(f'{i}', end='')
+            while p is not None:
+                print(f'-> {p.key} ({p.value})', end='')
+                p = p.next
+            print()
+
+```
+
+이제 테스트 하고, 문제가 생기면 이슈를 팝니다. 
+
+이로써 연결 리스트 구현 완료! 이에 대한 피드백을 받아 봅시다.
+
+### 피드백
+
+아주 깔끔하게 구현하셨습니다. 다만 remove 메서드 내부에서 버그가 하나 보이므로, 그 부분만 수정하면 완성도 높은 코드가 됩니다. 아래에서 해당 부분을 짚어드릴 테니 참고해보세요.
+
+1. remove 메서드 버그
+
+현재 remove 메서드에서는 찾고자 하는 키를 발견했을 때,
+
+```plain text
+if pp is None:  # 앞 요소가 none일 경우, 그대로 p만 배제
+    self.hash_table[hash] = pp  # <-- 여기서 head를 None으로 덮어쓰고 있습니다.
+else:
+    pp.next = p.next
+```
+
+이 로직 때문에 버킷의 첫 번째 노드를 지울 때, 원래 연결 리스트의 head를 **pp(None)**로 덮어쓰게 됩니다.
+
+결과적으로 해당 버킷 전체가 날아가 버리게 되므로, 올바른 head 재설정이 필요합니다.
+
+또한 노드를 제대로 삭제한 시점에서 return False를 고정적으로 리턴하므로, 삭제 성공 여부가 반영되지 않습니다.
+
+올바른 수정 예시
+
+```plain text
+def remove(self, key: Any):
+    hash = self.hash_value(key)
+    p = self.hash_table[hash]
+    pp = None
+
+    while p is not None:
+        if p.key == key:  # 일치하는 키를 찾았을 경우
+            if pp is None:
+                # 연결 리스트의 맨 앞 노드를 지우는 경우 -> head 교체
+                self.hash_table[hash] = p.next
+            else:
+                # 중간 혹은 끝 노드를 지우는 경우 -> 앞 노드(pp)의 next를 건너뛰어 연결
+                pp.next = p.next
+            return True  # 삭제 성공 시 True 반환
+
+        # 다음 노드로 이동
+        pp = p
+        p = p.next
+
+    # 찾지 못하고 반복문 종료 시
+    return False
+```
+
+•	맨 앞 노드(head) 교체
+
+self.hash_table[hash] = p.next 로 연결 리스트의 첫 노드만 제거하고, 이후 노드는 모두 유지합니다.
+
+•	중간 혹은 끝 노드 교체
+
+pp.next = p.next 로 원하는 노드를 제거하고, 앞 노드(pp)를 제거된 노드(p)의 다음 노드와 연결합니다.
+
+•	삭제 성공 시 return True 하여, 호출하는 쪽에서 삭제 여부를 알 수 있게 합니다.
+
+2. 추가적으로 개선할 수 있는 부분
+
+1.	find 메서드 반환 타입 통일
+
+•	지금은 값이 없을 때 False를 리턴하시는데, 객체 혹은 자료구조에서는 “값이 없음”을 뜻하기 위해 None을 쓰는 경우가 많습니다.
+
+•	예: return None
+
+2.	hash_value에서의 변수명
+
+•	hash라는 이름을 사용할 경우, 파이썬 내장 함수 hash와 혼동될 수 있습니다.
+
+•	bucket_idx 또는 index 등으로 변수명을 변경하면 가독성이 좋아집니다.
+
+3.	버킷 확장(Resize) & 재해싱(Rehash) 로직
+
+•	현재는 정해진 capacity만큼만 버킷을 사용하고 있습니다.
+
+•	데이터가 계속 쌓여 체인이 너무 길어지면 검색/삭제 시 성능이 저하될 수 있습니다.
+
+•	일정 ‘부하율(load factor)’을 넘어가면 버킷을 확장하고, 기존 데이터를 새로운 해시 테이블로 옮기는(재해싱) 로직을 구성해주면 좋습니다.
+
+4.	테스트 코드 작성
+
+•	실제로 동작이 잘 되는지 확인할 수 있도록, 적절한 테스트 함수를 작성하는 것이 좋습니다. 예를 들어 unittest나 pytest 등을 이용하여, add/find/remove/dump가 의도대로 작동하는지 체크하면 디버깅이 훨씬 쉬워집니다.
+
+3. 최종 수정 예시
+
+전체적으로 버그만 수정한 예시는 아래와 같습니다.
+
+```plain text
+import hashlib
+from typing import Any
+
+class Node:
+    def __init__(self, key, value, next):
+        self.key = key
+        self.value = value
+        self.next = next
+
+class ChainedHash:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.hash_table = [None] * capacity
+
+    def hash_value(self, key: Any):
+        if isinstance(key, int):
+            return key % self.capacity
+        return int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.capacity
+
+    def find(self, key: Any):
+        index = self.hash_value(key)
+        p = self.hash_table[index]
+        while p is not None:
+            if p.key == key:
+                return p.value
+            p = p.next
+        return None  # 혹은 False 대신 None으로 반환
+
+    def add(self, key: Any, value: Any):
+        index = self.hash_value(key)
+        p = self.hash_table[index]
+        while p is not None:
+            if p.key == key:
+                return False  # 이미 존재하는 키면 False
+            p = p.next
+
+        new_node = Node(key, value, self.hash_table[index])
+        self.hash_table[index] = new_node
+        return True
+
+    def remove(self, key: Any):
+        index = self.hash_value(key)
+        p = self.hash_table[index]
+        pp = None
+
+        while p is not None:
+            if p.key == key:  # 일치하는 키를 찾았을 경우
+                if pp is None:
+                    self.hash_table[index] = p.next
+                else:
+                    pp.next = p.next
+                return True  # 삭제 성공을 알림
+            pp = p
+            p = p.next
+        return False  # 찾지 못했음
+
+    def dump(self):
+        for i in range(self.capacity):
+            p = self.hash_table[i]
+            print(f'[{i}]', end='')
+            while p is not None:
+                print(f' -> {p.key} ({p.value})', end='')
+                p = p.next
+            print()
+```
+
+정리
+
+•	연결 리스트 기반 체이닝 기법이 잘 구현되었습니다.
+
+•	remove 메서드에서 버킷의 첫 노드를 올바르게 제거하고, 삭제 성공 여부를 반환하도록 수정만 해주시면 좋습니다.
+
+•	필요하다면 부하율을 고려해 리사이징과 재해싱을 고려하시면, 실제 해시 테이블 구현에 더 가깝게 다가갈 수 있습니다.
+
+이상으로 기본적인 체이닝 방식의 해시 테이블 코드를 완성하실 수 있을 겁니다. 구현해보시고 궁금한 부분 있으시면 또 질문 주세요. 화이팅입니다!
+
+## 개구코 2. 오픈 주소법(기본 개념 및 원소 추가)
+
+### 개념: 충돌이 발생했을 때 재해시를 수행하며 빈 버킷을 찾는 방법. 닫힌 해시법이라고도 함
+
+- 재해시를 위한 해시 함수는 자유롭게 정할 수 있음(그림에서는 키에 1을 더하여 13으로 나눈 나머지를 사용)
+### 구현: 그림참조
+
+![](./images/IMG_9992.png)
+
+### 코멘트: Open address 해시는 closed hashing이다. 
+
+뭐 이리 엇갈리게 이름을 지었냐.
+
+## 개구코 3. 닫힌 주소법의 버킷 속성과 검색
+
+### 개념:
+
+### 구현:
+
+(그림: 오픈 주소법에서의 버킷의 속성에 대해)
+
+![](./images/IMG_9993.png)
+
+(그림: 오픈 주소법에서 원소 검색)
+
+![](./images/IMG_9994.png)
+
+### 코멘트
+
+삭제완료 버킷 속성은, 해시값에 원하는 데이터가 없다고해서 검색 실패하지 말고 재해싱한 값으로 다 이터레이션 해 봐야기 때문에 주어져 있는 사인이구나. 그런데, 그러면 배열 전체 돌때까지 이터레이션 해야하나?
+
+
+
+## 머나몸고: 닫힌 해시 구현
+
+### Phase1. 수도코드 필사
+
+(이미지 첨부)
+
+### Phase2. 수도코드 직접 작성
+
+(이미지 첨부)
+
+### Phase3. 위 이미지를 기반으로 코드 구현
+
+# 이슈: 해쉬값 구하는 과정에 에러 발생
+
+## Phase1. 
+
+### 환경: 파이썬
+
+### 로그: TypeError: int() can't convert non-string with explicit base
+
+### 최근 변경 사항: chained hash 구현
+
+## Phase2-1
+
+### 확인: 
+
+```python
+return int(hashlib.sha256(str(key).encode()), 16) % self.capacity
+```
+
+int 캐스팅에 주어진 값이 int일 때 발생한다고 함. 이건 원래 코드가 기억이 안 나서 그냥 교재 참조.
+
+```python
+return(int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.capacity)
+
+```
+
+.hexdigest() 연산이 빠져 있었음. 이것의 의미는? 
+
+> Return the digest value as a string of hexadecimal digits.
+
+16진수 문자열 값을 반환.
+
+### 시도: 
+
+위 코드를 그대로 사용
+
+### 결과 분석
+
+성공
+
+
+
+
 
