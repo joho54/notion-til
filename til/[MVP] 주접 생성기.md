@@ -381,7 +381,7 @@ $('.sort-btn.oldest').on('click', function () {
 
 ### 오류 400: redirect_uri_mismatch
 
-앱이 Google의 OAuth 2.0 정책을 준수하지 않기 때문에 앱에 로그인할 수 없습니다.앱 개발자라면 Google Cloud Console에서 리디렉션 URI를 등록하세요.
+앱이 Google의 OAuth 2.0 정책을 준수하지 않기 때문에 앱에 로그인할 수 없습니다. 앱 개발자라면 Google Cloud Console에서 리디렉션 URI를 등록하세요.
 
 요청 세부정보: redirect_uri=http://127.0.0.1:5000/login/google/authorized flowName=GeneralOAuthFlow
 
@@ -517,17 +517,17 @@ Ajax 요청으로 폼을 제출할 경우, 브라우저는 서버가 보낸 302 
 여기서 like-btn 뒤에 liked 클래스 추가하면 빨갛게 칠해짐
 
 ```html
-                    <span class="joojeop-likes flex items-center">
-                        <!-- like-btn에 cursor-pointer를 추가해 클릭 가능함을 표시 -->
-                        <span class="like-btn cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </span>
-                        {{ joojeop.like }} likes
-                    </span>
+  <span class="joojeop-likes flex items-center">
+      <!-- like-btn에 cursor-pointer를 추가해 클릭 가능함을 표시 -->
+      <span class="like-btn cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+      </span>
+      {{ joojeop.like }} likes
+  </span>
 ```
 
 

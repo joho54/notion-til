@@ -10,8 +10,6 @@
 
 > 풀이에 실패했다면, 접막틀 정리(접근방법, 막힌 부분)
 
-
-
 # 재귀: 쿼드트리
 
 https://www.acmicpc.net/problem/1992
@@ -1372,49 +1370,6 @@ $$
 
 아래는 전형적인 공유기 설치 문제 풀이 방법을 간단히 정리한 코드입니다.
 
-```python
-import sys
-input = sys.stdin.readline
-
-N, C = map(int, input().split())
-houses = sorted(int(input()) for _ in range(N))
-
-# 공유기를 mid 간격으로 놓을 수 있는지 검사
-def can_place(mid):
-    # 첫 집에 공유기 하나 설치
-    count = 1
-    last_position = houses[0]
-
-    # 나머지 집들 순회
-    for i in range(1, N):
-        # 직전에 공유기 설치한 집과의 거리가 mid 이상이면 설치
-        if houses[i] - last_position >= mid:
-            count += 1
-            last_position = houses[i]
-            # 이미 C대 다 설치하면 True
-            if count == C:
-                return True
-    # 다 깔아도 C대 미만이면 False
-    return False
-
-# 이진 탐색 범위: 최소 간격 1부터, 최대 간격 (가장 오른쪽 - 가장 왼쪽)까지
-left, right = 1, houses[-1] - houses[0]
-answer = 0
-
-while left <= right:
-    mid = (left + right) // 2
-
-    if can_place(mid):
-        # mid 간격으로 C대를 배치할 수 있다면, 더 넓은 간격 시도
-        answer = mid  # 일단 저장
-        left = mid + 1
-    else:
-        # 불가능하다면 간격을 줄여본다
-        right = mid - 1
-
-print(answer)
-```
-
 동작 흐름
 
 1.	초기 세팅
@@ -1480,6 +1435,174 @@ print(answer)
 즉, 짧은 시간에 최대한 다양한 유형의 문제를 풀고, 빠르게 피드백을 받아 부족한 부분을 메꾸는 것이 좋은 전략입니다.
 
 앞으로도 30분 룰을 잘 활용하셔서, 많은 문제를 효율적으로 학습하시길 응원합니다!
+
+## Phase3. 피드백 참고 후 다시 30분 도전 - 성공!
+
+또 실패하면 그냥 코드 외우기 형벌
+
+```python
+"""
+1. 문제 읽기:
+2. 문제 풀기
+2-1. recursive method. 거리 배열을 써야할 거 같은데.
+import sys
+sys.setrecursionlimit(10**8) # 10^8 까지 늘림.
+
+n, c = tuple(map(int, sys.stdin.readline().split()))
+
+X = [
+    int(sys.stdin.readline().strip())
+    for _ in range(n)
+]
+
+X.sort()
+
+def get_min_distance(A:list):
+    '''집에 배치하는 경우 거리의 최소값 구하기'''
+    if len(A) >= 2:
+        min_dist = sys.maxsize
+        for i in range(1, len(A)):
+            min_dist = min(min_dist, A[i]-A[i-1])
+        return min_dist
+    return 0
+
+memo = {}
+def set_router_recursively(A: list, X: list, idx_house: int, num_router: int):
+    '''재귀적으로 X에서 라우터를 놓는 모든 경우를 A에 구합니다.'''
+    '''바닥 조건: 마지막 집에 라우터 배치하는 경우에서 재귀했을 때, 라우터가 다 배치됐다면'''
+    # 바닥 조건의 경우를 메모에 저장해놓고, 메모에 있는 경우 재귀 안 하면 안 되나.
+    min_dist = get_min_distance(A)
+    if memo.get(min_dist, False):
+        return
+    if idx_house == len(X)-1:
+        if num_router <= 0:
+            memo[min_dist] = True
+        return
+    # idx_house에 배치하는 경우
+    set_router_recursively([*A, X[idx_house]], X, idx_house+1, num_router-1)
+    # idx_house에 배치 안 하는 경우
+    set_router_recursively(A, X, idx_house+1, num_router)
+
+set_router_recursively([], X, 0, c)
+print(max(memo.keys()))
+
+1 2 4 8 9
+그 서브 값도 오름차순이 아닐 것임 .
+0 그다음 최적의 값을 모름
+
+이진탐색을 활용한 백트래킹?
+
+다음 체계는?
+
+3. 수도 코드
+
+4. 코드 구현
+
+"""
+
+""" 2트
+1. 문제 읽기
+2. 문제 풀기
+최대 공유기 거리를 매개변수로 놓고 can_place함수를 통해 '이 거리로 할 수 있는지'판단 하는 과정을
+이진탐색으로 진행.(문제 풀고 나면 나무 자르기 문제랑 어떻게 연관되는지 생각해보기)
+3. 수도 코드
+- 초기 입력을 받는다.
+- left, right를 설정한다. 
+- mid(공유기 최소 거리)를 가지고 can_place로 이터레이션하며 거리를 비교하여 불 자료형을 리턴
+- 끝? 별거 없네. (진짜로 별 거 없었다고 한다)
+4. 코드 구현
+"""
+import sys
+
+n, c = tuple(map(int, sys.stdin.readline().split()))
+MAX_H = 1_000_000_000
+houses = [
+    int(sys.stdin.readline().strip())
+    for _ in range(n)
+    ]
+
+# 집을 정렬.
+
+def can_place(min_dist: int, c_num):
+    """min_dist로 집 사이에 공유기 c_num대를 놓을 수 있는지 판단한다."""
+    # 선형 탐색해야지 뭐.
+    count = 1
+    c_idx = 0
+    # print(f'inspecting {min_dist}')
+    # print(f'{houses[c_idx]}', end=', ')
+    for i in range(1, n):
+        if houses[i] - houses[c_idx] >= min_dist:
+            # print(f'{houses[i]} - {houses[c_idx]} >= {min_dist}')
+            count += 1
+            c_idx = i
+            if count >= c_num: 
+                # print(f'inspection proved success: {min_dist}')
+                return True
+    # print(f'inspection discovered as failure for {min_dist}') 
+    return False
+
+
+def solve():
+    houses.sort()
+    left, right = 0, MAX_H
+    mid = (left + right) // 2
+    max_mid = mid
+    while left <= right:
+        if can_place(mid, c):
+            # print(f'can place at least {mid}')
+            # try bolder
+            left = mid + 1
+            max_mid = mid # mid 저장.
+        else:
+            # try smaller
+            right = mid - 1
+        mid = (left + right) // 2
+        # print(f'trying new area: {left} {mid} {right}')
+    return max_mid
+print(solve())
+
+"""
+이슈: 
+
+Phase1.
+환경: 파이썬
+로그: 11프로만 정답. 
+최근 변경 사항: can_place 와 solve 함수 작성
+
+Phase2.
+확인: 11프로 맞았으면 크게 틀린 건 아닐 수도 있는데. 또 반대로 틀린 테스트 케이스
+찾기에 그렇게 어려운 것도 아니긴 하다.
+근데 아무리 생각해도 can_place가 true일 때만 업데이트하는게 맞는데.
+집 개수가 짝수일 때는 맞다.
+홀수가 되면 1씩 작은 값을 내 놓는다. 왜 그렇지?
+일단 짝수인 경우를 집중 공략.
+세부 로그를 찍어본 결과 아래와 같은 결과.
+inspecting 13
+inspection discovered as failure for 13
+inspecting 6
+8 - 1 >= 6
+inspection discovered as failure for 6
+inspecting 2
+4 - 1 >= 2
+8 - 4 >= 2
+inspection proved success: 2
+can place at least 2
+inspecting 4
+8 - 1 >= 4
+inspection discovered as failure for 4
+2
+
+2를 본 다음 4를 보고, 4를 실패한 다음 3을 안 보고 끝낸다.
+left, right 인덱스 범위를 잘못 줬음!!
+left < right x
+left <= right
+
+시도: left <= right
+분석: 해결
+진짜 제발 이런 거좀 틀리지 마세요!
+"""
+
+```
 
 # 문제: 두 용액 (실패, 다시 풀어보기)
 
@@ -1601,39 +1724,6 @@ Phase2
 
 투 포인터 코드 예시 (Python)
 
-```plain text
-import sys
-input = sys.stdin.readline
-
-n = int(input())
-arr = list(map(int, input().split()))
-arr.sort()
-
-left, right = 0, n - 1
-best_sum = abs(arr[left] + arr[right])  # 초기값
-best_pair = (arr[left], arr[right])
-
-while left < right:
-    s = arr[left] + arr[right]
-
-    # 0에 더 가까운 합을 찾으면 갱신
-    if abs(s) < best_sum:
-        best_sum = abs(s)
-        best_pair = (arr[left], arr[right])
-
-        # 혹시 정확히 0이면 바로 종료해도 됨
-        if s == 0:
-            break
-
-    # 합이 음수면 left를 올려서 합을 크게, 양수면 right를 내려서 합을 작게
-    if s < 0:
-        left += 1
-    else:
-        right -= 1
-
-print(best_pair[0], best_pair[1])
-```
-
 •	이렇게 하면, 모든 가능한 i,j 쌍을 직접 보지 않고도 O(N)에 해결 가능하므로 효율적입니다.
 
 2. 모든 쌍 시도(이중 반복) + 최소값 탐색 (단순 방법)
@@ -1683,6 +1773,203 @@ print(best_pair[0], best_pair[1])
 •	이미 많이 알려진 “두 수의 합(혹은 특정 값에 가장 가까운 합)” 문제 패턴이니, 이 로직으로 구현해 보시면 쉽게 정답을 도출할 수 있습니다.
 
 화이팅입니다!
+
+## Phase3. 피드백 참고해서 30분 시도 - 실패: 인덱스가 너무 악랄하다.
+
+실패 시 코드 필사 형벌
+
+근데 이 경우는 내 풀이가 완전 틀린 방향은 아닌 거 같은데, 지피티는 그냥 투 포인터로 풀라고 하는 거지. 이진 탐색으로 하려면 경계조건이 중요해서 그렇다 이말인 거 같은데.
+
+```python
+"""
+1. 문제 읽기
+2. 문제 풀기
+이 경우는 i를 고정시키고 j를 이진탐색하면 안 되나? 그래보자 일단.
+3. 수도 코드
+4. 코드 구현
+"""
+
+import sys
+
+n = int(sys.stdin.readline().strip())
+arr = list(map(int, sys.stdin.readline().split()))
+
+def bin_search(i: int, left, right):
+    """arr[i] + arr[center]의 절대값을 최소로 만들어주는 center 인덱스를 리턴"""
+    center = (left+right)//2
+    # print(f'\nbin_search start {left} {center} {right}')
+    zero_combine = sys.maxsize
+    best_center = None
+    while left <= right:
+        combine = arr[center] + arr[i]
+        # print(f'{arr[center]} + {arr[i]} = {combine}')
+        if combine > 0:
+            right = center - 1
+        elif combine < 0:
+            left = center + 1
+        else: # 혼합 결과가 0인 베스트 케이스
+            return center
+        if zero_combine > abs(combine):
+            zero_combine = combine
+            best_center = center
+        center = (left+right)//2
+        # print(f'combine: {combine}, to next segment {left} {center} {right}')
+    # print(f'result: {best_center}')
+    return best_center if best_center != None else None
+        
+
+def incremental_method(n: int, arr: list):
+    arr.sort()
+    zero_combine = sys.maxsize
+    for i in range(0, len(arr)):
+        
+        j = bin_search(i=i, left=i+1, right=len(arr)-1)
+        if j == None: continue
+        combine = abs(arr[i] + arr[j])
+        # print(f'combine: {combine}')
+        # 초깃값은 매우 큰 양수, 컴바인 값도 절대값이므로 그냥 최소를 업데이트
+        if zero_combine >= combine:
+            pair = (arr[i], arr[j])
+            # print(f'zero_combine update: {arr[i], arr[j]}')
+        zero_combine = min(zero_combine, combine)
+    return f'{pair[0]} {pair[1]}'
+
+print(incremental_method(n, arr))
+            
+
+
+"""
+이슈: 5프로 맞고 틀렸습니다
+Phase1
+환경: 파이썬
+로그: 틀렸습니다(5프로 정답)
+최근 변경 사항: 이진 탐색 코드 작성
+
+Phase2
+확인: 이럴 땐 역시 경계값을 다시 보고 문제 조건을 다시 정리.
+산성 용액은 1부터 1,000,000,000까지 양의 정수
+알칼리 용액은 -1부터 1,000,000,000까지 음의 정수
+같은 양의 두 용액을 혼합하여 특성값이 0에 가가운 용액 만들기
+틀린 테스트 케이스를 찾았다.
+5
+-1 -1 -1 -1 4
+-1 4
+
+답은 -1, -1로 -2를 만드는 0, 1이 나와야 하는데, 
+로직 문제가 있는지 -1, 4가 나온다.
+
+시도: 평범한 이진탐색 인덱스로 재설정
+결과분석
+"""
+
+"""
+이슈: 1프로 맞고 틀렸습니다.
+
+Phase1.
+환경: 파이썬
+로그: 1프로 채점 후 틀렸습니다(두 가지 테스트케이스는 통과함을 확인)
+최근 변경 사항: 이진 탐색 조건 수정
+while left <= right:
+    combine = arr[center] + arr[i]
+    if combine > 0:
+        left, right = left, center - 1
+    elif combine < 0:
+        left, right = center + 1, right
+    else:
+        return center
+    center = (left+right)//2
+return center
+
+
+Phase2. 
+확인: 중복 값이 들어가는 경우를 확인. 이건 이진 탐색에서 문제가 생기는 것으로 보인다.
+5
+1 2 3 4 5
+1 1
+근데 이진탐색을 이렇게 하는데 같은 인덱스가 어떻게 또 나오지?
+j = bin_search(i, left=i+1, right=len(arr)-1)
+
+시도: 
+분석: 
+"""
+
+"""
+이슈: 틀린 테스트 케이스
+
+Phase1.
+환경: 파이썬
+로그: 
+5
+1 2 3 4 5
+
+bin_search start 1 2 4
+combine: 4, to next segment 1 1 1
+result: 2
+zero_combine update: (1, 3)
+
+bin_search start 2 3 4
+combine: 6, to next segment 2 2 2
+result: 3
+
+bin_search start 3 3 4
+combine: 7, to next segment 3 2 2
+result: 3
+
+bin_search start 4 4 4
+result: 4
+
+bin_search start 5 4 4
+result: 4
+1 3
+
+최근 변경 사항: 인덱스 수정.
+
+Phase2.
+확인: 아니 진짜 이진 트리 조건을 어떡하라는 거야.
+
+시도: 
+분석: 
+"""
+```
+
+## Phase4. 형벌: 외우십쇼
+
+```python
+import sys
+import bisect
+
+def main():
+    input = sys.stdin.readline
+    n = int(input().strip())
+    arr = list(map(int, input().split()))
+    arr.sort()
+    
+    best_sum = 2_000_000_000 * 2  # 충분히 큰 초기값
+    best_pair = (0, 0)
+    
+    for i in range(n - 1):
+        target = -arr[i]
+        # i+1 ~ n-1 범위에서 target의 삽입 위치를 찾음
+        j = bisect.bisect_left(arr, target, i + 1, n)
+        
+        # 후보: j (존재하면)
+        if j < n:
+            current_sum = arr[i] + arr[j]
+            if abs(current_sum) < best_sum:
+                best_sum = abs(current_sum)
+                best_pair = (arr[i], arr[j])
+        # 후보: j-1 (i+1 이상이면)
+        if j - 1 > i:
+            current_sum = arr[i] + arr[j - 1]
+            if abs(current_sum) < best_sum:
+                best_sum = abs(current_sum)
+                best_pair = (arr[i], arr[j - 1])
+    
+    print(best_pair[0], best_pair[1])
+
+if __name__ == '__main__':
+    main()
+```
 
 # 문제: 가장 긴 증가하는 부분 수열, (실패, 다시 풀기)
 
