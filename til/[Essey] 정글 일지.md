@@ -520,3 +520,596 @@ WEEK02: 1.5. 캐시가 중요하다 ~ 1.7. 운영체제는 하드웨어를 관�
 
 오전에 연결 리스트랑 트리를 다 보는게 좋겠습니다. 
 
+## 퀴즈 후기
+
+### 큐 구현이 좀 긴가민가. enque, deque 코드를 다시 볼 것. 아래는 내가 작성한 정답
+
+![](./images/IMG_0037.jpeg)
+
+### 쓰레드의 정의가 무엇인가!
+
+내가 작성한 정답: 하나의 프로세스가 가질 수 있는 여러 작업 분기.
+
+> 쓰레드는 **하나의 프로세스 내에서 실행되는 독립적인 실행 흐름(실행 단위)**입니다.
+
+(CSAPP 정리에서 참조) 개구코 11. 쓰레드
+
+개념: thread(the multiple execution units) consists a process.
+
+- Although we normally think of a process as having a single control flow, in modern systems a process can actually consist of multiple execution units, called thread, each running in the context of the process and sharing the same code and global data.
+- Threads are an increasingly important programming model because of the requirement for concurrency in network servers, because it is easier to share data between multiple threads than between multiple processes, 
+- and beccause threads are typically more efficient than processes.
+- Multi-threading is “also” one way to make programs run faster when multiple processors are available
+# 일지: 2025.03.27. 
+
+## 발제 전 화두 정리
+
+### 1. 파이썬 맵은 콜리젼을 어떻게 해결하며 키로 무엇을 쓰는가
+
+좋은 질문이에요! Python에서 map이라는 단어는 보통 두 가지로 쓰입니다:
+
+1.	map() 함수: 함수형 프로그래밍 도구
+
+2.	dict 자료형 (해시 맵): 키-값 쌍 저장 자료구조 — 이걸 물어보신 것 같아요!
+
+아래는 파이썬에서의 딕셔너리(dict) 자료구조, 즉 해시 맵의 동작 원리에 대해 설명드릴게요.
+
+🧠 파이썬 딕셔너리(dict) = 해시 맵
+
+🔑 키로 무엇을 쓸 수 있는가?
+
+•	해시 가능한 (hashable) 객체만 키로 사용할 수 있어요.
+
+•	대표적으로:
+
+•	int, float, str, tuple(불변 요소만 포함한) ✅
+
+•	list, dict, set ❌ (mutable → hashable 하지 않음)
+
+```plain text
+d = {
+    42: 'int key',
+    "hello": 'string key',
+    (1, 2): 'tuple key'
+}
+```
+
+💥 콜리전(충돌)은 어떻게 처리되는가?
+
+•	파이썬 dict는 해시 충돌(collision) 발생 시 다음 방식으로 처리합니다:
+
+1. 해시 계산
+
+•	hash(key)를 이용해 해시 값을 얻고, 내부 배열 인덱스를 결정
+
+2. 충돌 발생 시?
+
+•	open addressing 방식 사용 (구체적으로는 probing)
+
+•	즉, 충돌하면 다음 빈 공간을 찾아 저장
+
+3. __eq__로 비교
+
+•	해시값이 같은 경우, 동일한 객체인지 == 연산으로 비교
+
+•	같으면 덮어씀, 다르면 다음 슬롯을 탐색
+
+📦 예시
+
+```python
+class MyKey:
+    def __init__(self, val):
+        self.val = val
+    def __hash__(self):
+        return 42  # 일부러 충돌 발생!
+    def __eq__(self, other):
+        return self.val == other.val
+
+a = MyKey(1)
+b = MyKey(2)
+
+d = {}
+d[a] = 'first'
+d[b] = 'second'
+
+print(d[a])  # first? second? → second는 b로 들어감
+print(d[b])  # second
+```
+
+•	a와 b는 같은 해시값이지만, __eq__에서 다르다고 판단되므로 다른 슬롯에 저장
+
+🔒 요약
+
+필요하다면 딕셔너리 내부 구조를 그림으로 설명해드릴 수도 있어요!
+
+
+
+### 2. 파이썬 array는 연결리스트인가 무엇인가, 어떤 자료구조로 구현된 것인가.
+
+좋은 질문이에요!
+
+결론부터 말하자면:
+
+> **파이썬의 리스트(list)는 연결 리스트(linked list)가 아니라, 동적 배열(dynamic array)**입니다.
+
+🔍 파이썬 리스트(list)의 자료구조
+
+✅ 내부 구현: Dynamic Array (동적 배열)
+
+•	C로 구현된 연속된 메모리 공간에 요소들을 저장
+
+•	C의 배열 + 메모리 재할당 로직으로 구성된 구조
+
+```plain text
+arr = [1, 2, 3, 4]
+```
+
+•	실제 메모리 상에는 [1][2][3][4][ ][ ][ ] 처럼 빈 슬롯이 더 있을 수 있어요.
+
+•	새로운 값이 추가될 때 공간이 부족하면 더 큰 공간을 재할당하고 복사하는 식으로 작동해요.
+
+⚙️ 동적 배열 vs 연결 리스트
+
+📦 메모리 재할당 예시
+
+```python
+import sys
+
+a = []
+print(sys.getsizeof(a))  # 리스트의 초기 메모리 크기
+
+a.append(1)
+print(sys.getsizeof(a))  # 더 커진 공간 확보
+
+a.append(2)
+a.append(3)
+print(sys.getsizeof(a))  # 공간이 미리 확장되었을 수도 있음
+```
+
+→ 리스트는 요소를 추가할수록 재할당하며 공간을 확장해 나갑니다.
+
+💡 관련 키워드
+
+•	파이썬 리스트 = vector (C++), ArrayList (Java)와 유사
+
+•	연결 리스트 구현을 원한다면 collections.deque나 직접 Node 클래스 만들기
+
+필요하면, 연결 리스트와 파이썬 리스트의 성능 차이 실험 코드도 도와드릴게요!
+
+### 3. 리스트 컴프리헨션: range와 리스트의 차이는 무엇인가.
+
+1. range와 리스트의 차이는 뭔가
+좋은 질문이에요!
+
+결론부터 말하자면:
+
+> **파이썬의 리스트(list)는 연결 리스트(linked list)가 아니라, 동적 배열(dynamic array)**입니다.
+
+🔍 파이썬 리스트(list)의 자료구조
+
+✅ 내부 구현: Dynamic Array (동적 배열)
+
+•	C로 구현된 연속된 메모리 공간에 요소들을 저장
+
+•	C의 배열 + 메모리 재할당 로직으로 구성된 구조
+
+```plain text
+arr = [1, 2, 3, 4]
+```
+
+•	실제 메모리 상에는 [1][2][3][4][ ][ ][ ] 처럼 빈 슬롯이 더 있을 수 있어요.
+
+•	새로운 값이 추가될 때 공간이 부족하면 더 큰 공간을 재할당하고 복사하는 식으로 작동해요.
+
+⚙️ 동적 배열 vs 연결 리스트
+
+📦 메모리 재할당 예시
+
+```python
+import sys
+
+a = []
+print(sys.getsizeof(a))  # 리스트의 초기 메모리 크기
+
+a.append(1)
+print(sys.getsizeof(a))  # 더 커진 공간 확보
+
+a.append(2)
+a.append(3)
+print(sys.getsizeof(a))  # 공간이 미리 확장되었을 수도 있음
+```
+
+→ 리스트는 요소를 추가할수록 재할당하며 공간을 확장해 나갑니다.
+
+💡 관련 키워드
+
+•	파이썬 리스트 = vector (C++), ArrayList (Java)와 유사
+
+•	연결 리스트 구현을 원한다면 collections.deque나 직접 Node 클래스 만들기
+
+필요하면, 연결 리스트와 파이썬 리스트의 성능 차이 실험 코드도 도와드릴게요!
+
+1. 제너레이터가 무엇인가
+파이썬에서 **제너레이터(generator)**는
+
+> 값을 하나씩 ‘생산’해내는 함수 또는 객체
+
+> 일반 함수처럼 한 번에 모든 결과를 반환하지 않고,
+
+> 필요할 때마다 하나씩 값을 만들어주는
+
+✅ 제너레이터란?
+
+•	yield 키워드를 사용하여 하나의 값을 반환하고 함수 실행을 ‘멈춤’
+
+•	다음 값이 필요하면 다시 그 위치부터 실행을 재개
+
+•	메모리를 적게 사용하면서 **이터러블(iterable)**한 객체를 생성함
+
+🧪 예시: 일반 함수 vs 제너레이터 함수
+
+```python
+# 일반 함수: 모든 결과를 한꺼번에 계산 후 반환
+def get_numbers():
+    return [1, 2, 3]
+
+# 제너레이터 함수: 값을 하나씩 yield함
+def gen_numbers():
+    yield 1
+    yield 2
+    yield 3
+
+print(get_numbers())      # [1, 2, 3]
+print(gen_numbers())      # <generator object ...>
+
+for num in gen_numbers():
+    print(num)            # 1, 2, 3
+```
+
+📦 제너레이터의 장점
+
+✨ 실전 예시: 큰 수열 다루기
+
+```python
+def count_up_to(n):
+    i = 1
+    while i <= n:
+        yield i
+        i += 1
+
+gen = count_up_to(1000000)  # 리스트로 만들면 메모리 터짐
+print(next(gen))  # 1
+print(next(gen))  # 2
+```
+
+🚀 한 줄 제너레이터 표현식
+
+```python
+squares = (x*x for x in range(5))
+print(next(squares))  # 0
+print(next(squares))  # 1
+```
+
+> [] 대신 ()를 쓰면
+
+💡 요약
+
+•	yield를 쓰면 제너레이터 함수
+
+•	next()로 값을 하나씩 꺼냄
+
+•	for문에서 자동으로 next() 호출
+
+•	메모리 효율적이고 지연 계산이 가능함
+
+필요하다면 yield와 return의 차이나, send() 같은 고급 제너레이터 기능도 알려드릴게요!
+
+### 셋과 맵의 차이.
+
+### 정리
+
+1. set은 벨류 없는 해쉬다. → 메모리 효과적.
+## 발제
+
+1. 이미지를 코드로 옮기는 연습을 하라
+1. 막막함? 뭐 오케이.
+# WEEK03 학습 일정
+
+좋아, 그래프 알고리즘을 7일 동안 집중적으로 복습하고 문제도 푸는 일정으로 짜볼게. 문제풀이 중심(8):이론학습(2)의 비율을 반영하면서, 하루 학습 시간을 약 4~5시간으로 가정하고 커리큘럼을 제안할게.
+
+🔥 그래프 알고리즘 7일 집중 커리큘럼 (목~수)
+
+📅 Day 1 (목): 그래프 기초 & DFS, BFS 복습
+
+•	이론 (1시간)
+
+•	그래프 용어 정리 (vertex, edge, node, adjacency list/matrix 등)
+
+•	DFS, BFS 개념 복습
+
+•	DFS/BFS 구현 방식 차이 (stack/queue)
+
+•	문제 풀이 (3시간)
+
+•	DFS/BFS 기초 문제 5문제
+
+•	대표 문제 예시: 백준 1260, 2178, 1012 등
+
+•	목표: 그래프 탐색 기본 감각 회복
+
+📅 Day 2 (금): 위상 정렬 (Topological Sort)
+
+•	이론 (1시간)
+
+•	위상 정렬 개념, 사이클 유무 체크
+
+•	인접리스트 + 진입차수 배열 활용한 구현 방식
+
+•	문제 풀이 (3시간)
+
+•	위상 정렬 문제 3~4문제
+
+•	예시: 백준 2252, 1766, 2623 등
+
+•	목표: 위상정렬 알고리즘 구조 체득 + 사이클 감지 이해
+
+📅 Day 3 (토): 다익스트라 알고리즘
+
+•	이론 (1시간)
+
+•	다익스트라 개념, 우선순위 큐 사용 이유
+
+•	인접 리스트 vs 인접 행렬, 시간 복잡도 비교
+
+•	문제 풀이 (3시간)
+
+•	다익스트라 문제 4~5문제
+
+•	예시: 백준 1753, 1916, 11779 등
+
+•	목표: 다익스트라 구현 익숙해지기 (힙큐 꼭 활용)
+
+📅 Day 4 (일): 플로이드-워셜 알고리즘
+
+•	이론 (1시간)
+
+•	플로이드-워셜 개념: 모든 정점 간 최단거리
+
+•	3중 for문 구현 방식, 음수 가중치 허용
+
+•	문제 풀이 (3시간)
+
+•	플로이드-워셜 문제 2~3문제
+
+•	예시: 백준 11404, 11403, 1956 등
+
+•	목표: 전체 경로 기반 최단거리 개념 정립
+
+📅 Day 5 (월): 최소 신장 트리 (MST)
+
+•	이론 (1시간)
+
+•	MST 개념, 크루스칼 vs 프림 알고리즘 비교
+
+•	유니온 파인드, 간선 정렬 이해
+
+•	문제 풀이 (3시간)
+
+•	MST 문제 3~4문제
+
+•	예시: 백준 1197, 4386, 1922 등
+
+•	목표: Union-Find, Greedy 기반 트리 구성 이해
+
+📅 Day 6 (화): 종합 복습 + 중급 문제 도전
+
+•	이론 (0.5시간)
+
+•	개념 간 연결 정리 (탐색 ↔ 최단거리 ↔ MST)
+
+•	문제 풀이 (4시간 이상)
+
+•	혼합 유형 문제 4~5문제
+
+•	예시: 백준 1238, 13549, 14284, 1647 등
+
+•	목표: 문제 유형 구분 없이 그래프 문제 해결 능력 강화
+
+📅 Day 7 (수): 모의 테스트 + 보완
+
+•	모의 테스트 (2시간)
+
+•	제한 시간 내 그래프 알고리즘 3문제 풀기
+
+•	오답 정리 & 보완 (2~3시간)
+
+•	취약한 알고리즘 집중 복습
+
+•	목표: 실전 감각 익히기 + 마지막 취약점 메우기
+
+필요하다면 각 날짜에 맞는 구체적인 추천 문제 리스트나, 오답 기록용 양식도 따로 제공해줄 수 있어. 이 일정으로 하면 일주일 안에 탄탄하게 그래프 실력을 복구할 수 있을 거야. 준비됐으면 바로 목요일부터 시작해보자!
+
+### 위 키워드에는 옵셔널 키워드가 제외됐음. 최대한 빨리 진행 후 옵셔널 키워드 공부도 할 것.
+
+# 일지: 2025.03.27. 저녁
+
+일단 코드리뷰 끝내고.
+
+# 일지: 2025.04.01. 화
+
+## 오늘 한 일
+
+1. GPT와 다익스트라 증명에 대한 대담 - Introduction to Algorithm에 정리
+1. 
+## 알고리즘 풀이 커리큘럼 업데이트
+
+일단 푼다. 30분. 실패하면 피드백을 받는다. 재도전한다. 이걸 무한 반복으로 바꾸도록 한다. 알고리즘 시험 전날에는 그냥 답을 보도록 한다. ㅇㅋ? ㅇㅋ.
+
+이 방법 별로인 거 같다. 그냥 스트레스만 많이 받고
+
+## 현재 진행 상황
+
+### 남은 문제
+
+5639 이진 트리 검색: 2회 시도했는데 실패. 동료의 아이디어를 받음
+
+2655 미로 만들기: 1회 시도 후 실패
+
+7569 토마토: 1회 시도 후 실패
+
+3055 탈출: 여러번 시도했는데 디버깅 실패
+
+2637 장난감 조립: 2회 시도 후 실패
+
+1432 그래프 수정: 아직 시도 안 함
+
+1948 임계경로: 아직 시도 안 함
+
+### 개념 공부
+
+- 위상정렬
+- 최단거리 경로 계산
+## 깨달음
+
+코드를 디버깅할 때, 주석에 예상 값을 인덱스로 적고, 내가 완벽히 이해하며 중단점을 따라가야 의미있는 디버깅을 할 수 있다. 아래는 예시.
+
+```python
+#  **************************************************************************  #
+#                                                                              #
+#                                                       :::    :::    :::      #
+#    Problem Number: 2637                              :+:    :+:      :+:     #
+#                                                     +:+    +:+        +:+    #
+#    By: joho54 <boj.kr/u/joho54>                    +#+    +#+          +#+   #
+#                                                   +#+      +#+        +#+    #
+#    https://boj.kr/2637                           #+#        #+#      #+#     #
+#    Solved: 2025/03/30 22:45:21 by joho54        ###          ###   ##.kr     #
+#                                                                              #
+#  **************************************************************************  #
+# 아니 이거는 그거잖아. 
+#  위상정렬을 하고, shortest path estimate 대신 all paths estimate로 노드를 업데이트하면
+# 되지 않겠나?
+
+import sys
+from collections import deque, defaultdict
+# 그래프 표현 컨벤션을 너무 섞어 쓰는 거 같다.
+def topological_sort(V: int, E):
+    # 내적 초기화
+    # e. in_degree = [0, 0, 0, 0, 0, ]
+    in_degree = [0]*(V+1)
+    # 인접 리스트 초기화
+    adj = defaultdict(list)
+    # v 초기화
+    V_ = [i for i in range(V+1)]
+    # 가중치
+    weights = defaultdict(int)
+    
+    # p1. 5, 1, 2
+    # p2. 5, 2, 2
+    # p3. ...
+    for v, u, w in E:
+        adj[u].append(v)
+        in_degree[v] += 1
+        weights[(u,v)] = w
+    result = []
+    # 내적이 0인 버텍스 초기화
+    
+    initials = [v for v in V_ if in_degree[v] == 0]
+    # initials = [1, 2, 3, 4]
+    for i in initials:
+        p[i-1][i-1] = 1 # 자기자신을 만들 때 하나씩 필요
+
+    que = deque(initials)
+    que.popleft() # 0 제거
+    # que = deque([1, 2, 3, 4])
+    while que:
+        # p1. u = 1
+        u = que.popleft()
+        # p1. result = [1]
+        result.append(u)
+        # 내적을 제거하고 위상정렬. v를 만드는데 u가 가중치만큼 필요할 것.
+        # pick: u = 6
+        for v in adj[u]:
+            # v 내적 제거
+            # v 부품 만들때 필요한 정보 업데이트. u번째 부품이 몇 개 필요한가?
+            # 기존 u의 내적값...아 여기서 모든 부품에 대한 이터레이션 필요
+            # p1. i = 0 
+            # p2. i = 1
+            # n = 7
+            # 6번 부품이 7번부품 만들 때 몇개 필요한지 반영이 안 됨
+            # pick: 
+            for i in range(n):
+                # i = 0
+                # p[v-1=6][0~6] += p[5][0~6]*weight
+                p[v-1][i] += p[u-1][i]*weights[(u,v)]
+            
+            in_degree[v] -= 1
+            if in_degree[v] == 0:
+                que.append(v)
+
+    for i in initials:
+        if i != 0:
+            print(i, p[n-1][i-1] )
+
+def dag_shortest_path(s:int, adj: list, weights: list):
+    """뭐 어떻게 하면 되지? 일단 하나의 버텍스를 기준으로? 그냥 모든 간선을 돌면서?"""
+    p[s] = 1
+    que = deque([s])
+    while que:
+        u = que.popleft()
+        for v in adj[u]:
+            
+            que.append(v)
+
+
+
+if __name__ == '__main__':	
+    input = sys.stdin.readline
+    # n = 7
+    n = int(input().strip()) 
+    # m = 8
+    m = int(input().strip())
+    # E = [(5, 1, 2), ...]
+    # 
+    E = [ 
+        tuple(map(int, input().split()))
+        for _ in range(m)
+    ]
+    # p는? i번째 부품을 만드는데 m번째 부품이 몇 개 필요한지 계산.
+    """
+    p = [ 
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+    ]
+    """
+    p = [[0 for j in range(n)] for _ in range(n)]
+    topological_sort(n, E)
+    # for s in p:
+    #     print(s)
+    # for s in initials:
+    #     p = [0 for _ in range(n+1)]
+    #     dag_shortest_path(s, adj, weights)
+    #     print(f'{s} {p[n]}')
+
+"""
+이슈: 시간초과
+
+Phase1.
+환경: 파이썬
+로그: 
+최근 변경 사항: 
+
+Phase2.
+확인: 
+시도: 
+p 초기화 함수 삭제,
+relax 함수 삭제
+
+분석: 의미 없음
+"""
+```
+

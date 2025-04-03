@@ -971,9 +971,15 @@ class ChainedHash:
 
 > 이후 단계부터는 빠르게 다른 자료구조 다 본 다음 진행할 것!
 
-### Phase2. 수도코드 쓰기
+![](./images/IMG_0039.png)
 
-(구현 명세를 우선 정리할 것)
+![](./images/IMG_0040.png)
+
+![](./images/IMG_0041.png)
+
+![](./images/IMG_0042.png)
+
+### Phase2. 수도코드 쓰기
 
 ### Phase3. 코드 구현하기
 
@@ -1129,5 +1135,5 @@ return(int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.capacity)
 
 
 
-
+# 
 
