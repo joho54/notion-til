@@ -1409,6 +1409,230 @@ u는 큐에서 꺼냈으니 d-값이 최소이고, \delta(s,u)는 진짜 최단�
 
 처럼 모두 같아진다는 결론에 이르게 됩니다.
 
+## 개: predecessor matrix
+
+### 개념
+
+predecessor matrix: all-pair shortest paths problem에서 솔루션은 단순히 최소 가중치만 포함하는게 아니고, predecessor matrix ∏ = (π_i, j)를 포함한다. 
+
+1. 이때 π_ij 는 i==j이거나 i에서 j로 가는 경로가 없을 때 NIL이다. 
+1. 그게 아니라면, π_ij는 i에서 j로 가는 어떤 최단 경로의 조상이다(?).(의문 1.)
+### 의문 1. 왜 π_ij가 i에서 j로 가는 어떤 최단 경로의 조상이라고 하는가?
+
+π₍ᵢⱼ₎가 “i에서 j로 가는 어떤 최단 경로의 조상(predecessor)”이라고 불리는 이유는,
+
+단순히 최단 경로의 가중치값만 기록하는 것이 아니라, 경로 재구성을 위한 “직전 정점” 정보를 함께 저장하기 때문입니다.
+
+경로 재구성과 π₍ᵢⱼ₎의 역할
+
+1.	경로 재구성의 필요성
+
+모든 쌍 최단 경로 문제에서는 단순히 i에서 j까지의 최단 거리만 알면 충분하지 않고, 실제로 어떤 경로(정점들의 순서)를 거치는지도 알아야 할 때가 많습니다. 이를 위해, 알고리즘은 각 정점 쌍 (i, j)에 대해 최단 경로 상에서 j 바로 앞에 오는 정점을 기록합니다.
+
+2.	π₍ᵢⱼ₎의 정의
+
+•	만약 i에서 j로의 직접적인 간선이 존재한다면, π₍ᵢⱼ₎는 i로 설정됩니다.
+
+•	만약 i와 j 사이에 여러 개의 정점을 거치는 경로가 존재한다면, π₍ᵢⱼ₎는 최단 경로 상에서 j의 바로 직전 정점, 즉 j로 가기 직전에 도달한 정점을 기록합니다.
+
+•	만약 i == j이거나 i에서 j로 가는 경로가 없다면 π₍ᵢⱼ₎는 NIL입니다.
+
+3.	’조상(Ancestor)’이라는 용어의 유래
+
+π₍ᵢⱼ₎를 “조상” 혹은 “predecessor”라고 부르는 이유는,
+
+•	경로의 트리 구조를 생각해 볼 수 있기 때문입니다.
+
+•	각 최단 경로는 일종의 트리(혹은 포레스트)로 생각할 수 있으며, 이 트리에서 각 정점 j는 자신의 부모(조상) 정점 π₍ᵢⱼ₎를 가지게 됩니다.
+
+•	즉, j에 도달하기 직전에 어떤 정점(π₍ᵢⱼ₎)을 거쳤는지가 바로 “조상”의 역할을 하며, 이 정보를 이용해 j부터 시작해 π₍ᵢⱼ₎, 그 다음 π₍ᵢ,π₍ᵢⱼ₎₎, … 등을 따라가면 최종적으로 출발점 i에 도달할 수 있습니다.
+
+4.	경로 재구성 과정
+
+•	예를 들어, i → … → u → j라는 최단 경로가 있다고 하자. 이때, π₍ᵢⱼ₎는 j 바로 앞에 오는 정점 u가 됩니다.
+
+•	u 또한 최단 경로 상에서 그 앞선 정점을 가리키도록 π₍ᵢ,u₎가 기록되어 있을 것입니다.
+
+•	이런 식으로 π 행렬에 저장된 “직전 정점” 정보를 뒤로 추적(backtracking)하면, 최단 경로의 전체 경로를 복원할 수 있습니다.
+
+요약
+
+π₍ᵢⱼ₎가 “i에서 j로 가는 어떤 최단 경로의 조상”이라고 하는 이유는,
+
+•	π₍ᵢⱼ₎가 j에 도달하기 직전에 도달했던 정점(즉, j의 “이전 단계”)을 저장하기 때문이며,
+
+•	이 정보를 이용해 j에서 출발점 i까지 역추적함으로써 전체 최단 경로를 재구성할 수 있기 때문입니다.
+
+즉, π₍ᵢⱼ₎는 단순한 최단 거리 값뿐만 아니라 최단 경로의 “경로 정보”를 담고 있으며, 그 정보가 바로 j의 “조상” 역할을 하기 때문에 그렇게 표현됩니다.
+
+### 의문 2. 그렇다면 π_ij 자신 역시 그 사이에 존재하는 모든 최단 거리와 마찬가지로 그 최단거리에 포함되는 집합이기 때문에, π_ij도 π_ij의 조상이다, 이렇게 볼 수 있는 건가?
+
+π₍ᵢⱼ₎는 “직전 정점”이라는 구체적인 역할을 수행하며, 이는 j에 도달하기 바로 전에 나온 정점을 의미합니다. 질문에서 말하는 “π₍ᵢⱼ₎도 π₍ᵢⱼ₎의 조상이다”라고 볼 수 있느냐는 관점은, 경로에 포함된 모든 정점을 ‘조상’이라고 취급하는 관점과 혼동될 수 있습니다. 그러나 실제로는 다음과 같이 봐야 합니다.
+
+1.	즉시(predecessor)의 개념
+
+π₍ᵢⱼ₎는 i에서 j로 가는 최단 경로 상에서 j 바로 직전에 등장하는 정점을 가리킵니다. 즉, 경로 전체에 있는 여러 정점 중 j에 바로 연결되는 “직전” 정점으로 정의되므로, 자기 자신을 가리키는 것이 아니라 j보다 앞에 오는 한 단계 이전의 정점입니다.
+
+2.	경로 재구성에서는 비재귀적 체인
+
+경로를 재구성할 때는 j에서 π₍ᵢⱼ₎를 찾고, 다시 그 정점에 대해 π₍ᵢ,π₍ᵢⱼ₎₎를 찾는 식으로 역추적합니다. 이 과정은 “조상” 관계의 전이를 나타내지만, 보통의 “조상” 관계는 반사(reflexive)가 아니라 비반사적입니다.
+
+즉, 정점 u가 u 자신의 조상으로 간주되지는 않습니다.
+
+3.	정의상의 한계
+
+π₍ᵢⱼ₎가 경로에 포함된 정점임은 맞지만, “조상”이라는 용어는 재귀적인 추적에 있어 더 이상 자기 자신을 포함하지 않는 비반사적 관계로 사용하는 것이 일반적입니다.
+
+예를 들어, 만약 A → B → C라는 최단 경로에서, π₍A,C₎는 B입니다. 여기서 B는 C의 직전 정점(Predecessor)이자, 재귀적으로 A로 이어지는 조상의 일부입니다. 그런데 B를 “B의 조상”으로 보지는 않습니다.
+
+따라서, π₍ᵢⱼ₎ 자체를 “자기 자신의 조상”이라고 보는 것은 일반적인 정의와 맞지 않습니다.
+
+π₍ᵢⱼ₎는 경로 상에 포함되어 있는 한 정점일 뿐이며, 재귀 추적을 통해 최초 출발점 i에 도달하는 체인에서 각각의 정점은 그 위에 있는 정점을 “조상(predecessor)”이라고 하지만, 자기 자신을 그 자체의 조상으로 정의하지는 않습니다.
+
+요약하면,
+
+•	π₍ᵢⱼ₎는 i에서 j로 가는 최단 경로에서 j 바로 이전 정점을 나타내며,
+
+•	경로 전체가 하나의 집합으로 포함되더라도, 각 정점은 자기 자신을 조상으로 포함하지 않는 비반사적(predecessor) 관계에 있습니다.
+
+따라서 π₍ᵢⱼ₎가 스스로의 조상이라고 보지는 않습니다.
+
+## 개구코: printing all pairs shortest path
+
+### 개념
+
+The subgraph induced by the ith row of the ∏ matrix should be a shortest-paths tree with root i.
+
+for each vertex i in V, the predecessor subgraph of G for i is G_π, i = (V_π,i, E_π, i), where
+
+V_π,i = {j in V: π_i,j ≠ NIL} U {i}, 
+
+E_π, i = {(π_i, j, j) : j in V_π, i = {i}}
+
+if G_π, i is shortest paths tree, then PRINT-ALL-PAIRS-SHORTEST-PATH on the following page prints a shortest path from vertex i to vertex j.
+
+### 구현
+
+```assembly
+PRINT-ALL-PAIRS-SHORTEST-PATH(∏, i, j)
+	if i==j
+		print i
+	elseif π_ij == NIL
+		print "no path from" i "to" j "exists"
+	else PRINT-ALL-PAIRS-SHORTEST-PATH(∏, i, π_ij)
+		print j
+```
+
+### 코멘트 1. 프린트 함수만 보면 그렇게 어려워 보이진 않는데. 재귀적으로 π_ij를 반복호출 하면 결국 i==j가 되고 프린트가 끝나는 거지?
+
+맞습니다. 이 재귀적 프린트 함수는 단순하게, 시작 정점 i부터 출발해 정점 j로 가는 경로에서 j 바로 앞에 있는 정점을 계속 따라가면서 결국 i에 도달하도록 설계되어 있습니다. 구체적으로 동작하는 방식은 다음과 같습니다.
+
+1. 함수의 기본 구조
+
+함수는 아래와 같이 동작합니다:
+
+•	Base Case:
+
+•	만약 i와 j가 같으면, 즉 i == j라면, 현재 정점 i를 출력합니다.
+
+이는 경로의 시작점에 도달했음을 의미합니다.
+
+•	경로 존재 여부 확인:
+
+•	만약 π[i][j]가 NIL이면, i에서 j로 가는 경로가 존재하지 않음을 출력합니다.
+
+•	재귀 호출:
+
+•	그렇지 않다면, 먼저 PRINT-ALL-PAIRS-SHORTEST-PATH(∏, i, π[i][j])를 재귀적으로 호출해서, j의 바로 이전 정점을 대상으로 경로를 출력합니다.
+
+•	재귀 호출이 끝난 후에 정점 j를 출력합니다.
+
+즉, 최종 호출 체인은 i → … → u → j 의 형태가 될 것이고, 재귀 호출 과정에서는 각각의 정점 u(즉, π[i][j]를 따라간 정점)를 만나게 됩니다.
+
+2. 재귀 호출의 종료 보장
+
+재귀적으로 π[i][j]를 호출하면, 각 단계에서 “현재 정점 j의 바로 이전 정점”을 따라가게 됩니다.
+
+•	종료 조건:
+
+•	시작 정점 i로부터 j까지 최단 경로가 존재한다면, 그 경로의 predecessor 체인은 반드시 유한하며, 마지막에는 반드시 i에 도달합니다.
+
+•	그러므로, 재귀 호출은 결국 i == j인 상태로 도달하여 base case를 만족시키고 종료됩니다.
+
+3. 경로 재구성 예시
+
+예를 들어, 정점 1에서 정점 5로 가는 최단 경로가 다음과 같다고 해봅시다:
+
+```plain text
+1 → 3 → 4 → 5
+```
+
+이때, 각 π 값은 다음과 같이 설정되어 있을 수 있습니다.
+
+•	π[1][3] = 1
+
+•	π[1][4] = 3
+
+•	π[1][5] = 4
+
+함수 호출은 다음과 같이 이루어집니다:
+
+1.	PRINT-ALL-PAIRS-SHORTEST-PATH(∏, 1, 5)
+
+•	1 != 5이고, π[1][5]는 4이므로 재귀 호출:
+
+→ PRINT-ALL-PAIRS-SHORTEST-PATH(∏, 1, 4) 후에 출력: 5
+
+2.	PRINT-ALL-PAIRS-SHORTEST-PATH(∏, 1, 4)
+
+•	1 != 4이고, π[1][4]는 3이므로 재귀 호출:
+
+→ PRINT-ALL-PAIRS-SHORTEST-PATH(∏, 1, 3) 후에 출력: 4
+
+3.	PRINT-ALL-PAIRS-SHORTEST-PATH(∏, 1, 3)
+
+•	1 != 3이고, π[1][3]는 1이므로 재귀 호출:
+
+→ PRINT-ALL-PAIRS-SHORTEST-PATH(∏, 1, 1) 후에 출력: 3
+
+4.	PRINT-ALL-PAIRS-SHORTEST-PATH(∏, 1, 1)
+
+•	1 == 1이므로, 1을 출력
+
+재귀 호출이 종료되면, 함수 호출들이 역순으로 “3”, “4”, “5”를 출력하게 되어 최종적으로
+
+```plain text
+1 3 4 5
+```
+
+가 출력됩니다.
+
+4. 결론
+
+재귀적으로 π[i][j]를 사용하면, 결국 시작 정점 i로 도달하게 되어 base case에 도달하면서 재귀 호출이 종료됩니다. 그러므로, 프린트 함수는 “어렵지 않게” 모든 정점 쌍에 대한 최단 경로(정점들의 순서)를 올바르게 출력할 수 있습니다.
+
+이로써 “재귀적으로 π_ij를 반복 호출하면 결국 i == j가 되어 프린트가 끝난다”는 설명이 타당함을 알 수 있습니다.
+
+### 코멘트 2. 결국 그렇다면 ALL-PAIRS-SHORTEST-PAHTS 문제는 predecessor matrix를 완성하는 것으로 목표가 수렴하겠군.
+
+맞습니다. All-Pairs Shortest Paths 문제의 핵심은 단순히 모든 정점 쌍 (i, j)에 대해 최단 거리를 구하는 것뿐만 아니라, 그 최단 경로의 경로 재구성을 가능하게 하는 정보를 확보하는 데 있습니다.
+
+구체적으로 말하면, 알고리즘(예: Floyd–Warshall)은 두 가지 결과물을 산출합니다.
+
+1.	거리 행렬(Distance Matrix):
+
+각 (i, j) 쌍에 대해 최단 경로의 총 가중치를 제공합니다.
+
+2.	Predecessor Matrix (π Matrix):
+
+각 (i, j) 쌍에 대해, j에 도달하기 바로 전에 거쳐야 하는 정점을 기록합니다.
+
+이 행렬은 “경로 재구성” 기능을 수행하는데, 예를 들어 PRINT-ALL-PAIRS-SHORTEST-PATH와 같은 재귀적 알고리즘을 통해, 최종적으로 i에서 j까지의 실제 경로(정점의 순서)를 복원할 수 있게 됩니다.
+
+즉, 모든 정점 쌍에 대해 최단 경로를 구하는 문제는 결국 이 두 가지 결과, 특히 경로 정보가 담긴 predecessor matrix를 완성하는 것으로 목표가 수렴됩니다. Predecessor matrix를 통해, 단순히 최단 거리를 아는 것에 그치지 않고, 실제 경로(어떤 정점을 거치는지)를 재구성할 수 있으므로, APSP 문제의 완전한 해결책이라 볼 수 있습니다.
+
+따라서, 코멘트에서 언급한 바와 같이, 결국 All-Pairs Shortest Paths 문제는 predecessor matrix를 완성하는 것으로 그 해결의 핵심이 된다고 할 수 있습니다.
+
 ## 개구코: The structure of a shortest path - 1
 
 ### 개념: 플로이드 워셜 알고리즘의 기본은, 최단 부분 거리 더하기 최단 부분 거리가 전체 최단 거리라는 간단한 발상에서 출발한다. 
@@ -1696,11 +1920,33 @@ $$
 - Following the above discussion, define d_{ij}^{(k)} recursively by 
  
 
-### 구현
+### 구현: 점화식 
 
-### 코멘트
+![](./images/IMG_0527.png)
 
-책 앞 내용을 건너뛰어서, all-pairs shortest paths problem의 정의를 잘 모르겠다. 
+### 의문 1. 아래 진술의 의미
+
+because any simple path contains at most n-1 edges, a path from vertex i to vertex j with more than n - 1 adges can not have lower weight than a shortest path from i to j. The actual shortest path therefore given by
+
+$$
+\sigma(i, j) = l_{i,j}^{n-1} = l_{i,j}^{n} = l_{i,j}^{n+1}
+$$
+
+위 진술의 의미는 다음과 같습니다.
+
+그래프에서 꼭짓점(정점)의 개수를 n이라 할 때, 임의의 단순 경로(simple path)는 같은 정점을 두 번 이상 방문하지 않기 때문에, 최대 n-1개의 간선을 포함할 수 있습니다.
+
+즉, 정점이 n개라면, 어떤 두 정점 i와 j 사이의 최단 경로(shortest path)는 아무리 길어도 n-1개의 간선을 넘을 수 없습니다. 만약 간선이 n개 이상 있다면, 반드시 같은 정점을 두 번 이상 방문하게 되며, 이때는 단순 경로가 아니라 사이클을 포함하는 경로가 됩니다. 사이클을 포함한 경로는 절대로 최단 경로보다 더 짧아질 수 없습니다. (음의 가중치가 있는 사이클을 허용하지 않는다는 가정 하에)
+
+따라서, 최단 경로의 길이를 계산할 때, 최대 n-1개의 간선까지만 고려하면 충분합니다. n개, n+1개 이상의 간선을 추가로 고려해도 최단 거리는 더 이상 짧아지지 않습니다.
+
+위 수식으로 표현하면 다음과 같습니다.
+
+$$
+\sigma(i, j) = l_{i,j}^{n-1} = l_{i,j}^{n} = l_{i,j}^{n+1}
+$$
+
+이 수식은 정점 i에서 j까지의 최단 경로 \sigma(i, j)의 길이는, 경로의 간선 수를 점진적으로 늘려도 (즉 n-1, n, n+1개로 늘려도) 변하지 않음을 의미합니다. 다시 말해, 정점 개수가 n개인 그래프에서는 최단 경로는 최대 n-1개의 간선으로 제한되므로, 그 이상의 간선을 사용하는 경우는 더 이상 최단 경로를 짧게 만들 수 없다는 뜻입니다.
 
 ### All-pairs shortest paths poblem
 
@@ -1751,6 +1997,57 @@ $$
 •	기본 아이디어: “지금보다 더 많은 정점을 거칠 수 있게 되었을 때, 경로가 더 짧아질 수 있다!”
 
 궁금한 점이나, 이 재귀 정의를 코드로 구현하는 데 도움 받고 싶다면 말씀 주세요!
+
+## 개구코: Computing the shortest path weights bottom up
+
+### 개념: all pair shortest path weights 알고리즘의 심장은 이 점화식을 구현하는 EXTEND-SHORTEST-PATHS 코드다.
+
+![](./images/Screenshot_2025-04-08_at_1.19.59_PM.png)
+
+### 구현
+
+```assembly
+EXTEND-SHORTEST-PATHS(L^(r-1), W, L^(r), n)
+// assume that the elements of L^(r) are initialized to inf
+for i = 1 to n
+	for j = 1 to n
+		for k = 1 to n
+			l_(ij)^(r) = min{l_(ij)^(r), l_(ik)^(r-1) + w_(kj)
+```
+
+### 코멘트
+
+이제 이 개념이 바로 행렬 곱셈 문제로 이어진다.
+
+## 개구코: Computing the shortest path weights bottom up using matrix multiplication
+
+### 개념
+
+EXTEND SHORTEST PATHS와 행렬 연산의 연관성을 이해해보자!
+
+### 구현: 증명과 코드
+
+![](./images/IMG_0528.png)
+
+```java
+SLOW_APSP(W, L^(0), n)
+let L = (l_ij) and M = (m_ij) be new n x n matrices
+L = L^(0)
+for r = 1 to n-1
+	M = INF // initialize M니
+	// compute the matrix "product" M = LxW.
+	EXTEND-SHORTEST-PATHS(L, W, M, n)
+	L = M
+return L
+```
+
+### 코멘트
+
+### 의문 1. 아래 과정을 거쳐 EXTEND-SHORTEST-PATHS 함수를 행렬 연산으로 바꿀 수 있는 이유를 모르겠음. 연산자가 바뀌잖아.
+
+$$
+l^{r-1} \rightarrow a, w\rightarrow b, l^{r} \rightarrow c, min \rightarrow +, + \rightarrow .
+$$
 
 ## 개구코: Computing the shortest-path weights bottom up
 
@@ -1890,5 +2187,175 @@ $$
 
 •	따라서 “인접 리스트로 굳이 Floyd-Warshall 알고리즘을 직접 구현”하는 일은 거의 없다고 보시면 됩니다. (가능하긴 하지만, 불필요하게 복잡해질 뿐입니다.)
 
+# DP
 
+## 개구코1.  일반적인 행렬 곱셈
+
+### 개념: 일반적인 행렬 곱셈은 C = C + A * B형태로 이루어진다. 시간 복잡도 큼
+
+### 구현
+
+```python
+RECTANGULAR-MATRIX-MULTIPLY(A, B, C, p, q, r)
+for i = 1 to p
+	for j = 1 to r
+		for k = 1 to q
+			c_ij = c_ij + a_ik * b_kj
+```
+
+### 코멘트
+
+위 경우에서 시간 복잡도는 p*q*r. 
+
+이제 matrix-chain multiplication problem이 제시된다. 행렬 곱셈 문제는 (이미 알고 있지만) 행렬 <A1, A2..,An>이 있을 때, 시간 복잡도를 최소화 할 수 있도록 행렬끼리 fully parenthesize하는 문제다. 입력은 <p0, p1, p2, …, pn>이다. 이때 ‘어떻게 곱할지 고민하는 시간’은 실제로 곱할때 제대로 보상이 오기 때문에 고민할 가치가 있다.
+
+## 개구코 2. Counting the number of parenthesizations
+
+### 개념: 재귀적인 방법으로 parenthesization을 할 때는 시간 복잡도가 O(2^n)이 나온다. 따라서 DP 적용을 고민해야 한다.
+
+### 구현: 재귀식
+
+![](./images/IMG_0529.png)
+
+### 코멘트
+
+다음 스텝으로 넘어가기 전에, 다시 보는 DP 4계명
+
+1. “Characterize” the structure of an optimal solution
+1. Recursively “define” the value of an solution
+1. “Compute” an optimal solution from computed information
+1. “Construct” an optimal solution from computed information
+## 개구코 3. Applying dynamic programming - Characterize
+
+### 개념: DP 1계명. Characterize the structure of an optimal solution
+
+### 구현
+
+1. 노테이션: A_i:j는 문제가 nontrivial할 때, 즉 i < j일때 A_i, A_i+1, …, A_j에 대한 행렬 제곱 결과를 의미.
+1. 반대로 i==j여서 문제가 trivial하면 그냥 1을 리턴.
+1. 이때, 이 문제의 optimal substructure는 다음과 같음.
+  1. i ≤ k < j가 있음
+  1. 이 k를 기준으로 A_i:j를 나눔
+  1. A_i:k, A_k+1:j 가 있다고 할 때 A_i:j가 최적해이기 위해서는 A_i:k, A_k+1:j 각각이 최적이어야 함.
+### 코멘트
+
+이때, define단계로 넘어가기 전에 첨언이 있음. Any solution to a nontrivial instance of the matrix chain multiplication problem requires splitting the product, and any optimal solution contains within it optimal solutions to subproblem instances. Thus, to build an optimal solution to an instance of the matrix-chain multiplication problem, split the problem into two subproblems (optimally parenthesizing A_i A_i+1 … A_k and A_k+1 …A_j), find optimal solution to the two subproblem instances, and then combine these optimal subproblem solutions. To ensure that you’ve examined the optimal split, you must consider all possible splits.
+
+## 개구코 4. Applying dynamic programming - a recursive solution.
+
+### 개념
+
+다음 단계는 최적해를 재귀적으로 정의하는 겁니다. 무엇으로? 부문제에 대한 최적해의 언어로. matrix-chain multiplication 문제에 대해, 부문제는 A_i, A_i+1, … A_j (1 ≤ i ≤ j ≤ n)의 최소 parenthesization 비용을 얻는 것. 
+
+### 구현
+
+m[i:j]가 등장합니다. 이건 A_i:j 행렬 제곱에 대한 최소 비용입니다. 그럼 m[i:j]에 대해 다음과 같은 정의를 할 수 있습니다. (행렬 A_i의 형상을 P_i-1, P_i라고 정의할 때 A_i:k * A_k+1:j의 곱셈 비용은 p_i-1*p_k*p_j와 같음)
+
+m[i:j] = 0 if i = j 
+
+m[i, j] = m[i, k] + m[k + 1, j] + p_i-1*p_k*p_j
+
+그런데! 이 식은 k를 안다고 정의하지만, 문제는, 우리는 k를 모른다. 적어도 아직은. 그러니 이에 대해서는 완전 탐색을 적용한 recurrence를 정의할 수 있다.
+
+![](./images/IMG_0530.png)
+
+따라서 이제는 k를 찾아야 하는 문제로 이어지는데, k역시 부문제로 정의를 할 수 있다.
+
+s[i,j] = m[i,k] + m[k+1,j] + pi-1 * pk * pj를 최소로 만드는 k
+
+### 코멘트
+
+없음.
+
+## 개구코 5. Computing the optimal costs
+
+### 개념
+
+- 위의 recurrence를 그대로 쓰면 exponential함.
+- 다행히도, 이 문제에는 많은 서로 구별되는 부문제들이 중복됨.
+- 재귀적으로 위의 점화식을 구하는 대신, tabular를 사용하여 상향식으로 문제를 구할 수 있음.
+- 이 과정은 m[i, j]의 솔루션을 저장하기 위해 auxiliary table m[1:n, 1:n]테이블을 사용함. 
+- 이 테이블은 어떤 k가 m[i,j]를 구해냈는지 기록함. 
+- s는 constructing an optimal solution을 도와주는 보조 테이블( 스텝 4에서 도움이 될 것)
+### 구현
+
+```python
+MATRIX-CHAIN-ORDER(p, n)
+let m[1:n, 1:n] and s[1:n - 1, 2:n] be new tables
+for i = 1 to n // chain length 1
+	m[i, j] = 0
+for l = 2 to n // l is the chain length
+	for i = 1 to n-1 ++ 1 // chain begins at A_i
+		j = i + l - l // chain ends at A_j
+		m[i, j] = INF
+		for k = 1 to j - 1 // try A_i:k A_k+1:j
+			q = m[i, k] + m[k+1, j] + p_i-1 * p_k * p_j
+			if q < m[i, j]
+				m[i,j] = q // remember this cost
+				s[i, j] = k // remember this index
+return m and s
+```
+
+![](./images/IMG_0209.png)
+
+![](./images/a8d4e237-0842-44d8-9a4e-91bbdf41009c.png)
+
+### 코멘트
+
+으아~
+
+## 개구코 6. 마지막. Constructing an optimal solution
+
+짧게 가자.
+
+### 개념
+
+s[1:n]을 통해 이 행렬 체인을 나누는 최적 포인트를 구할 수 있고, 더 나아간 세부적인 행렬 체인의 나누기 포인트를 아래 두 재귀적인 정의로 구할 수 있음.
+
+s[1, s[1,n]], s[s[1,n]+1, n]
+
+The s table contains the information needed to determine the earlier matrix multiplications as well, using recursion: s[1, s[1, n]] determines the last matrix multiplication when computing A_1:s[1,n] and s[s[1:n]+1, n] determines the last matrix multiplication when computing A_s[1,n]+1:n
+
+### 구현
+
+```python
+PRINT-OPTIMAL-PARENS(s, i, j)
+if i == j
+	print "A"i
+else print "("
+	PRINT-OPTIMAL-PARENS(s, i, s[i,j])
+	PRINT-OPTIMAL-PARENS(s, s[i,j]+1, j)
+	print ")"
+```
+
+### 코멘트 
+
+오케이 끝! 다음 번에 볼 때 연습 문제를 풀어봅시다.
+
+## 개. Elements of dynamic programming
+
+### 개념: DP에 대한 일반론(내가 간절한!)
+
+동적 계획법의 필수 요소: optimal substructure and overlapping subproblems.
+
+“When a problem exhibits optimal substructure, that gives you a good clue that dynamic programming might apply.”
+
+이 문제를 푸는 과정을 패턴화 하면 다음과 같음
+
+1. 해답이 선택의 연속일때(줄 자르기, 행렬 체인 나누기)
+1. 이미 주어진 문제에 대해 최선의 선택이 이루어졌다고 생각하기(어떻게 선택했는지 지금은 생각하지 않기)
+1. 주어진 선택에 대해 어떤 부문제가 잇따라 일어나는지, 부문제의 결과가 어떻게 유형화되는지 결정하기
+1. 자르고 붙이기 테크닉으로 문제가 해결됨을 보여주기. 이것은 의외로 ‘반례를 만드는 선택을’ ‘잘라내고’, 최적의 선택을 ‘붙이는’ 방식으로 진행. 솔루션이 하나 이상의 부문제에 대한 해결을 제공한다면, 이를 조금씩만 수정해서 전체 문제를 해결하는 방향으로 갈 수 있음. cut and paste.
+이 자르고 붙이는 과정에서, space of problem에 대해 생각해봐야 함. 이것은 우선 최대한 작게 생각하고, 필요에 따라 확장해나가야 함. 
+
+예를 들어, 줄 자르기 문제에서는 space of problem이 첫번째 자르는 지점만을 고려하면 됐음.
+
+반대로, 행렬 체인 최적화 문제에서는 i, k, j를 다양하게 생각해야 했음. (unless you can guarantee that k always equals j-1, you will find that you have subproblems of the form A1, A2…Ak and Ak+1Ak+2…Aj.  Moreover, the latter subproblems of the form A1A2..Aj. To solve this problem by DP, you need to allow the subproblems to vary at “both ends” → this leads us to expansion of space of problem.)
+
+- 문제 해결책의 비용은 종종 부문제의 비용 더하기 부문제 선택으로 발생하는 직접 비용의 합이기도 하다. The cost of the problem solution is usually the subproblem costs plus a cost that is directly attributable to the choice itself. 
+### 첨언
+
+그리디 알고리즘도 DP와 유사한 점이 있다. optimal structure를 활용한다는 점에서! 대신 그 초이스가 항상 그리디하다는 점에 차이가 있다.
+
+In particular, problems to which greedy algorithms apply have optimal substructure. One major difference between greedy algorithms and dynamic programming is that instead of first finding optimal solutions to subproblems and then making an informed choice, greedy algorithms first make “greedy” choice - the choice that looks best at the time - and then solve a resulting subproblem, without bothering to solve all possible related smaller subproblems.
 

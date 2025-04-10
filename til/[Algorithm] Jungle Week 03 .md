@@ -8,6 +8,8 @@
 
 > 실습은 천천히, 하지만 robust하게 하세요. 
 
+> 알고리즘 TIL의 경우 완성 코드는 하나만! 나머지는 수정 사항만 코드 블럭으로 작성하세요
+
 
 
 # 트리, 재귀: 트리 순회
@@ -3986,45 +3988,15 @@ if __name__ == '__main__':
 
 사전순으로 출력이 안 돼서 내적 기준 대신 외적 기준으로 정렬을 함. 
 
-‘사전 역순’ 출력일 경우 내적 기준으로 정렬하면 됨. 
-
 ```python
-#  **************************************************************************  #
-#                                                                              #
-#                                                       :::    :::    :::      #
-#    Problem Number: 1432                              :+:    :+:      :+:     #
-#                                                     +:+    +:+        +:+    #
-#    By: joho54 <boj.kr/u/joho54>                    +#+    +#+          +#+   #
-#                                                   +#+      +#+        +#+    #
-#    https://boj.kr/1432                           #+#        #+#      #+#     #
-#    Solved: 2025/04/02 10:45:06 by joho54        ###          ###   ##.kr     #
-#                                                                              #
-#  **************************************************************************  #
-"""
-1. 문제 읽기
-2. 문제 풀기
-일단 위상정렬해서 차례로 매긴 번호를 원래 번호 순서대로 출력하면 됨.
-3. 수도 코드
-4. 코드 구현
-"""
 
-import sys, heapq
-from collections import defaultdict
-
-
-# 위상 정렬 알고리즘
 def topological_sort(n: int, graph):
-    # 내적 초기화
-    # out_degree = [0, 0, 0, 0]
     out_degree = [0 for _ in range(n)]
     graph_reverse = defaultdict(list)
     for u in range(n):
         for v in graph[u]:
             out_degree[u] += 1
             graph_reverse[v].append(u)
-    # out_degree = [2, 0, 0, 1]
-    # 내적이 0인 버텍스값들 먼저 큐에 삽입
-    # que = [0]
     que = [-u for u in range(n) if out_degree[u] == 0]
     heapq.heapify(que)
     cnt = n
@@ -4047,24 +4019,9 @@ def topological_sort(n: int, graph):
             print(r, end=' ')
 
 
-if __name__ == '__main__':	
-    input = sys.stdin.readline
-    n = int(input().strip())
-    arr = [
-        tuple(map(int, list(input().strip())))
-        for _ in range(n)
-    ]   
-    graph = defaultdict(list)
-    for i in range(n):
-        for j in range(n):
-            if arr[i][j] == 1:
-                graph[i].append(j)
-    topological_sort(n, graph)
-    # print(graph)
-
-
-
 ```
+
+‘사전 역순’ 출력일 경우 내적 기준으로 정렬하면 됨. 
 
 # 위상정렬: 임계경로
 
